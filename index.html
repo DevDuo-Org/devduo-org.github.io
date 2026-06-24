@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevDuo Innovations</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E8192C;--red-dim:#8B0F1A;--teal:#00D4FF;--purple:#7B2FBE;--bg:#050709;
+  --bg2:#0A0C10;--bg3:#0F1318;--text:#F0F2F5;--text-dim:#6B7280;--border:#1A1F2E;
+  --glow-red:0 0 20px rgba(232,25,44,0.4);--glow-teal:0 0 20px rgba(0,212,255,0.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;cursor:crosshair}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;line-height:1.6}
+
+/* SCAN LINE OVERLAY */
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9999}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 3rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(232,25,44,0.15);backdrop-filter:blur(20px);background:rgba(5,7,9,0.85)}
+.nav-logo{font-family:'Orbitron',monospace;font-weight:900;font-size:1.1rem;letter-spacing:.15em}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .2s;position:relative}
+.nav-links a:hover{color:var(--teal)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--teal);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;padding:.5rem 1.25rem;border:1px solid var(--red);color:var(--red);background:transparent;cursor:pointer;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--red);color:#fff;box-shadow:var(--glow-red)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:0 3rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(123,47,190,0.08) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(232,25,44,0.06) 0%,transparent 60%),radial-gradient(ellipse 30% 30% at 80% 10%,rgba(0,212,255,0.05) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,25,44,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(232,25,44,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%)}
+.hero-content{position:relative;z-index:2;max-width:680px}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+.hero-tag::before{content:'';width:2rem;height:1px;background:var(--red)}
+.hero-tag::after{content:'';width:2rem;height:1px;background:var(--red)}
+h1{font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(3rem,6vw,5.5rem);line-height:.95;letter-spacing:-.02em;margin-bottom:1.5rem}
+h1 .dev{color:var(--text)}
+h1 .slash{color:var(--red);margin:0 .05em}
+h1 .duo{color:var(--red);text-shadow:var(--glow-red)}
+h1 .innovations{display:block;font-size:.45em;color:var(--text-dim);letter-spacing:.25em;font-weight:400;margin-top:.25em}
+.hero-sub{font-size:1.1rem;color:var(--text-dim);max-width:500px;margin-bottom:2.5rem;font-weight:400;line-height:1.7}
+.hero-sub em{color:var(--teal);font-style:normal}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;padding:.9rem 2rem;background:var(--red);color:#fff;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.btn-primary:hover{box-shadow:var(--glow-red);transform:translateY(-2px)}
+.btn-ghost{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;padding:.9rem 2rem;background:transparent;color:var(--teal);border:1px solid var(--teal);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-ghost:hover{background:rgba(0,212,255,0.1);box-shadow:var(--glow-teal);transform:translateY(-2px)}
+.hero-stats{position:absolute;right:3rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:2rem;z-index:2}
+.stat{text-align:right}
+.stat-val{font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:var(--text);line-height:1}
+.stat-val span{color:var(--red)}
+.stat-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--text-dim);text-transform:uppercase;margin-top:.25rem}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--text-dim);text-transform:uppercase}
+.scroll-line{width:1px;height:3rem;background:linear-gradient(to bottom,var(--red),transparent);animation:scrollpulse 2s ease-in-out infinite}
+@keyframes scrollpulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.2)}}
+
+/* TICKER */
+.ticker{background:var(--bg2);border-top:1px solid rgba(232,25,44,0.2);border-bottom:1px solid rgba(232,25,44,0.2);padding:.65rem 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;gap:4rem;animation:ticker 25s linear infinite}
+.ticker-item{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
+.ticker-item span{color:var(--red);margin-right:.5rem}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:7rem 3rem}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.25em;color:var(--red);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+.section-tag::before{content:'//';color:var(--text-dim)}
+.section-title{font-family:'Orbitron',monospace;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.8rem);letter-spacing:-.01em;margin-bottom:1.5rem;line-height:1.1}
+.section-title em{color:var(--red);font-style:normal}
+
+/* PRODUCTS */
+#products{background:var(--bg)}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin-top:4rem;background:rgba(232,25,44,0.1)}
+.product-card{background:var(--bg2);padding:2.5rem;position:relative;overflow:hidden;transition:all .3s;cursor:pointer}
+.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);transform:scaleX(0);transition:transform .4s}
+.product-card:hover::before{transform:scaleX(1)}
+.product-card:hover{background:var(--bg3)}
+.product-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--text-dim);margin-bottom:1.5rem}
+.product-icon{font-size:2.5rem;margin-bottom:1.25rem;filter:grayscale(20%)}
+.product-name{font-family:'Orbitron',monospace;font-weight:700;font-size:1.25rem;margin-bottom:.5rem}
+.product-name span{color:var(--red)}
+.product-desc{font-size:.95rem;color:var(--text-dim);line-height:1.7;margin-bottom:1.5rem}
+.product-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.ptag{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;padding:.3rem .7rem;border:1px solid var(--border);color:var(--text-dim);text-transform:uppercase}
+.product-price{font-family:'Orbitron',monospace;font-size:1.4rem;font-weight:700;color:var(--teal)}
+.product-price small{font-family:'Rajdhani',sans-serif;font-size:.75rem;color:var(--text-dim);font-weight:400}
+.product-link{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);text-decoration:none;margin-top:1rem;transition:gap .2s}
+.product-link:hover{gap:1rem}
+
+/* SERVICES */
+#services{background:var(--bg2)}
+.services-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:4rem}
+.service-item{padding:1.75rem;border:1px solid var(--border);position:relative;transition:border-color .3s}
+.service-item:hover{border-color:rgba(232,25,44,0.4)}
+.service-item::after{content:attr(data-num);position:absolute;top:1.75rem;right:1.75rem;font-family:'Orbitron',monospace;font-size:2.5rem;font-weight:900;color:rgba(232,25,44,0.06);line-height:1}
+.service-icon{font-size:1.5rem;margin-bottom:1rem}
+.service-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.service-desc{font-size:.9rem;color:var(--text-dim);line-height:1.7}
+
+/* ABOUT */
+#about{background:var(--bg)}
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-top:4rem}
+.about-text p{font-size:1rem;color:var(--text-dim);line-height:1.85;margin-bottom:1.25rem}
+.about-text p strong{color:var(--text);font-weight:600}
+.about-stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+.stack-item{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;padding:.35rem .8rem;background:rgba(232,25,44,0.06);border:1px solid rgba(232,25,44,0.2);color:var(--text-dim);text-transform:uppercase}
+.about-visual{position:relative}
+.terminal{background:#0A0C10;border:1px solid rgba(0,212,255,0.2);padding:1.5rem;font-family:'JetBrains Mono',monospace;font-size:.8rem;line-height:1.8;position:relative;overflow:hidden}
+.terminal::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--purple))}
+.t-bar{display:flex;gap:.5rem;margin-bottom:1.25rem}
+.t-dot{width:10px;height:10px;border-radius:50%}
+.t-r{background:#E8192C}.t-y{background:#F59E0B}.t-g{background:#10B981}
+.t-line{color:var(--text-dim);margin:.1rem 0}
+.t-line .cmd{color:var(--teal)}
+.t-line .str{color:#10B981}
+.t-line .kw{color:var(--purple)}
+.t-line .comment{color:#374151}
+.t-cursor{display:inline-block;width:8px;height:14px;background:var(--teal);animation:blink 1s step-end infinite;vertical-align:middle;margin-left:2px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* YOUTUBE / CONTENT */
+#content{background:var(--bg2)}
+.content-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;margin-top:4rem;background:rgba(0,212,255,0.08)}
+.content-card{background:var(--bg2);padding:2rem;border-top:2px solid transparent;transition:all .3s}
+.content-card:hover{background:var(--bg3);border-top-color:var(--teal)}
+.cc-type{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+.cc-type.demo{color:var(--red)}.cc-type.explainer{color:var(--teal)}.cc-type.case{color:var(--purple)}.cc-type.founder{color:#F59E0B}
+.cc-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.04em;margin-bottom:.5rem;line-height:1.35}
+.cc-desc{font-size:.85rem;color:var(--text-dim);line-height:1.6}
+
+/* CTA */
+#contact{background:var(--bg);position:relative;overflow:hidden;text-align:center}
+#contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(232,25,44,0.06) 0%,transparent 70%)}
+.cta-inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.cta-title{font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(2rem,5vw,4rem);line-height:1;margin-bottom:1.5rem}
+.cta-sub{font-size:1.05rem;color:var(--text-dim);margin-bottom:3rem;line-height:1.7}
+.cta-links{display:flex;justify-content:center;gap:1.5rem;margin-top:3rem;flex-wrap:wrap}
+.cta-link{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .2s}
+.cta-link:hover{color:var(--teal)}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Orbitron',monospace;font-weight:900;font-size:.9rem;letter-spacing:.15em}
+.footer-logo span{color:var(--red)}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--text-dim);text-transform:uppercase}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--red)}
+
+/* SCROLL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">DEV<span>/DUO</span> INNOVATIONS</div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#content">YouTube</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:business@devduo.dev" class="nav-cta">Hire Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content reveal">
+    <div class="hero-tag">Karachi, Pakistan · Est. 2025</div>
+    <h1>
+      <span class="dev">DEV</span><span class="slash">/</span><span class="duo">DUO</span>
+      <span class="innovations">INNOVATIONS</span>
+    </h1>
+    <p class="hero-sub">
+      We build <em>AI-native products</em> that ship — multi-agent systems, LLM tools, and SaaS platforms. Not prototypes. Not demos. <em>Production software.</em>
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">View Products ↗</a>
+      <a href="#contact" class="btn-ghost">Work With Us</a>
+    </div>
+  </div>
+  <div class="hero-stats reveal reveal-delay-2">
+    <div class="stat"><div class="stat-val">3<span>+</span></div><div class="stat-label">Live Products</div></div>
+    <div class="stat"><div class="stat-val">4<span>x</span></div><div class="stat-label">Team Members</div></div>
+    <div class="stat"><div class="stat-val">∞</div><div class="stat-label">Lines Shipped</div></div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span>//</span>Multi-Agent AI Systems</span>
+    <span class="ticker-item"><span>//</span>RAG Pipelines</span>
+    <span class="ticker-item"><span>//</span>SaaS Engineering</span>
+    <span class="ticker-item"><span>//</span>LLM Integration</span>
+    <span class="ticker-item"><span>//</span>Claude · GPT-4 · Gemini</span>
+    <span class="ticker-item"><span>//</span>FastAPI · Python · TypeScript</span>
+    <span class="ticker-item"><span>//</span>Build. Innovate. Collaborate.</span>
+    <span class="ticker-item"><span>//</span>Multi-Agent AI Systems</span>
+    <span class="ticker-item"><span>//</span>RAG Pipelines</span>
+    <span class="ticker-item"><span>//</span>SaaS Engineering</span>
+    <span class="ticker-item"><span>//</span>LLM Integration</span>
+    <span class="ticker-item"><span>//</span>Claude · GPT-4 · Gemini</span>
+    <span class="ticker-item"><span>//</span>FastAPI · Python · TypeScript</span>
+    <span class="ticker-item"><span>//</span>Build. Innovate. Collaborate.</span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-tag">Our Products</div>
+  <h2 class="section-title reveal">We build. <em>You scale.</em></h2>
+  <div class="products-grid">
+
+    <div class="product-card reveal">
+      <div class="product-num">01 / FLAGSHIP</div>
+      <div class="product-icon">🧠</div>
+      <div class="product-name">SAGENTA<span>.</span></div>
+      <p class="product-desc">Conversational multi-agent AI that builds entire software features from plain text — with full visibility into every agent decision and approval gates before anything runs.</p>
+      <div class="product-tags">
+        <span class="ptag">Multi-Agent</span>
+        <span class="ptag">LangGraph</span>
+        <span class="ptag">Claude API</span>
+        <span class="ptag">CLI + VSCode</span>
+      </div>
+      <div class="product-price">$20<small>/mo · Launching 2026</small></div>
+      <a href="#" class="product-link">Join Waitlist →</a>
+    </div>
+
+    <div class="product-card reveal reveal-delay-1">
+      <div class="product-num">02 / LIVE</div>
+      <div class="product-icon">🔍</div>
+      <div class="product-name">REPO<span>MIND</span></div>
+      <p class="product-desc">Turn any GitHub repository into a single, structured context file — so you can interrogate any codebase with ChatGPT, Claude, or any LLM without reading thousands of files.</p>
+      <div class="product-tags">
+        <span class="ptag">Developer Tool</span>
+        <span class="ptag">LLM Context</span>
+        <span class="ptag">GitHub API</span>
+        <span class="ptag">SaaS</span>
+      </div>
+      <div class="product-price">$9<small>/mo · Free tier available</small></div>
+      <a href="https://repomind.dev" class="product-link">Get RepoMind →</a>
+    </div>
+
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-num">03 / GUMROAD</div>
+      <div class="product-icon">📦</div>
+      <div class="product-name">CODE<span>CONTEXT</span></div>
+      <p class="product-desc">One command packages your entire codebase into an LLM-optimised context file — filtered, structured, and token-counted. Works with ChatGPT, Claude, Cursor, and more.</p>
+      <div class="product-tags">
+        <span class="ptag">CLI Tool</span>
+        <span class="ptag">Python</span>
+        <span class="ptag">LLM Ready</span>
+        <span class="ptag">One-Time</span>
+      </div>
+      <div class="product-price">$9<small>–$49 · One-time payment</small></div>
+      <a href="#" class="product-link">Get on Gumroad →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-tag">Client Work</div>
+  <h2 class="section-title reveal">We <em>build for you,</em><br>too.</h2>
+  <div class="services-layout">
+    <div>
+      <div class="service-item reveal" data-num="01">
+        <div class="service-icon">🤖</div>
+        <div class="service-name">RAG Systems & Knowledge Bases</div>
+        <p class="service-desc">Custom document Q&amp;A systems, enterprise knowledge bases, and semantic search — powered by GPT-4, Claude, or open-source LLMs.</p>
+      </div>
+      <div class="service-item reveal reveal-delay-1" data-num="02" style="margin-top:1.5px">
+        <div class="service-icon">⚡</div>
+        <div class="service-name">Multi-Agent Automation</div>
+        <p class="service-desc">Autonomous AI workflows that plan, execute, and self-correct — eliminating repetitive processes across your business.</p>
+      </div>
+      <div class="service-item reveal reveal-delay-2" data-num="03" style="margin-top:1.5px">
+        <div class="service-icon">🔌</div>
+        <div class="service-name">LLM API Integration</div>
+        <p class="service-desc">OpenAI, Anthropic, Gemini, or open-source models — integrated cleanly into your existing app with streaming, function calling, and memory.</p>
+      </div>
+    </div>
+    <div>
+      <div class="service-item reveal" data-num="04">
+        <div class="service-icon">🚀</div>
+        <div class="service-name">AI SaaS Development</div>
+        <p class="service-desc">End-to-end SaaS products with AI at the core — from architecture to deployment, with Stripe, auth, and production-grade infrastructure.</p>
+      </div>
+      <div class="service-item reveal reveal-delay-1" data-num="05" style="margin-top:1.5px">
+        <div class="service-icon">🧬</div>
+        <div class="service-name">Prompt Engineering & Fine-tuning</div>
+        <p class="service-desc">Audit your existing AI prompts for quality and cost. We regularly cut token usage by 30–60% while improving output quality.</p>
+      </div>
+      <div class="service-item reveal reveal-delay-2" data-num="06" style="margin-top:1.5px">
+        <div class="service-icon">📊</div>
+        <div class="service-name">AI Strategy Consulting</div>
+        <p class="service-desc">Not sure where AI fits your product? We scope the right solution — no overengineering, no hype. Just the right tool for your problem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-tag">Who We Are</div>
+  <div class="about-layout">
+    <div class="about-text reveal">
+      <h2 class="section-title">Built by <em>builders.</em></h2>
+      <p>DevDuo Innovation is a <strong>two-founder AI development studio</strong> from Karachi, Pakistan — Safwan Ali (AI Engineer, BSCS final year) and co-founder, leading a team of four.</p>
+      <p>We don't consult. We <strong>ship production-grade AI systems</strong> — the same standard we hold our own products (Sagenta, RepoMind, CodeContext) to. If we wouldn't use it ourselves, we won't build it for you.</p>
+      <p>Safwan works full-time as an AI Engineer at Markytech while building DevDuo. That's not a side project mentality — that's <strong>proof of craft under pressure.</strong></p>
+      <div class="about-stack">
+        <span class="stack-item">Python</span>
+        <span class="stack-item">LangChain</span>
+        <span class="stack-item">LangGraph</span>
+        <span class="stack-item">FastAPI</span>
+        <span class="stack-item">OpenAI API</span>
+        <span class="stack-item">Anthropic</span>
+        <span class="stack-item">Pinecone</span>
+        <span class="stack-item">Weaviate</span>
+        <span class="stack-item">TypeScript</span>
+        <span class="stack-item">Next.js</span>
+        <span class="stack-item">Docker</span>
+        <span class="stack-item">AWS</span>
+      </div>
+    </div>
+    <div class="about-visual reveal reveal-delay-1">
+      <div class="terminal">
+        <div class="t-bar"><div class="t-dot t-r"></div><div class="t-dot t-y"></div><div class="t-dot t-g"></div></div>
+        <div class="t-line"><span class="comment">// devduo.config.ts</span></div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line"><span class="kw">const</span> studio = {</div>
+        <div class="t-line">&nbsp;&nbsp;name: <span class="str">"DevDuo Innovation"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;founded: <span class="str">2025</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;location: <span class="str">"Karachi, Pakistan"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;team: <span class="str">4</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;products: [</div>
+        <div class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Sagenta"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"RepoMind"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"CodeContext"</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;],</div>
+        <div class="t-line">&nbsp;&nbsp;mission: <span class="str">"Ship real AI."</span>,</div>
+        <div class="t-line">&nbsp;&nbsp;contact: <span class="str">"business@devduo.dev"</span></div>
+        <div class="t-line">};</div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line"><span class="cmd">export default</span> studio;<div class="t-cursor"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE CONTENT -->
+<section id="content">
+  <div class="section-tag">YouTube · DevDuo Innovation</div>
+  <h2 class="section-title reveal">We build in <em>public.</em></h2>
+  <p class="reveal" style="color:var(--text-dim);max-width:550px;margin-bottom:.5rem">Weekly videos on AI engineering, product builds, case studies, and the unfiltered journey of building a startup from Pakistan.</p>
+  <div class="content-grid">
+    <div class="content-card reveal">
+      <div class="cc-type demo">// Product Demo</div>
+      <div class="cc-title">I gave Sagenta one sentence and it built a full auth system</div>
+      <p class="cc-desc">Watch multi-agent AI complete a real task end-to-end — with full agent conversation visibility.</p>
+    </div>
+    <div class="content-card reveal reveal-delay-1">
+      <div class="cc-type explainer">// AI Explainer</div>
+      <div class="cc-title">What is a multi-agent AI system? (and why single models keep failing)</div>
+      <p class="cc-desc">The clearest explanation of agent orchestration you'll find — no jargon, real examples.</p>
+    </div>
+    <div class="content-card reveal reveal-delay-2">
+      <div class="cc-type case">// Case Study</div>
+      <div class="cc-title">How a dev onboarded to a 40k-line codebase in 18 minutes using RepoMind</div>
+      <p class="cc-desc">Before vs after — real metrics, real workflow, real result.</p>
+    </div>
+    <div class="content-card reveal reveal-delay-3">
+      <div class="cc-type founder">// Founder Update</div>
+      <div class="cc-title">Month 1 building DevDuo: $0 to first paying customer</div>
+      <p class="cc-desc">Honest revenue breakdown, mistakes made, and what's next for the studio.</p>
+    </div>
+  </div>
+  <div style="margin-top:2rem" class="reveal">
+    <a href="https://youtube.com/@devduoinnovations" class="btn-ghost" target="_blank">Watch on YouTube →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+  <div class="cta-inner">
+    <div class="section-tag" style="justify-content:center">Get In Touch</div>
+    <h2 class="cta-title reveal">Ready to build<br><em>something real?</em></h2>
+    <p class="cta-sub reveal">Whether you need an AI system built, want to use our products, or just want to follow the journey — we're here.</p>
+    <div class="hero-btns" style="justify-content:center" class="reveal">
+      <a href="mailto:business@devduo.dev" class="btn-primary">Email Us ↗</a>
+      <a href="https://devduo.dev" class="btn-ghost">devduo.dev</a>
+    </div>
+    <div class="cta-links reveal">
+      <a href="https://youtube.com/@devduoinnovations" class="cta-link">▶ YouTube</a>
+      <a href="https://github.com/devduoinnovations" class="cta-link">◈ GitHub</a>
+      <a href="https://twitter.com/devduoinnovations" class="cta-link">✕ Twitter/X</a>
+      <a href="https://linkedin.com/company/devduoinnovations" class="cta-link">in LinkedIn</a>
+      <a href="https://upwork.com" class="cta-link">⬡ Upwork</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">DEV<span>/DUO</span> INNOVATIONS</div>
+  <div class="footer-copy">© 2025–2026 DevDuo Innovation · Karachi, Pakistan · All rights reserved</div>
+  <div class="footer-links">
+    <a href="https://devduo.dev">Website</a>
+    <a href="mailto:business@devduo.dev">Email</a>
+    <a href="#products">Products</a>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth nav active states
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 120) current = s.id; });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#'+current ? 'var(--teal)' : '';
+  });
+});
+</script>
+</body>
+</html>
