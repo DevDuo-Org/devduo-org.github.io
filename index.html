@@ -3,52 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevDuo Innovations | Enterprise Multi-Agent AI Systems & Studio</title>
-  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Linear-grade glassmorphism software engineering studio.">
+  <title>DevDuo Innovations | Cyberpunk AI Systems & SaaS Studio</title>
+  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Cyberpunk HUD engineering studio.">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="DevDuo Innovations | Multi-Agent AI Systems">
-  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Hyper-sleek glassmorphism software studio.">
+  <meta property="og:title" content="DevDuo Innovations | AI Systems • SaaS Engineering • Automation">
+  <meta property="og:description" content="Building Intelligence. Shaping Tomorrow. Multi-agent systems, LLM tools, and production SaaS platforms.">
   <meta property="og:image" content="assets/Banner.png">
   <link rel="icon" type="image/png" href="assets/profile.png">
   
-  <!-- Premium Fonts: Inter & Space Grotesk & JetBrains Mono -->
+  <!-- Premium Fonts: Space Grotesk, Rajdhani, JetBrains Mono, Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Rajdhani:wght@500;600;700;800&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
     :root {
-      /* Linear & Vercel Dark Color System */
-      --bg-dark: #08090C;
-      --bg-surface: #0E1117;
-      --bg-card: rgba(18, 22, 32, 0.65);
-      --bg-card-hover: rgba(26, 32, 46, 0.85);
+      /* Cyberpunk Banner Theme Palette */
+      --bg-dark: #070408;
+      --bg-surface: #0E0712;
+      --bg-card: rgba(18, 10, 26, 0.75);
+      --bg-card-hover: rgba(28, 14, 40, 0.9);
       
-      --accent-red: #FF2A4B;
-      --accent-red-glow: rgba(255, 42, 75, 0.35);
-      --accent-cyan: #00F0FF;
-      --accent-cyan-glow: rgba(0, 240, 255, 0.3);
-      --accent-purple: #9D4EDD;
+      --neon-red: #FF1E43;
+      --neon-red-glow: rgba(255, 30, 67, 0.45);
+      --neon-purple: #D500F9;
+      --neon-purple-glow: rgba(213, 0, 249, 0.35);
+      --neon-cyan: #00F0FF;
+      --neon-cyan-glow: rgba(0, 240, 255, 0.4);
       
-      --text-main: #EDEDED;
-      --text-muted: #A1A1AA;
-      --text-dim: #52525B;
+      --text-main: #FFFFFF;
+      --text-muted: #B8B0C8;
+      --text-dim: #6B6280;
       
-      --border-light: rgba(255, 255, 255, 0.08);
-      --border-red: rgba(255, 42, 75, 0.3);
-      --border-cyan: rgba(0, 240, 255, 0.3);
+      --border-hud-red: rgba(255, 30, 67, 0.4);
+      --border-hud-purple: rgba(213, 0, 249, 0.4);
+      --border-hud-cyan: rgba(0, 240, 255, 0.4);
       
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-full: 9999px;
-      
-      --font-display: 'Space Grotesk', sans-serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Rajdhani', 'Space Grotesk', sans-serif;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
@@ -63,7 +60,6 @@
       background-color: var(--bg-dark);
       color: var(--text-main);
       font-family: var(--font-body);
-      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       overflow-x: hidden;
     }
 
@@ -71,23 +67,33 @@
       position: relative;
       min-height: 100vh;
       background-image: 
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 42, 75, 0.12), transparent 70%),
-        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 240, 255, 0.08), transparent 70%),
-        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(157, 78, 221, 0.08), transparent 70%);
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 30, 67, 0.18), transparent 70%),
+        radial-gradient(ellipse 70% 50% at 85% 50%, rgba(213, 0, 249, 0.12), transparent 70%),
+        radial-gradient(ellipse 60% 50% at 15% 85%, rgba(0, 240, 255, 0.12), transparent 70%);
       background-attachment: fixed;
     }
 
-    /* Ambient Subtle Grid Overlay */
-    .bg-grid-overlay {
+    /* Cyber Circuit Grid & Scanline Overlay */
+    .cyber-grid-overlay {
       position: fixed;
       inset: 0;
       background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 60px 60px;
+        linear-gradient(rgba(255, 30, 67, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 30, 67, 0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
       pointer-events: none;
       z-index: 1;
-      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%);
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .scanline-effect {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.25) 51%);
+      background-size: 100% 4px;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.4;
     }
 
     /* Top Reading Progress Bar */
@@ -95,20 +101,65 @@
       position: fixed;
       top: 0;
       left: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent-red), var(--accent-cyan), var(--accent-purple));
-      z-index: 3000;
+      height: 3px;
+      background: linear-gradient(90deg, var(--neon-red), var(--neon-purple), var(--neon-cyan));
+      z-index: 3500;
       width: 0%;
-      box-shadow: 0 0 10px var(--accent-cyan);
+      box-shadow: 0 0 15px var(--neon-red);
     }
 
     /* Container Utility */
     .container {
-      max-width: 1220px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 0 2rem;
       position: relative;
-      z-index: 2;
+      z-index: 3;
+    }
+
+    /* Cyber Corner Bracket Helper */
+    .hud-box {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hud-red);
+      backdrop-filter: blur(20px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hud-box::before, .hud-box::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-color: var(--neon-red);
+      border-style: solid;
+      pointer-events: none;
+    }
+
+    .hud-box::before {
+      top: -1px;
+      left: -1px;
+      border-width: 2px 0 0 2px;
+    }
+
+    .hud-box::after {
+      bottom: -1px;
+      right: -1px;
+      border-width: 0 2px 2px 0;
+    }
+
+    .hud-box-cyan {
+      border-color: var(--border-hud-cyan);
+    }
+    .hud-box-cyan::before, .hud-box-cyan::after {
+      border-color: var(--neon-cyan);
+    }
+
+    .hud-box-purple {
+      border-color: var(--border-hud-purple);
+    }
+    .hud-box-purple::before, .hud-box-purple::after {
+      border-color: var(--neon-purple);
     }
 
     /* Navigation Header */
@@ -123,11 +174,11 @@
     }
 
     header.scrolled {
-      background: rgba(8, 9, 12, 0.85);
+      background: rgba(7, 4, 7, 0.92);
       backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-hud-red);
       padding: 0.85rem 0;
+      box-shadow: 0 5px 30px rgba(255, 30, 67, 0.15);
     }
 
     .nav-inner {
@@ -144,10 +195,10 @@
     }
 
     .logo-img {
-      height: 36px;
+      height: 38px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 0 10px var(--accent-red-glow));
+      filter: drop-shadow(0 0 12px var(--neon-red-glow));
     }
 
     .nav-menu {
@@ -155,93 +206,103 @@
       align-items: center;
       gap: 2rem;
       list-style: none;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-light);
-      padding: 0.4rem 1.5rem;
-      border-radius: var(--radius-full);
+      background: rgba(255, 30, 67, 0.05);
+      border: 1px solid var(--border-hud-red);
+      padding: 0.45rem 1.75rem;
+      clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
       backdrop-filter: blur(16px);
     }
 
     .nav-link {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       transition: all 0.25s ease;
     }
 
     .nav-link:hover, .nav-link.active {
-      color: var(--text-main);
+      color: var(--neon-red);
+      text-shadow: 0 0 10px var(--neon-red-glow);
     }
 
-    /* Raycast Style Command Palette Bar Trigger */
+    /* Raycast / Cyber Command Bar Trigger */
     .cmd-bar-trigger {
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      padding: 0.4rem 0.9rem;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-full);
-      color: var(--text-muted);
+      padding: 0.45rem 1rem;
+      background: rgba(213, 0, 249, 0.08);
+      border: 1px solid var(--border-hud-purple);
+      color: var(--text-main);
       font-family: var(--font-mono);
       font-size: 0.78rem;
       cursor: pointer;
+      clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
       transition: all 0.25s ease;
     }
 
     .cmd-bar-trigger:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      background: rgba(0, 240, 255, 0.08);
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
+      background: rgba(0, 240, 255, 0.12);
+      box-shadow: 0 0 15px var(--neon-cyan-glow);
     }
 
     .kbd-chip {
       padding: 0.15rem 0.4rem;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 3px;
       font-size: 0.7rem;
-      border: 1px solid var(--border-light);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    /* Buttons */
+    /* Cyber Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.7rem 1.4rem;
-      border-radius: var(--radius-full);
-      font-size: 0.85rem;
-      font-weight: 600;
+      gap: 0.6rem;
+      padding: 0.75rem 1.6rem;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       border: 1px solid transparent;
+      clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
     }
 
     .btn-red {
-      background: var(--accent-red);
+      background: var(--neon-red);
       color: #FFF;
-      box-shadow: 0 0 20px var(--accent-red-glow);
+      box-shadow: 0 0 25px var(--neon-red-glow);
     }
 
     .btn-red:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(255, 42, 75, 0.6);
+      box-shadow: 0 0 35px rgba(255, 30, 67, 0.8);
+      background: #FF3557;
     }
 
     .btn-glass {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
       color: var(--text-main);
-      border-color: var(--border-light);
+      border-color: var(--border-hud-cyan);
       backdrop-filter: blur(12px);
     }
 
     .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
       transform: translateY(-2px);
+      box-shadow: 0 0 25px var(--neon-cyan-glow);
     }
 
     .nav-toggle-btn {
@@ -258,9 +319,9 @@
       top: 75px;
       left: 0;
       right: 0;
-      background: rgba(14, 17, 23, 0.95);
+      background: rgba(14, 7, 18, 0.96);
       backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-hud-red);
       padding: 2rem;
       display: flex;
       flex-direction: column;
@@ -274,42 +335,10 @@
       transform: translateY(0);
     }
 
-    /* Glassmorphism Card with Spotlight Physics */
-    .spotlight-card {
-      position: relative;
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      overflow: hidden;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .spotlight-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 240, 255, 0.08), transparent 40%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
-
-    .spotlight-card:hover::before {
-      opacity: 1;
-    }
-
-    .spotlight-card:hover {
-      border-color: var(--border-cyan);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-cyan-glow);
-    }
-
     /* Hero Section */
     .hero {
       padding-top: 170px;
-      padding-bottom: 100px;
+      padding-bottom: 110px;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -317,78 +346,126 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .hero-pill {
+    .hero-pill-hud {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      padding: 0.35rem 1rem;
-      border-radius: var(--radius-full);
-      background: rgba(255, 42, 75, 0.08);
-      border: 1px solid var(--border-red);
+      padding: 0.4rem 1.2rem;
+      background: rgba(255, 30, 67, 0.1);
+      border: 1px solid var(--border-hud-red);
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent-red);
+      font-size: 0.78rem;
+      color: var(--neon-red);
       margin-bottom: 1.75rem;
+      clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
     }
 
     .hero-pill-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--accent-red);
-      box-shadow: 0 0 10px var(--accent-red);
-      animation: pulseDot 2s infinite;
+      background: var(--neon-red);
+      box-shadow: 0 0 10px var(--neon-red);
+      animation: pulseDot 1.8s infinite;
     }
 
     @keyframes pulseDot {
       0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
     }
 
-    .hero-headline {
+    .hero-headline-title {
       font-family: var(--font-display);
-      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-      line-height: 1.05;
-      font-weight: 700;
-      letter-spacing: -0.03em;
+      font-size: clamp(3rem, 6vw, 4.8rem);
+      line-height: 1.02;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
       margin-bottom: 1.5rem;
     }
 
-    .text-gradient {
-      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-cyan) 60%, var(--accent-purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .text-metallic-white {
+      color: #FFFFFF;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
 
-    .text-gradient-red {
-      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-red) 70%, var(--accent-purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .text-neon-red {
+      color: var(--neon-red);
+      text-shadow: 0 0 25px var(--neon-red-glow);
+    }
+
+    .text-neon-cyan {
+      color: var(--neon-cyan);
+      text-shadow: 0 0 25px var(--neon-cyan-glow);
+    }
+
+    .text-neon-purple {
+      color: var(--neon-purple);
+      text-shadow: 0 0 25px var(--neon-purple-glow);
     }
 
     .hero-subtext {
       font-size: 1.1rem;
       color: var(--text-muted);
       line-height: 1.75;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.25rem;
       max-width: 580px;
     }
 
-    .hero-subtext em {
-      color: var(--accent-cyan);
-      font-style: normal;
-      font-weight: 500;
+    .hero-subtext strong {
+      color: var(--neon-cyan);
+    }
+
+    /* Cyber HUD Icon Badges: BUILD • INNOVATE • COLLABORATE */
+    .hud-badges-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .hud-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .hud-badge-red {
+      border-color: var(--border-hud-red);
+      color: var(--neon-red);
+      background: rgba(255, 30, 67, 0.1);
+      box-shadow: 0 0 15px rgba(255, 30, 67, 0.2);
+    }
+
+    .hud-badge-purple {
+      border-color: var(--border-hud-purple);
+      color: var(--neon-purple);
+      background: rgba(213, 0, 249, 0.1);
+      box-shadow: 0 0 15px rgba(213, 0, 249, 0.2);
+    }
+
+    .hud-badge-cyan {
+      border-color: var(--border-hud-cyan);
+      color: var(--neon-cyan);
+      background: rgba(0, 240, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
     }
 
     .hero-cta-group {
       display: flex;
       gap: 1.25rem;
       flex-wrap: wrap;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
 
     .hero-stats-row {
@@ -396,19 +473,19 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--border-light);
+      border-top: 1px solid var(--border-hud-red);
     }
 
     .hero-stat-val {
       font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 700;
+      font-size: 2.4rem;
+      font-weight: 800;
       color: var(--text-main);
       line-height: 1;
     }
 
     .hero-stat-val span {
-      color: var(--accent-red);
+      color: var(--neon-red);
     }
 
     .hero-stat-lbl {
@@ -419,65 +496,102 @@
       margin-top: 0.4rem;
     }
 
-    .hero-card-container {
+    /* Cyber Hero Banner Frame */
+    .hero-banner-frame {
       position: relative;
-      perspective: 1000px;
-    }
-
-    .hero-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-hud-red);
       padding: 0.75rem;
-      backdrop-filter: blur(24px);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 240, 255, 0.08);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
-      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px var(--neon-red-glow);
+      transition: transform 0.4s ease, border-color 0.4s ease;
     }
 
-    .hero-card:hover {
-      border-color: var(--border-cyan);
-      transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+    .hero-banner-frame:hover {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 50px var(--neon-cyan-glow);
+      transform: translateY(-6px);
     }
 
-    .hero-banner-image {
+    .hero-banner-img {
       width: 100%;
       height: auto;
-      border-radius: var(--radius-md);
       display: block;
       object-fit: cover;
     }
 
-    /* Section Global Styles */
+    /* Live AI HUD Status Box inside Banner Frame */
+    .banner-hud-live-tag {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      background: rgba(14, 7, 18, 0.88);
+      border: 1px solid var(--border-hud-cyan);
+      padding: 0.75rem 1.25rem;
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+    }
+
+    .hud-progress-meter {
+      width: 120px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--neon-red);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hud-progress-bar-fill {
+      height: 100%;
+      width: 89%;
+      background: linear-gradient(90deg, var(--neon-red), var(--neon-purple));
+      box-shadow: 0 0 10px var(--neon-red);
+      animation: fillGlow 2s infinite alternate;
+    }
+
+    @keyframes fillGlow {
+      0% { opacity: 0.7; } 100% { opacity: 1; }
+    }
+
+    /* Section Styles */
     section {
       padding: 120px 0;
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
 
     .section-title-wrap {
       text-align: center;
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 4rem auto;
     }
 
-    .section-badge {
+    .section-badge-hud {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent-cyan);
+      font-size: 0.78rem;
+      color: var(--neon-cyan);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       margin-bottom: 0.8rem;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid var(--border-hud-cyan);
+      padding: 0.3rem 0.9rem;
     }
 
-    .section-heading {
+    .section-heading-title {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 3.8vw, 3.2rem);
-      line-height: 1.15;
-      font-weight: 700;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
       margin-bottom: 1rem;
     }
 
@@ -487,23 +601,21 @@
       line-height: 1.7;
     }
 
-    /* Simulator Window */
+    /* Simulator Window (Cyber HUD Style) */
     .simulator-window {
       background: var(--bg-card);
-      border: 1px solid var(--border-cyan);
-      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-hud-red);
       backdrop-filter: blur(24px);
-      overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--accent-cyan-glow);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 45px var(--neon-red-glow);
     }
 
     .sim-topbar {
-      background: rgba(14, 17, 23, 0.9);
+      background: rgba(14, 7, 18, 0.95);
       padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-hud-red);
     }
 
     .sim-mac-dots {
@@ -516,9 +628,9 @@
       height: 10px;
       border-radius: 50%;
     }
-    .mac-dot.r { background: #FF5F56; }
-    .mac-dot.y { background: #FFBD2E; }
-    .mac-dot.g { background: #27C93F; }
+    .mac-dot.r { background: var(--neon-red); box-shadow: 0 0 8px var(--neon-red); }
+    .mac-dot.y { background: #FFC107; }
+    .mac-dot.g { background: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
 
     .sim-layout {
       padding: 2.25rem;
@@ -529,8 +641,8 @@
 
     .preset-selector-label {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent-cyan);
+      font-size: 0.78rem;
+      color: var(--neon-cyan);
       text-transform: uppercase;
       margin-bottom: 1rem;
       display: block;
@@ -541,8 +653,7 @@
       text-align: left;
       padding: 1rem 1.25rem;
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
+      border: 1px solid var(--border-hud-red);
       color: var(--text-main);
       font-family: var(--font-body);
       font-size: 0.9rem;
@@ -552,8 +663,9 @@
     }
 
     .sim-preset-card:hover, .sim-preset-card.active {
-      border-color: var(--accent-cyan);
-      background: rgba(0, 240, 255, 0.08);
+      border-color: var(--neon-cyan);
+      background: rgba(0, 240, 255, 0.12);
+      box-shadow: 0 0 20px var(--neon-cyan-glow);
     }
 
     .sim-input-row {
@@ -565,8 +677,7 @@
     .sim-text-input {
       flex: 1;
       background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-full);
+      border: 1px solid var(--border-hud-red);
       padding: 0.75rem 1.25rem;
       color: #FFF;
       font-family: var(--font-mono);
@@ -575,7 +686,7 @@
 
     .sim-text-input:focus {
       outline: none;
-      border-color: var(--accent-cyan);
+      border-color: var(--neon-cyan);
     }
 
     .swarm-nodes-row {
@@ -587,31 +698,29 @@
 
     .swarm-node-item {
       background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 0.75rem;
       text-align: center;
       transition: all 0.3s ease;
     }
 
     .swarm-node-item.active {
-      border-color: var(--accent-red);
-      background: rgba(255, 42, 75, 0.15);
-      box-shadow: 0 0 15px rgba(255, 42, 75, 0.3);
+      border-color: var(--neon-red);
+      background: rgba(255, 30, 67, 0.2);
+      box-shadow: 0 0 20px var(--neon-red-glow);
     }
 
     .swarm-node-item.done {
-      border-color: #10B981;
-      background: rgba(16, 185, 129, 0.1);
+      border-color: var(--neon-cyan);
+      background: rgba(0, 240, 255, 0.15);
     }
 
     .terminal-output-box {
-      background: #050608;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
+      background: #040206;
+      border: 1px solid var(--border-hud-cyan);
       padding: 1.25rem;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       min-height: 250px;
       max-height: 290px;
       overflow-y: auto;
@@ -627,10 +736,10 @@
 
     @keyframes fadeIn { to { opacity: 1; } }
 
-    .badge-planner { background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
-    .badge-coder { background: rgba(255, 42, 75, 0.15); color: var(--accent-red); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
-    .badge-security { background: rgba(157, 78, 221, 0.15); color: var(--accent-purple); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
-    .badge-success { background: rgba(16, 185, 129, 0.15); color: #10B981; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-planner { background: rgba(0, 240, 255, 0.18); color: var(--neon-cyan); padding: 0.15rem 0.4rem; font-size: 0.7rem; }
+    .badge-coder { background: rgba(255, 30, 67, 0.18); color: var(--neon-red); padding: 0.15rem 0.4rem; font-size: 0.7rem; }
+    .badge-security { background: rgba(213, 0, 249, 0.18); color: var(--neon-purple); padding: 0.15rem 0.4rem; font-size: 0.7rem; }
+    .badge-success { background: rgba(0, 240, 255, 0.25); color: #00F0FF; padding: 0.15rem 0.4rem; font-size: 0.7rem; }
 
     /* Products Grid */
     .products-grid {
@@ -648,8 +757,9 @@
     }
 
     .product-glass-card.featured {
-      border-color: var(--accent-red);
-      background: linear-gradient(180deg, rgba(255, 42, 75, 0.08) 0%, var(--bg-card) 100%);
+      border-color: var(--neon-red);
+      background: linear-gradient(180deg, rgba(255, 30, 67, 0.12) 0%, var(--bg-card) 100%);
+      box-shadow: 0 0 35px var(--neon-red-glow);
     }
 
     .product-tag-badge {
@@ -659,35 +769,35 @@
       font-family: var(--font-mono);
       font-size: 0.68rem;
       padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-full);
       text-transform: uppercase;
     }
 
-    .badge-red { background: rgba(255, 42, 75, 0.12); color: var(--accent-red); border: 1px solid var(--border-red); }
-    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--accent-cyan); border: 1px solid var(--border-cyan); }
-    .badge-purple { background: rgba(157, 78, 221, 0.12); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
+    .badge-red { background: rgba(255, 30, 67, 0.15); color: var(--neon-red); border: 1px solid var(--border-hud-red); }
+    .badge-cyan { background: rgba(0, 240, 255, 0.15); color: var(--neon-cyan); border: 1px solid var(--border-hud-cyan); }
+    .badge-purple { background: rgba(213, 0, 249, 0.15); color: var(--neon-purple); border: 1px solid var(--border-hud-purple); }
 
     .product-icon-box {
-      width: 52px;
-      height: 52px;
-      border-radius: var(--radius-md);
+      width: 54px;
+      height: 54px;
       background: var(--bg-surface);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-hud-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-cyan);
+      color: var(--neon-cyan);
       margin-bottom: 1.75rem;
     }
 
     .product-glass-card.featured .product-icon-box {
-      color: var(--accent-red);
-      border-color: var(--border-red);
+      color: var(--neon-red);
+      border-color: var(--border-hud-red);
     }
 
     .product-name-title {
       font-family: var(--font-display);
-      font-size: 1.6rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
       margin-bottom: 0.75rem;
     }
 
@@ -709,10 +819,9 @@
       font-family: var(--font-mono);
       font-size: 0.7rem;
       padding: 0.25rem 0.65rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
-      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
     }
 
     .product-bottom-row {
@@ -720,13 +829,13 @@
       align-items: center;
       justify-content: space-between;
       padding-top: 1.25rem;
-      border-top: 1px solid var(--border-light);
+      border-top: 1px solid var(--border-hud-red);
     }
 
     .price-value {
       font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-weight: 800;
     }
 
     .price-value small {
@@ -740,20 +849,19 @@
     /* Sandbox Container */
     .sandbox-container {
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-hud-purple);
       overflow: hidden;
       backdrop-filter: blur(20px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--neon-purple-glow);
     }
 
     .sandbox-header {
-      background: rgba(14, 17, 23, 0.9);
+      background: rgba(14, 7, 18, 0.95);
       padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-hud-purple);
     }
 
     .sandbox-tabs {
@@ -769,27 +877,28 @@
       font-family: var(--font-mono);
       font-size: 0.8rem;
       cursor: pointer;
-      border-radius: var(--radius-full);
       transition: all 0.2s ease;
     }
 
     .sandbox-tab-btn.active {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--accent-cyan);
+      background: rgba(213, 0, 249, 0.18);
+      color: var(--neon-purple);
+      border: 1px solid var(--border-hud-purple);
     }
 
     .sandbox-code-area {
-      padding: 1.75rem;
+      padding: 2rem;
       font-family: var(--font-mono);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: #38BDF8;
-      line-height: 1.75;
+      line-height: 1.8;
+      background: #040206;
     }
 
     .code-cmt { color: var(--text-dim); }
-    .code-cmd { color: var(--accent-red); }
-    .code-flg { color: var(--accent-purple); }
-    .code-str { color: #34D399; }
+    .code-cmd { color: var(--neon-red); font-weight: 700; }
+    .code-flg { color: var(--neon-purple); }
+    .code-str { color: var(--neon-cyan); }
 
     /* Services Grid */
     .services-grid {
@@ -808,27 +917,27 @@
       top: 1.5rem;
       right: 1.5rem;
       font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.04);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: rgba(255, 30, 67, 0.15);
     }
 
     .service-icon-box {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-md);
-      background: rgba(0, 240, 255, 0.08);
-      border: 1px solid var(--border-cyan);
+      width: 50px;
+      height: 50px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid var(--border-hud-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-cyan);
+      color: var(--neon-cyan);
       margin-bottom: 1.5rem;
     }
 
     .service-card-title {
       font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
+      font-weight: 700;
       margin-bottom: 0.75rem;
     }
 
@@ -856,8 +965,8 @@
       height: 270px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--accent-red);
-      box-shadow: 0 0 35px var(--accent-red-glow);
+      border: 3px solid var(--neon-red);
+      box-shadow: 0 0 40px var(--neon-red-glow);
     }
 
     .about-bio-text p {
@@ -868,7 +977,7 @@
     }
 
     .about-bio-text strong {
-      color: var(--text-main);
+      color: var(--neon-cyan);
     }
 
     .stack-badges {
@@ -882,9 +991,8 @@
       font-family: var(--font-mono);
       font-size: 0.75rem;
       padding: 0.35rem 0.8rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-red);
-      border-radius: var(--radius-full);
+      background: rgba(255, 30, 67, 0.08);
+      border: 1px solid var(--border-hud-red);
       color: var(--text-main);
     }
 
@@ -904,15 +1012,14 @@
       justify-content: space-between;
     }
 
-    /* Contact Banner */
+    /* Contact Cyber Banner */
     .contact-glass-box {
-      background: linear-gradient(135deg, rgba(255, 42, 75, 0.12) 0%, rgba(157, 78, 221, 0.08) 50%, var(--bg-card) 100%);
-      border: 1px solid var(--border-red);
-      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(255, 30, 67, 0.15) 0%, rgba(213, 0, 249, 0.1) 50%, var(--bg-card) 100%);
+      border: 1px solid var(--border-hud-red);
       padding: 4.5rem 2rem;
       text-align: center;
       backdrop-filter: blur(20px);
-      box-shadow: 0 0 50px rgba(255, 42, 75, 0.15);
+      box-shadow: 0 0 60px rgba(255, 30, 67, 0.25);
     }
 
     .social-links-row {
@@ -932,27 +1039,28 @@
       font-family: var(--font-mono);
       font-size: 0.85rem;
       padding: 0.6rem 1.25rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-hud-cyan);
       transition: all 0.25s ease;
     }
 
     .social-pill-link:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
+      background: rgba(0, 240, 255, 0.12);
       transform: translateY(-2px);
+      box-shadow: 0 0 20px var(--neon-cyan-glow);
     }
 
     /* Footer */
     footer {
-      background: #040508;
-      border-top: 1px solid var(--border-light);
+      background: #040205;
+      border-top: 1px solid var(--border-hud-red);
       padding: 3rem 0;
       color: var(--text-dim);
       font-size: 0.88rem;
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
 
     .footer-row {
@@ -967,9 +1075,9 @@
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.88);
-      backdrop-filter: blur(16px);
-      z-index: 3000;
+      background: rgba(4, 2, 6, 0.92);
+      backdrop-filter: blur(20px);
+      z-index: 4000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -985,31 +1093,29 @@
     }
 
     .modal-content-box {
-      background: #0E1117;
-      border: 1px solid var(--border-red);
-      border-radius: var(--radius-lg);
+      background: #0E0712;
+      border: 1px solid var(--border-hud-red);
       max-width: 540px;
       width: 100%;
       padding: 2.5rem;
       position: relative;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 40px var(--accent-red-glow);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px var(--neon-red-glow);
     }
 
     .cmd-palette-box {
-      background: #0E1117;
-      border: 1px solid var(--border-cyan);
-      border-radius: var(--radius-lg);
+      background: #0E0712;
+      border: 1px solid var(--border-hud-cyan);
       max-width: 600px;
       width: 100%;
       overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 40px var(--accent-cyan-glow);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px var(--neon-cyan-glow);
     }
 
     .cmd-search-input {
       width: 100%;
       background: transparent;
       border: none;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-hud-cyan);
       padding: 1.25rem 1.5rem;
       color: #FFF;
       font-family: var(--font-mono);
@@ -1031,7 +1137,6 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.75rem 1rem;
-      border-radius: var(--radius-sm);
       color: var(--text-main);
       text-decoration: none;
       font-size: 0.9rem;
@@ -1040,8 +1145,8 @@
     }
 
     .cmd-item:hover {
-      background: rgba(0, 240, 255, 0.08);
-      color: var(--accent-cyan);
+      background: rgba(0, 240, 255, 0.12);
+      color: var(--neon-cyan);
     }
 
     .modal-close-btn {
@@ -1070,8 +1175,7 @@
     .form-input {
       width: 100%;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
+      border: 1px solid var(--border-hud-red);
       padding: 0.8rem 1rem;
       color: #FFF;
       font-family: var(--font-body);
@@ -1080,7 +1184,7 @@
 
     .form-input:focus {
       outline: none;
-      border-color: var(--accent-red);
+      border-color: var(--neon-cyan);
     }
 
     .toast-popup {
@@ -1088,14 +1192,13 @@
       bottom: 2rem;
       right: 2rem;
       background: var(--bg-surface);
-      border: 1px solid var(--accent-cyan);
-      color: var(--accent-cyan);
+      border: 1px solid var(--neon-cyan);
+      color: var(--neon-cyan);
       padding: 0.8rem 1.4rem;
-      border-radius: var(--radius-full);
       font-family: var(--font-mono);
       font-size: 0.85rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 20px var(--accent-cyan-glow);
-      z-index: 4000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 25px var(--neon-cyan-glow);
+      z-index: 5000;
       opacity: 0;
       pointer-events: none;
       transform: translateY(20px);
@@ -1113,22 +1216,21 @@
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(14, 17, 23, 0.85);
-      border: 1px solid var(--border-light);
-      color: var(--text-main);
+      width: 46px;
+      height: 46px;
+      background: rgba(14, 7, 18, 0.9);
+      border: 1px solid var(--border-hud-red);
+      color: var(--neon-red);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 2500;
+      z-index: 3000;
       backdrop-filter: blur(12px);
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
     }
 
     #back-to-top.visible {
@@ -1137,10 +1239,10 @@
     }
 
     #back-to-top:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
       transform: translateY(-3px);
-      box-shadow: 0 0 20px var(--accent-cyan-glow);
+      box-shadow: 0 0 25px var(--neon-cyan-glow);
     }
 
     /* Scroll Reveal Animations */
@@ -1160,7 +1262,7 @@
       .container { padding: 0 1.5rem; }
       .hero-layout { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
       .hero-subtext { margin-left: auto; margin-right: auto; }
-      .hero-cta-group { justify-content: center; }
+      .hud-badges-row, .hero-cta-group { justify-content: center; }
       .hero-stats-row { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
       .products-grid, .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
       .sim-layout { grid-template-columns: 1fr; padding: 1.75rem; gap: 1.75rem; }
@@ -1172,7 +1274,7 @@
       .nav-menu, .nav-action-btn { display: none; }
       .nav-toggle-btn { display: block; }
       .hero { padding-top: 130px; padding-bottom: 70px; }
-      .hero-headline { font-size: clamp(2.2rem, 7vw, 3.2rem); }
+      .hero-headline-title { font-size: clamp(2.2rem, 7vw, 3.2rem); }
       .hero-stats-row { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
       .products-grid, .services-grid, .yt-grid { grid-template-columns: 1fr; gap: 1.25rem; }
       .swarm-nodes-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
@@ -1183,8 +1285,8 @@
 
     @media (max-width: 480px) {
       .container { padding: 0 1rem; }
-      .hero-headline { font-size: 2rem; }
-      .hero-pill { font-size: 0.68rem; padding: 0.3rem 0.75rem; }
+      .hero-headline-title { font-size: 2rem; }
+      .hero-pill-hud { font-size: 0.68rem; padding: 0.3rem 0.75rem; }
       .hero-subtext { font-size: 0.98rem; }
       .btn { padding: 0.65rem 1.15rem; font-size: 0.8rem; width: 100%; justify-content: center; }
       .hero-cta-group { flex-direction: column; gap: 0.75rem; }
@@ -1194,15 +1296,16 @@
       .sandbox-tab-btn { text-align: left; width: 100%; }
       .sandbox-header { flex-direction: column; gap: 0.75rem; align-items: stretch; }
       .sandbox-code-area { padding: 1rem; font-size: 0.75rem; }
-      .modal-content-box { padding: 1.5rem 1.25rem; border-radius: var(--radius-md); }
+      .modal-content-box { padding: 1.5rem 1.25rem; }
       .toast-popup { left: 1rem; right: 1rem; bottom: 1rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Grid Overlay -->
-  <div class="bg-grid-overlay"></div>
+  <!-- Cyber Circuit & Scanline Overlay -->
+  <div class="cyber-grid-overlay"></div>
+  <div class="scanline-effect"></div>
 
   <!-- Top Reading Scroll Progress -->
   <div id="scroll-progress"></div>
@@ -1226,13 +1329,13 @@
       <div style="display:flex; align-items:center; gap:1rem">
         <button onclick="toggleModal('cmd-modal', true)" class="cmd-bar-trigger">
           <i data-lucide="search" size="14"></i>
-          <span>Search...</span>
+          <span>SEARCH HUD...</span>
           <span class="kbd-chip">⌘K</span>
         </button>
 
         <div class="nav-action-btn">
           <button onclick="toggleModal('contact-modal', true)" class="btn btn-red">
-            <i data-lucide="mail"></i> Hire Us
+            <i data-lucide="terminal"></i> &lt;//&gt; Hire Us
           </button>
         </div>
 
@@ -1252,7 +1355,7 @@
     <a href="#about" class="nav-link" onclick="closeDrawer()">About</a>
     <a href="#youtube" class="nav-link" onclick="closeDrawer()">YouTube</a>
     <button onclick="closeDrawer(); toggleModal('contact-modal', true)" class="btn btn-red" style="width:100%">
-      <i data-lucide="mail"></i> Hire Us
+      <i data-lucide="terminal"></i> &lt;//&gt; Hire Us
     </button>
   </div>
 
@@ -1260,37 +1363,50 @@
   <section class="hero" id="hero">
     <div class="container hero-layout">
       <div class="hero-left reveal-item">
-        <div class="hero-pill">
+        <div class="hero-pill-hud">
           <span class="hero-pill-dot"></span>
-          KARACHI, PAKISTAN · EST. 2025 · MULTI-AGENT AI STUDIO
+          BUILDING INTELLIGENCE. SHAPING TOMORROW. &gt;&gt;&gt; _L1...
         </div>
 
-        <h1 class="hero-headline">
-          BUILDING <span class="text-gradient-red">INTELLIGENCE.</span><br>
-          SHAPING <span class="text-gradient">TOMORROW.</span>
+        <h1 class="hero-headline-title">
+          <span class="text-metallic-white">DEV</span><span class="text-neon-red">/DUO</span><br>
+          <span class="text-neon-cyan">INNOVATIONS</span>
         </h1>
 
         <p class="hero-subtext">
-          We build <em>AI-native products</em> that ship — multi-agent systems, LLM tools, and production SaaS platforms. Minimalist. Precise. <em>Production software.</em>
+          Production-grade <strong>multi-agent AI systems</strong>, LLM orchestration tools, and enterprise SaaS platforms. Minimalist. Precise. <strong>Cyber-engineered software studio.</strong>
         </p>
+
+        <!-- Banner HUD Badges: BUILD • INNOVATE • COLLABORATE -->
+        <div class="hud-badges-row">
+          <div class="hud-badge-item hud-badge-red">
+            &lt;//&gt; BUILD
+          </div>
+          <div class="hud-badge-item hud-badge-purple">
+            💡 INNOVATE
+          </div>
+          <div class="hud-badge-item hud-badge-cyan">
+            👥 COLLABORATE
+          </div>
+        </div>
 
         <div class="hero-cta-group">
           <a href="#products" class="btn btn-red">
-            <i data-lucide="sparkles"></i> Explore Products
+            <i data-lucide="cpu"></i> Explore AI Products
           </a>
           <a href="#simulator" class="btn btn-glass">
-            <i data-lucide="cpu"></i> Agent Swarm Demo
+            <i data-lucide="play-circle"></i> Swarm Simulator
           </a>
         </div>
 
         <div class="hero-stats-row">
           <div>
             <div class="hero-stat-val">3<span>+</span></div>
-            <div class="hero-stat-lbl">Live Products</div>
+            <div class="hero-stat-lbl">Live SaaS Tools</div>
           </div>
           <div>
             <div class="hero-stat-val">4<span>x</span></div>
-            <div class="hero-stat-lbl">Core Team</div>
+            <div class="hero-stat-lbl">Core Dev Team</div>
           </div>
           <div>
             <div class="hero-stat-val">50k<span>+</span></div>
@@ -1298,14 +1414,28 @@
           </div>
           <div>
             <div class="hero-stat-val">60<span>%</span></div>
-            <div class="hero-stat-lbl">Token Savings</div>
+            <div class="hero-stat-lbl">Token Cost Cut</div>
           </div>
         </div>
       </div>
 
-      <div class="hero-card-container reveal-item">
-        <div class="hero-card">
-          <img src="assets/Banner.png" alt="DevDuo Innovations Banner" class="hero-banner-image">
+      <!-- Cyber Hero Banner Frame with Live AI HUD Meter -->
+      <div class="hero-banner-container reveal-item">
+        <div class="hero-banner-frame hud-box">
+          <img src="assets/Banner.png" alt="DevDuo Innovations Cyberpunk Banner" class="hero-banner-img">
+          
+          <div class="banner-hud-live-tag">
+            <div style="display:flex; align-items:center; gap:0.5rem; color:var(--neon-red)">
+              <i data-lucide="cpu" size="16"></i>
+              <span>AI MODEL TRAINING...</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.75rem">
+              <span style="color:var(--neon-cyan); font-weight:700">89%</span>
+              <div class="hud-progress-meter">
+                <div class="hud-progress-bar-fill"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1315,27 +1445,27 @@
   <section id="simulator">
     <div class="container">
       <div class="section-title-wrap reveal-item">
-        <div class="section-badge"><i data-lucide="play-circle"></i> Live Interactive Playground</div>
-        <h2 class="section-heading">Multi-Agent <span class="text-gradient-red">Swarm Simulator</span></h2>
+        <div class="section-badge-hud"><i data-lucide="play-circle"></i> Cyber HUD Playground</div>
+        <h2 class="section-heading-title">Multi-Agent <span class="text-neon-red">Swarm Simulator</span></h2>
         <p class="section-desc">Experience how Sagenta orchestrates autonomous sub-agents with full visibility and approval checkpoints.</p>
       </div>
 
-      <div class="simulator-window reveal-item">
+      <div class="simulator-window hud-box reveal-item">
         <div class="sim-topbar">
           <div class="sim-mac-dots">
             <span class="mac-dot r"></span>
             <span class="mac-dot y"></span>
             <span class="mac-dot g"></span>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted)">
-            <i data-lucide="cpu" size="14"></i> Sagenta Multi-Agent Orchestrator (Live Demo)
+          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--neon-cyan)">
+            <i data-lucide="cpu" size="14"></i> Sagenta Multi-Agent Orchestrator [Live HUD]
           </div>
           <i data-lucide="sliders" size="14" style="color:var(--text-dim)"></i>
         </div>
 
         <div class="sim-layout">
           <div>
-            <span class="preset-selector-label">Select Task Prompt:</span>
+            <span class="preset-selector-label">SELECT HUD TASK PROMPT:</span>
             <button class="sim-preset-card active" onclick="pickSimPreset(0, this)">
               <strong>1. Build FastAPI Auth System</strong>
               <div style="font-size:0.78rem; color:var(--text-dim); margin-top:0.2rem">OAuth2 routes with Argon2 password hashing and refresh tokens</div>
@@ -1352,8 +1482,8 @@
             </button>
 
             <div class="sim-input-row">
-              <input type="text" id="sim-prompt-field" class="sim-text-input" placeholder="Or type your own agent instruction...">
-              <button class="btn btn-red" onclick="executeSimSwarm()">Run Swarm</button>
+              <input type="text" id="sim-prompt-field" class="sim-text-input" placeholder="Or type custom agent prompt...">
+              <button class="btn btn-red" onclick="executeSimSwarm()">Execute</button>
             </div>
           </div>
 
@@ -1378,7 +1508,7 @@
             </div>
 
             <div class="terminal-output-box" id="sim-log-box">
-              <div class="log-line"><span class="badge-planner">[SYSTEM]</span> Ready. Click "Run Swarm" to test live orchestration.</div>
+              <div class="log-line"><span class="badge-planner">[SYSTEM]</span> Ready. Click "Execute" to run agent orchestration.</div>
             </div>
           </div>
         </div>
@@ -1390,21 +1520,21 @@
   <section id="products">
     <div class="container">
       <div class="section-title-wrap reveal-item">
-        <div class="section-badge"><i data-lucide="layers"></i> Suite</div>
-        <h2 class="section-heading">Our Flagship <span class="text-gradient">Products</span></h2>
+        <div class="section-badge-hud"><i data-lucide="layers"></i> AI Suite</div>
+        <h2 class="section-heading-title">Our Flagship <span class="text-neon-cyan">Products</span></h2>
         <p class="section-desc">Software tools engineered for developers and engineering teams who demand reliable, production-grade AI.</p>
       </div>
 
       <div class="products-grid">
         <!-- Sagenta Card -->
-        <div class="product-glass-card spotlight-card featured reveal-item">
+        <div class="product-glass-card hud-box featured reveal-item">
           <span class="product-tag-badge badge-red">Flagship · 2026</span>
           <div>
             <div class="product-icon-box"><i data-lucide="bot" size="28"></i></div>
-            <h3 class="product-name-title">SAGENTA<span style="color:var(--accent-red)">.</span></h3>
+            <h3 class="product-name-title">SAGENTA<span style="color:var(--neon-red)">.</span></h3>
             <p class="product-description">Conversational multi-agent AI system that builds entire software features from natural text — with full agent decision visibility and approval gates.</p>
             <div class="chips-group">
-              <span class="chip-item">Multi-Agent</span>
+              <span class="chip-item">Multi-Agent Swarm</span>
               <span class="chip-item">LangGraph</span>
               <span class="chip-item">Claude 3.7</span>
               <span class="chip-item">VSCode Extension</span>
@@ -1417,11 +1547,11 @@
         </div>
 
         <!-- RepoMind Card -->
-        <div class="product-glass-card spotlight-card reveal-item">
+        <div class="product-glass-card hud-box hud-box-cyan reveal-item">
           <span class="product-tag-badge badge-cyan">Live SaaS</span>
           <div>
             <div class="product-icon-box"><i data-lucide="search" size="28"></i></div>
-            <h3 class="product-name-title">REPO<span style="color:var(--accent-cyan)">MIND</span></h3>
+            <h3 class="product-name-title">REPO<span style="color:var(--neon-cyan)">MIND</span></h3>
             <p class="product-description">Turn any GitHub repository into a single, token-optimized context file. Interrogate codebases with ChatGPT or Claude without manual navigation.</p>
             <div class="chips-group">
               <span class="chip-item">Developer Tool</span>
@@ -1437,11 +1567,11 @@
         </div>
 
         <!-- CodeContext Card -->
-        <div class="product-glass-card spotlight-card reveal-item">
+        <div class="product-glass-card hud-box hud-box-purple reveal-item">
           <span class="product-tag-badge badge-purple">CLI Tool</span>
           <div>
-            <div class="product-icon-box"><i data-lucide="terminal" size="28"></i></div>
-            <h3 class="product-name-title">CODE<span style="color:var(--accent-purple)">CONTEXT</span></h3>
+            <div class="product-icon-box" style="color:var(--neon-purple); border-color:var(--border-hud-purple)"><i data-lucide="terminal" size="28"></i></div>
+            <h3 class="product-name-title">CODE<span style="color:var(--neon-purple)">CONTEXT</span></h3>
             <p class="product-description">A high-speed CLI tool that packages your entire codebase into a clean context file filtered by `.gitignore`. Token counted and LLM ready.</p>
             <div class="chips-group">
               <span class="chip-item">Python CLI</span>
@@ -1461,21 +1591,21 @@
     </div>
   </section>
 
-  <!-- CodeContext Sandbox -->
+  <!-- Banner Script Sandbox Section -->
   <section id="sandbox">
     <div class="container">
       <div class="section-title-wrap reveal-item">
-        <div class="section-badge"><i data-lucide="terminal"></i> CLI Sandbox</div>
-        <h2 class="section-heading">Developer <span class="text-gradient-red">Terminal Sandbox</span></h2>
-        <p class="section-desc">Try out CodeContext CLI snippets directly in your terminal.</p>
+        <div class="section-badge-hud"><i data-lucide="code-2"></i> Cyber Terminal Sandbox</div>
+        <h2 class="section-heading-title">Studio <span class="text-neon-red">Code Engine</span></h2>
+        <p class="section-desc">Interactive CLI environment powered by DevDuo's core software philosophy.</p>
       </div>
 
-      <div class="sandbox-container reveal-item">
+      <div class="sandbox-container hud-box hud-box-purple reveal-item">
         <div class="sandbox-header">
           <div class="sandbox-tabs">
-            <button class="sandbox-tab-btn active" onclick="switchSandbox(0)">1. Installation</button>
-            <button class="sandbox-tab-btn" onclick="switchSandbox(1)">2. Pack Repository</button>
-            <button class="sandbox-tab-btn" onclick="switchSandbox(2)">3. Token Estimate</button>
+            <button class="sandbox-tab-btn active" onclick="switchSandbox(0)">1. Studio Philosophy</button>
+            <button class="sandbox-tab-btn" onclick="switchSandbox(1)">2. CodeContext CLI</button>
+            <button class="sandbox-tab-btn" onclick="switchSandbox(2)">3. Token Audit</button>
           </div>
           <button onclick="copySandboxScript()" class="btn btn-glass" style="padding:0.4rem 0.9rem; font-size:0.75rem">
             <i data-lucide="copy" size="14"></i> Copy Script
@@ -1483,65 +1613,68 @@
         </div>
 
         <div class="sandbox-code-area" id="sandbox-display">
-          <span class="code-cmt"># Install CodeContext CLI via pip</span><br>
-          <span class="code-cmd">pip</span> install codecontext-cli<br><br>
-          <span class="code-cmt"># Verify installation</span><br>
-          <span class="code-cmd">codecontext</span> <span class="code-flg">--version</span><br>
-          <span class="code-str">CodeContext CLI v2.1.0 [DevDuo Innovations]</span>
+          <span class="code-cmt">// CODE</span><br>
+          <span class="code-cmd">function</span> <span class="code-str">ideas</span>() {<br>
+          &nbsp;&nbsp;data = <span class="code-flg">inspire</span>();<br>
+          &nbsp;&nbsp;build = <span class="code-flg">train</span>();<br>
+          &nbsp;&nbsp;impact = <span class="code-flg">deploy</span>();<br>
+          &nbsp;&nbsp;<span class="code-cmd">return</span> future;<br>
+          }<br><br>
+          <span class="code-cmt">// We build, so the world evolves.</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Custom Services -->
+  <!-- Custom Services Section -->
   <section id="services">
     <div class="container">
       <div class="section-title-wrap reveal-item">
-        <div class="section-badge"><i data-lucide="briefcase"></i> Client Engineering</div>
-        <h2 class="section-heading">Custom AI <span class="text-gradient">Engineering Services</span></h2>
+        <div class="section-badge-hud"><i data-lucide="briefcase"></i> Client Engineering</div>
+        <h2 class="section-heading-title">Custom AI <span class="text-neon-cyan">Engineering Services</span></h2>
         <p class="section-desc">We build enterprise-ready AI solutions customized for your exact workflows.</p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card spotlight-card reveal-item">
+        <div class="service-card hud-box hud-box-cyan reveal-item">
           <span class="service-idx">01</span>
           <div class="service-icon-box"><i data-lucide="database"></i></div>
           <h3 class="service-card-title">RAG Systems & Knowledge Bases</h3>
           <p class="service-card-desc">Custom document Q&A systems and semantic search powered by Pinecone, Weaviate, or Pgvector.</p>
         </div>
 
-        <div class="service-card spotlight-card reveal-item">
+        <div class="service-card hud-box hud-box-red reveal-item">
           <span class="service-idx">02</span>
-          <div class="service-icon-box"><i data-lucide="cpu"></i></div>
+          <div class="service-icon-box" style="color:var(--neon-red); border-color:var(--border-hud-red)"><i data-lucide="cpu"></i></div>
           <h3 class="service-card-title">Multi-Agent Automation</h3>
           <p class="service-card-desc">Autonomous AI agent workflows built with LangGraph that plan, execute, and self-correct tasks.</p>
         </div>
 
-        <div class="service-card spotlight-card reveal-item">
+        <div class="service-card hud-box hud-box-purple reveal-item">
           <span class="service-idx">03</span>
-          <div class="service-icon-box"><i data-lucide="zap"></i></div>
+          <div class="service-icon-box" style="color:var(--neon-purple); border-color:var(--border-hud-purple)"><i data-lucide="zap"></i></div>
           <h3 class="service-card-title">LLM API Integration</h3>
           <p class="service-card-desc">Seamless integration of OpenAI, Claude 3.7, Gemini, or open-source LLMs into your production backend.</p>
         </div>
 
-        <div class="service-card spotlight-card reveal-item">
+        <div class="service-card hud-box hud-box-cyan reveal-item">
           <span class="service-idx">04</span>
           <div class="service-icon-box"><i data-lucide="layers"></i></div>
           <h3 class="service-card-title">AI SaaS Development</h3>
           <p class="service-card-desc">Full-stack web application development from architecture to cloud deployment with Stripe and auth.</p>
         </div>
 
-        <div class="service-card spotlight-card reveal-item">
+        <div class="service-card hud-box hud-box-red reveal-item">
           <span class="service-idx">05</span>
-          <div class="service-icon-box"><i data-lucide="trending-down"></i></div>
+          <div class="service-icon-box" style="color:var(--neon-red); border-color:var(--border-hud-red)"><i data-lucide="trending-down"></i></div>
           <h3 class="service-card-title">Token & Cost Optimization</h3>
           <p class="service-card-desc">Audit prompts and system architectures to reduce token invoice costs by 30%–60%.</p>
         </div>
 
-        <div class="service-card spotlight-card reveal-item">
+        <div class="service-card hud-box hud-box-purple reveal-item">
           <span class="service-idx">06</span>
-          <div class="service-icon-box"><i data-lucide="compass"></i></div>
-          <h3 class="service-card-title">AI Strategy & Technical Scoping</h3>
+          <div class="service-icon-box" style="color:var(--neon-purple); border-color:var(--border-hud-purple)"><i data-lucide="compass"></i></div>
+          <h3 class="service-card-title">AI Strategy & Scoping</h3>
           <p class="service-card-desc">Pragmatic architectural consulting. We select the exact AI models suitable for your domain.</p>
         </div>
       </div>
@@ -1552,21 +1685,21 @@
   <section id="about">
     <div class="container">
       <div class="section-title-wrap reveal-item">
-        <div class="section-badge"><i data-lucide="users"></i> Founders & Studio</div>
-        <h2 class="section-heading">Built By <span class="text-gradient-red">Builders</span></h2>
+        <div class="section-badge-hud"><i data-lucide="users"></i> Founders & Studio</div>
+        <h2 class="section-heading-title">Built By <span class="text-neon-red">Builders</span></h2>
         <p class="section-desc">Proof of craft under pressure. We don't sell slide decks — we ship production software.</p>
       </div>
 
-      <div class="about-card spotlight-card reveal-item">
+      <div class="about-card hud-box reveal-item">
         <div class="about-avatar-center">
           <img src="assets/profile.png" alt="DevDuo Co-Founders" class="about-avatar-img">
-          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-dim); margin-top:1rem">
+          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--neon-red); margin-top:1rem">
             DevDuo Co-Founders & AI Engineers
           </div>
         </div>
 
         <div class="about-bio-text">
-          <h3 style="font-family:var(--font-heading); font-size:1.6rem; margin-bottom:1rem">Two Founders. Four Engineers. Karachi, Pakistan.</h3>
+          <h3 style="font-family:var(--font-heading); font-size:1.7rem; margin-bottom:1rem">Two Founders. Four Engineers. Karachi, Pakistan.</h3>
           <p>
             DevDuo Innovations is led by two <strong>co-founders & AI engineers</strong> leading a tight-knit engineering team of four.
           </p>
@@ -1596,46 +1729,46 @@
   <section id="youtube">
     <div class="container">
       <div class="section-title-wrap reveal-item">
-        <div class="section-badge"><i data-lucide="youtube"></i> Content</div>
-        <h2 class="section-heading">YouTube & <span class="text-gradient">Build In Public</span></h2>
+        <div class="section-badge-hud"><i data-lucide="youtube"></i> Content</div>
+        <h2 class="section-heading-title">YouTube & <span class="text-neon-cyan">Build In Public</span></h2>
         <p class="section-desc">Weekly deep-dives into AI engineering, agent architectures, and SaaS product builds.</p>
       </div>
 
       <div class="yt-grid">
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card hud-box hud-box-red reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// DEMO</div>
-            <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Sagenta Multi-Agent End-to-End Build</h4>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--neon-red); margin-bottom:0.75rem">// DEMO</div>
+            <h4 style="font-size:1rem; font-weight:700; margin-bottom:0.5rem">Sagenta Multi-Agent End-to-End Build</h4>
             <p style="font-size:0.85rem; color:var(--text-muted)">Watch Sagenta build a complete auth system with approval gates.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card hud-box hud-box-purple reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// EXPLAINER</div>
-            <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Why Single LLMs Fail at Complex Tasks</h4>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--neon-purple); margin-bottom:0.75rem">// EXPLAINER</div>
+            <h4 style="font-size:1rem; font-weight:700; margin-bottom:0.5rem">Why Single LLMs Fail at Complex Tasks</h4>
             <p style="font-size:0.85rem; color:var(--text-muted)">The engineering behind agent swarms and stateful graph execution.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card hud-box hud-box-cyan reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// CASE STUDY</div>
-            <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">RepoMind Workflow for 40k-Line Repos</h4>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--neon-cyan); margin-bottom:0.75rem">// CASE STUDY</div>
+            <h4 style="font-size:1rem; font-weight:700; margin-bottom:0.5rem">RepoMind Workflow for 40k-Line Repos</h4>
             <p style="font-size:0.85rem; color:var(--text-muted)">Real metrics comparing manual code exploration vs RepoMind context files.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card hud-box hud-box-red reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// FOUNDER LOG</div>
-            <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Building a Dev Studio in Karachi</h4>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--neon-red); margin-bottom:0.75rem">// FOUNDER LOG</div>
+            <h4 style="font-size:1rem; font-weight:700; margin-bottom:0.5rem">Building a Dev Studio in Karachi</h4>
             <p style="font-size:0.85rem; color:var(--text-muted)">Revenue transparency, engineering challenges, and studio growth milestones.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan); margin-top:1rem">Watch Video →</div>
         </a>
       </div>
     </div>
@@ -1644,10 +1777,10 @@
   <!-- Contact Banner -->
   <section id="contact">
     <div class="container">
-      <div class="contact-glass-box reveal-item">
-        <div class="section-badge" style="justify-content:center"><i data-lucide="mail"></i> Get In Touch</div>
-        <h2 class="section-heading" style="font-size:clamp(2.2rem, 4.5vw, 3.5rem); margin-bottom:1rem">
-          Ready to build <span class="text-gradient-red">something real?</span>
+      <div class="contact-glass-box hud-box reveal-item">
+        <div class="section-badge-hud" style="margin:0 auto 1rem auto"><i data-lucide="mail"></i> Get In Touch</div>
+        <h2 class="section-heading-title" style="font-size:clamp(2.2rem, 4.5vw, 3.5rem); margin-bottom:1rem">
+          Ready to build <span class="text-neon-red">something real?</span>
         </h2>
         <p class="section-desc" style="max-width:550px; margin:0 auto 2rem auto">
           Whether you need a custom AI agent system, RAG pipeline, or want to collaborate with DevDuo Innovations, let's talk.
@@ -1668,6 +1801,10 @@
           <a href="https://twitter.com/devduoinnovations" target="_blank" class="social-pill-link"><i data-lucide="twitter" size="16"></i> Twitter/X</a>
           <a href="https://linkedin.com/company/devduoinnovations" target="_blank" class="social-pill-link"><i data-lucide="linkedin" size="16"></i> LinkedIn</a>
         </div>
+
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); margin-top:2rem">
+          FUEL IDEAS. CODE. REPEAT. &lt;//&gt;
+        </div>
       </div>
     </div>
   </section>
@@ -1676,7 +1813,7 @@
   <footer>
     <div class="container footer-row">
       <div style="display:flex; align-items:center; gap:0.75rem">
-        <img src="assets/logo.png" alt="DevDuo Logo" style="height:26px">
+        <img src="assets/logo.png" alt="DevDuo Logo" style="height:28px">
         <span>© 2025–2026 DevDuo Innovations · Karachi, Pakistan</span>
       </div>
 
@@ -1691,49 +1828,49 @@
 
   <!-- Contact Modal -->
   <div class="modal-backdrop" id="contact-modal">
-    <div class="modal-content-box">
+    <div class="modal-content-box hud-box">
       <button class="modal-close-btn" onclick="toggleModal('contact-modal', false)"><i data-lucide="x"></i></button>
-      <h3 style="font-family:var(--font-heading); font-size:1.5rem; margin-bottom:0.5rem">Work With <span style="color:var(--accent-red)">DevDuo</span></h3>
+      <h3 style="font-family:var(--font-heading); font-size:1.6rem; margin-bottom:0.5rem">WORK WITH <span style="color:var(--neon-red)">DEVDUO</span></h3>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem">Tell us about your project requirements and we'll reply within 24 hours.</p>
       
       <form onsubmit="onFormSubmit(event, 'Inquiry Sent! We will get back to you shortly.')">
         <div class="form-field">
-          <label>Your Name</label>
+          <label>YOUR NAME</label>
           <input type="text" class="form-input" placeholder="Alex Morgan" required>
         </div>
         <div class="form-field">
-          <label>Email Address</label>
+          <label>EMAIL ADDRESS</label>
           <input type="email" class="form-input" placeholder="name@company.com" required>
         </div>
         <div class="form-field">
-          <label>Project Brief</label>
+          <label>PROJECT BRIEF</label>
           <textarea class="form-input" rows="3" placeholder="Describe what you want to build..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-red" style="width:100%">Send Inquiry →</button>
+        <button type="submit" class="btn btn-red" style="width:100%">SEND INQUIRY →</button>
       </form>
     </div>
   </div>
 
   <!-- Waitlist Modal -->
   <div class="modal-backdrop" id="waitlist-modal">
-    <div class="modal-content-box">
+    <div class="modal-content-box hud-box">
       <button class="modal-close-btn" onclick="toggleModal('waitlist-modal', false)"><i data-lucide="x"></i></button>
-      <h3 style="font-family:var(--font-heading); font-size:1.5rem; margin-bottom:0.5rem">Join <span style="color:var(--accent-red)">Sagenta</span> Waitlist</h3>
+      <h3 style="font-family:var(--font-heading); font-size:1.6rem; margin-bottom:0.5rem">JOIN <span style="color:var(--neon-red)">SAGENTA</span> WAITLIST</h3>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem">Be among the first engineers to access Sagenta Multi-Agent System upon launch.</p>
       
       <form onsubmit="onFormSubmit(event, 'You are reserved on the waitlist!')">
         <div class="form-field">
-          <label>Work Email</label>
+          <label>WORK EMAIL</label>
           <input type="email" class="form-input" placeholder="developer@domain.com" required>
         </div>
-        <button type="submit" class="btn btn-red" style="width:100%">Reserve Spot →</button>
+        <button type="submit" class="btn btn-red" style="width:100%">RESERVE SPOT →</button>
       </form>
     </div>
   </div>
 
-  <!-- Raycast Style Command Palette Modal -->
+  <!-- Raycast / Cyber Style Command Palette Modal -->
   <div class="modal-backdrop" id="cmd-modal">
-    <div class="cmd-palette-box">
+    <div class="cmd-palette-box hud-box hud-box-cyan">
       <input type="text" class="cmd-search-input" id="cmd-input" placeholder="Type a command or search studio tools..." onkeyup="filterCmds()">
       <div class="cmd-list" id="cmd-list">
         <a href="#simulator" class="cmd-item" onclick="toggleModal('cmd-modal', false)">
@@ -1745,7 +1882,7 @@
           <span class="kbd-chip">Jump</span>
         </a>
         <a href="#sandbox" class="cmd-item" onclick="toggleModal('cmd-modal', false)">
-          <span><i data-lucide="terminal" size="16"></i> Open CodeContext CLI Sandbox</span>
+          <span><i data-lucide="terminal" size="16"></i> Open Code Engine Sandbox</span>
           <span class="kbd-chip">Jump</span>
         </a>
         <div class="cmd-item" onclick="toggleModal('cmd-modal', false); toggleModal('contact-modal', true)">
@@ -1782,17 +1919,6 @@
         item.style.display = item.innerText.toLowerCase().includes(q) ? 'flex' : 'none';
       });
     }
-
-    // Mouse Spotlight Physics on Cards
-    document.querySelectorAll('.spotlight-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
 
     // Mobile Nav Toggle
     const mobileBtn = document.getElementById('mobile-toggle');
@@ -1931,9 +2057,9 @@
       }, 650);
     }
 
-    // Sandbox Logic
+    // Sandbox Snippets from Banner.png
     const sandboxSnippets = [
-      `<span class="code-cmt"># Install CodeContext CLI via pip</span><br><span class="code-cmd">pip</span> install codecontext-cli<br><br><span class="code-cmt"># Verify installation</span><br><span class="code-cmd">codecontext</span> <span class="code-flg">--version</span><br><span class="code-str">CodeContext CLI v2.1.0 [DevDuo Innovations]</span>`,
+      `<span class="code-cmt">// CODE</span><br><span class="code-cmd">function</span> <span class="code-str">ideas</span>() {<br>&nbsp;&nbsp;data = <span class="code-flg">inspire</span>();<br>&nbsp;&nbsp;build = <span class="code-flg">train</span>();<br>&nbsp;&nbsp;impact = <span class="code-flg">deploy</span>();<br>&nbsp;&nbsp;<span class="code-cmd">return</span> future;<br>}<br><br><span class="code-cmt">// We build, so the world evolves.</span>`,
       `<span class="code-cmt"># Package current project directory into LLM context</span><br><span class="code-cmd">codecontext</span> pack <span class="code-flg">--out</span> context.txt <span class="code-flg">--ignore</span> <span class="code-str">".git,node_modules"</span><br><br><span class="code-str">✓ 148 files processed</span><br><span class="code-str">✓ Total tokens: 28,450 [Optimized for Claude 3.7 / GPT-4o]</span>`,
       `<span class="code-cmt"># Calculate token density before feeding to LLM</span><br><span class="code-cmd">codecontext</span> estimate <span class="code-flg">--target</span> claude-3-7-sonnet<br><br><span class="code-str">Context fit: 14.2% of 200k window</span>`
     ];
@@ -1946,7 +2072,11 @@
     }
 
     function copySandboxScript() {
-      const text = ["pip install codecontext-cli", "codecontext pack --out context.txt --ignore \".git,node_modules\"", "codecontext estimate --target claude-3-7-sonnet"][currentSandboxIdx];
+      const text = [
+        "function ideas() { data = inspire(); build = train(); impact = deploy(); return future; }",
+        "codecontext pack --out context.txt --ignore \".git,node_modules\"",
+        "codecontext estimate --target claude-3-7-sonnet"
+      ][currentSandboxIdx];
       copyToClipboard(text, 'Script copied to clipboard!');
     }
 
