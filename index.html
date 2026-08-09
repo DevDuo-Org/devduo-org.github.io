@@ -3,52 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevDuo Innovations | Premium Production AI & SaaS Engineering</title>
-  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Minimalist, high-performance software engineering studio.">
+  <title>DevDuo Innovations | Next-Gen Production AI Systems & Multi-Agent Engineering</title>
+  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Sleek. High-performance software engineering studio.">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="DevDuo Innovations | Production AI Systems">
-  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Sleek. Minimalist. Production-grade.">
+  <meta property="og:title" content="DevDuo Innovations | Multi-Agent AI Systems">
+  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Sleek. Production-grade software studio.">
   <meta property="og:image" content="assets/Banner.png">
   <link rel="icon" type="image/png" href="assets/profile.png">
   
-  <!-- Premium Fonts: Plus Jakarta Sans, Inter, JetBrains Mono, Space Grotesk -->
+  <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Lucide Icons & Three.js CDN -->
+  <!-- Lucide Icons & Three.js r128 CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
     :root {
-      /* Luxury Minimal Dark Color Palette */
-      --bg-main: #030508;
-      --bg-card: rgba(12, 16, 26, 0.65);
-      --bg-card-hover: rgba(18, 24, 38, 0.85);
-      --bg-surface: #090D16;
+      /* Luxury Minimal Cyber Theme */
+      --bg-dark: #040609;
+      --bg-card: rgba(10, 14, 23, 0.72);
+      --bg-card-hover: rgba(16, 22, 36, 0.9);
+      --bg-surface: #0B0F19;
       
-      --accent-red: #FF2A4B;
-      --accent-red-glow: rgba(255, 42, 75, 0.35);
-      --accent-cyan: #00F0FF;
-      --accent-cyan-glow: rgba(0, 240, 255, 0.3);
-      --accent-purple: #9D4EDD;
+      --red: #FF2A4B;
+      --red-glow: rgba(255, 42, 75, 0.4);
+      --cyan: #00F0FF;
+      --cyan-glow: rgba(0, 240, 255, 0.35);
+      --purple: #9D4EDD;
+      --purple-glow: rgba(157, 78, 221, 0.35);
       
-      --text-primary: #F8FAFC;
-      --text-secondary: #94A3B8;
-      --text-tertiary: #64748B;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
       
-      --border-light: rgba(255, 255, 255, 0.07);
-      --border-red: rgba(255, 42, 75, 0.25);
-      --border-cyan: rgba(0, 240, 255, 0.25);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-red: rgba(255, 42, 75, 0.3);
+      --border-cyan: rgba(0, 240, 255, 0.3);
       
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
       --radius-full: 9999px;
       
-      --font-display: 'Space Grotesk', sans-serif;
+      --font-heading: 'Space Grotesk', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -61,8 +62,8 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: var(--bg-main);
-      color: var(--text-primary);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       font-family: var(--font-body);
       overflow-x: hidden;
     }
@@ -83,17 +84,16 @@
       z-index: 0;
     }
 
-    /* Top Reading Progress Bar */
+    /* Reading Progress Bar */
     #scroll-progress {
       position: fixed;
       top: 0;
       left: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent-red), var(--accent-cyan));
-      z-index: 2000;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--cyan), var(--purple));
+      z-index: 3000;
       width: 0%;
-      transition: width 0.1s ease-out;
-      box-shadow: 0 0 10px var(--accent-cyan);
+      box-shadow: 0 0 12px var(--cyan);
     }
 
     /* Container Utility */
@@ -105,7 +105,7 @@
       z-index: 2;
     }
 
-    /* Luxury Header Navigation */
+    /* Header Navigation */
     header {
       position: fixed;
       top: 0;
@@ -113,14 +113,14 @@
       right: 0;
       z-index: 1000;
       padding: 1.25rem 0;
-      transition: all 0.4s ease;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     header.scrolled {
-      background: rgba(3, 5, 8, 0.85);
+      background: rgba(4, 6, 9, 0.85);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-color);
       padding: 0.9rem 0;
     }
 
@@ -141,7 +141,7 @@
       height: 38px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 0 12px rgba(255, 42, 75, 0.4));
+      filter: drop-shadow(0 0 12px var(--red-glow));
     }
 
     .nav-menu {
@@ -150,14 +150,14 @@
       gap: 2.25rem;
       list-style: none;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-light);
-      padding: 0.4rem 1.5rem;
+      border: 1px solid var(--border-color);
+      padding: 0.45rem 1.75rem;
       border-radius: var(--radius-full);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
     }
 
     .nav-link {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
@@ -166,8 +166,8 @@
     }
 
     .nav-link:hover, .nav-link.active {
-      color: var(--text-primary);
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+      color: var(--text-main);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
 
     /* Buttons */
@@ -185,21 +185,21 @@
       border: 1px solid transparent;
     }
 
-    .btn-glow-red {
-      background: var(--accent-red);
+    .btn-red {
+      background: var(--red);
       color: #FFF;
-      box-shadow: 0 0 25px var(--accent-red-glow);
+      box-shadow: 0 0 25px var(--red-glow);
     }
 
-    .btn-glow-red:hover {
-      transform: translateY(-2px) scale(1.02);
+    .btn-red:hover {
+      transform: translateY(-2px);
       box-shadow: 0 0 35px rgba(255, 42, 75, 0.6);
     }
 
     .btn-glass {
       background: rgba(255, 255, 255, 0.05);
-      color: var(--text-primary);
-      border-color: var(--border-light);
+      color: var(--text-main);
+      border-color: var(--border-color);
       backdrop-filter: blur(12px);
     }
 
@@ -213,19 +213,19 @@
       display: none;
       background: transparent;
       border: none;
-      color: var(--text-primary);
+      color: var(--text-main);
       cursor: pointer;
     }
 
-    /* Mobile Nav Drawer */
+    /* Mobile Drawer */
     .mobile-menu {
       position: fixed;
       top: 75px;
       left: 0;
       right: 0;
-      background: rgba(9, 13, 22, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border-light);
+      background: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border-color);
       padding: 2rem;
       display: flex;
       flex-direction: column;
@@ -265,7 +265,7 @@
       border: 1px solid var(--border-red);
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--accent-red);
+      color: var(--red);
       margin-bottom: 1.75rem;
     }
 
@@ -273,8 +273,8 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--accent-red);
-      box-shadow: 0 0 10px var(--accent-red);
+      background: var(--red);
+      box-shadow: 0 0 10px var(--red);
       animation: pulseDot 2s infinite;
     }
 
@@ -283,7 +283,7 @@
     }
 
     .hero-headline {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: clamp(2.8rem, 5.5vw, 4.5rem);
       line-height: 1.05;
       font-weight: 700;
@@ -292,28 +292,27 @@
     }
 
     .text-gradient {
-      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-cyan) 60%, var(--accent-purple) 100%);
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--cyan) 60%, var(--purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .text-gradient-red {
-      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-red) 70%, var(--accent-purple) 100%);
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--red) 70%, var(--purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtext {
       font-size: 1.1rem;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       line-height: 1.75;
       margin-bottom: 2.5rem;
       max-width: 580px;
-      font-weight: 400;
     }
 
     .hero-subtext em {
-      color: var(--accent-cyan);
+      color: var(--cyan);
       font-style: normal;
       font-weight: 500;
     }
@@ -330,30 +329,30 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--border-light);
+      border-top: 1px solid var(--border-color);
     }
 
     .hero-stat-val {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: 2.2rem;
       font-weight: 700;
-      color: var(--text-primary);
+      color: var(--text-main);
       line-height: 1;
     }
 
     .hero-stat-val span {
-      color: var(--accent-red);
+      color: var(--red);
     }
 
     .hero-stat-lbl {
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      color: var(--text-tertiary);
+      color: var(--text-dim);
       text-transform: uppercase;
       margin-top: 0.4rem;
     }
 
-    /* Hero Interactive 3D Visual Card */
+    /* Hero Card Visual */
     .hero-card-container {
       position: relative;
       perspective: 1000px;
@@ -361,10 +360,10 @@
 
     .hero-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
       padding: 0.75rem;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(24px);
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 240, 255, 0.08);
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
       overflow: hidden;
@@ -383,7 +382,7 @@
       object-fit: cover;
     }
 
-    /* Section Component Architecture */
+    /* Section Styles */
     section {
       padding: 120px 0;
       position: relative;
@@ -402,14 +401,14 @@
       gap: 0.5rem;
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--accent-cyan);
+      color: var(--cyan);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-bottom: 0.8rem;
     }
 
     .section-heading {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: clamp(2rem, 3.8vw, 3.2rem);
       line-height: 1.15;
       font-weight: 700;
@@ -417,28 +416,28 @@
     }
 
     .section-desc {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-size: 1.05rem;
       line-height: 1.7;
     }
 
-    /* Interactive Agent Simulator Widget */
+    /* Simulator Window */
     .simulator-window {
       background: var(--bg-card);
       border: 1px solid var(--border-cyan);
       border-radius: var(--radius-lg);
       backdrop-filter: blur(24px);
       overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--accent-cyan-glow);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--cyan-glow);
     }
 
     .sim-topbar {
-      background: rgba(9, 13, 22, 0.9);
+      background: rgba(11, 15, 25, 0.9);
       padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-color);
     }
 
     .sim-mac-dots {
@@ -465,7 +464,7 @@
     .preset-selector-label {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--accent-cyan);
+      color: var(--cyan);
       text-transform: uppercase;
       margin-bottom: 1rem;
       display: block;
@@ -476,9 +475,9 @@
       text-align: left;
       padding: 1rem 1.25rem;
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      color: var(--text-primary);
+      color: var(--text-main);
       font-family: var(--font-body);
       font-size: 0.9rem;
       margin-bottom: 0.85rem;
@@ -487,7 +486,7 @@
     }
 
     .sim-preset-card:hover, .sim-preset-card.active {
-      border-color: var(--accent-cyan);
+      border-color: var(--cyan);
       background: rgba(0, 240, 255, 0.08);
     }
 
@@ -500,7 +499,7 @@
     .sim-text-input {
       flex: 1;
       background: var(--bg-surface);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-full);
       padding: 0.75rem 1.25rem;
       color: #FFF;
@@ -510,7 +509,7 @@
 
     .sim-text-input:focus {
       outline: none;
-      border-color: var(--accent-cyan);
+      border-color: var(--cyan);
     }
 
     .swarm-nodes-row {
@@ -522,7 +521,7 @@
 
     .swarm-node-item {
       background: var(--bg-surface);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-sm);
       padding: 0.75rem;
       text-align: center;
@@ -530,7 +529,7 @@
     }
 
     .swarm-node-item.active {
-      border-color: var(--accent-red);
+      border-color: var(--red);
       background: rgba(255, 42, 75, 0.15);
       box-shadow: 0 0 15px rgba(255, 42, 75, 0.3);
     }
@@ -541,8 +540,8 @@
     }
 
     .terminal-output-box {
-      background: #04060A;
-      border: 1px solid var(--border-light);
+      background: #040609;
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 1.25rem;
       font-family: var(--font-mono);
@@ -562,12 +561,12 @@
 
     @keyframes fadeIn { to { opacity: 1; } }
 
-    .badge-planner { background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
-    .badge-coder { background: rgba(255, 42, 75, 0.15); color: var(--accent-red); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
-    .badge-security { background: rgba(157, 78, 221, 0.15); color: var(--accent-purple); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-planner { background: rgba(0, 240, 255, 0.15); color: var(--cyan); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-coder { background: rgba(255, 42, 75, 0.15); color: var(--red); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-security { background: rgba(157, 78, 221, 0.15); color: var(--purple); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
     .badge-success { background: rgba(16, 185, 129, 0.15); color: #10B981; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
 
-    /* Products Cards Layout */
+    /* Products Grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -576,7 +575,7 @@
 
     .product-glass-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
       padding: 2.5rem;
       display: flex;
@@ -590,11 +589,11 @@
     .product-glass-card:hover {
       border-color: var(--border-red);
       transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--accent-red-glow);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--red-glow);
     }
 
     .product-glass-card.featured {
-      border-color: var(--accent-red);
+      border-color: var(--red);
       background: linear-gradient(180deg, rgba(255, 42, 75, 0.06) 0%, var(--bg-card) 100%);
     }
 
@@ -609,36 +608,36 @@
       text-transform: uppercase;
     }
 
-    .badge-red { background: rgba(255, 42, 75, 0.12); color: var(--accent-red); border: 1px solid var(--border-red); }
-    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--accent-cyan); border: 1px solid var(--border-cyan); }
-    .badge-purple { background: rgba(157, 78, 221, 0.12); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
+    .badge-red { background: rgba(255, 42, 75, 0.12); color: var(--red); border: 1px solid var(--border-red); }
+    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--cyan); border: 1px solid var(--border-cyan); }
+    .badge-purple { background: rgba(157, 78, 221, 0.12); color: var(--purple); border: 1px solid var(--purple); }
 
     .product-icon-box {
       width: 52px;
       height: 52px;
       border-radius: var(--radius-md);
       background: var(--bg-surface);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-cyan);
+      color: var(--cyan);
       margin-bottom: 1.75rem;
     }
 
     .product-glass-card.featured .product-icon-box {
-      color: var(--accent-red);
+      color: var(--red);
       border-color: var(--border-red);
     }
 
     .product-name-title {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: 1.6rem;
       margin-bottom: 0.75rem;
     }
 
     .product-description {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.65;
       margin-bottom: 1.75rem;
@@ -656,9 +655,9 @@
       font-size: 0.7rem;
       padding: 0.25rem 0.65rem;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-sm);
-      color: var(--text-tertiary);
+      color: var(--text-dim);
     }
 
     .product-bottom-row {
@@ -666,11 +665,11 @@
       align-items: center;
       justify-content: space-between;
       padding-top: 1.25rem;
-      border-top: 1px solid var(--border-light);
+      border-top: 1px solid var(--border-color);
     }
 
     .price-value {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: 1.4rem;
       font-weight: 700;
     }
@@ -678,15 +677,15 @@
     .price-value small {
       font-family: var(--font-body);
       font-size: 0.75rem;
-      color: var(--text-tertiary);
+      color: var(--text-dim);
       display: block;
       font-weight: 400;
     }
 
-    /* Terminal Sandbox Component */
+    /* Sandbox Container */
     .sandbox-container {
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
       overflow: hidden;
       backdrop-filter: blur(20px);
@@ -694,12 +693,12 @@
     }
 
     .sandbox-header {
-      background: rgba(9, 13, 22, 0.9);
+      background: rgba(11, 15, 25, 0.9);
       padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-color);
     }
 
     .sandbox-tabs {
@@ -711,7 +710,7 @@
       padding: 0.4rem 1rem;
       background: transparent;
       border: none;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-family: var(--font-mono);
       font-size: 0.8rem;
       cursor: pointer;
@@ -721,7 +720,7 @@
 
     .sandbox-tab-btn.active {
       background: rgba(255, 255, 255, 0.08);
-      color: var(--accent-cyan);
+      color: var(--cyan);
     }
 
     .sandbox-code-area {
@@ -732,9 +731,9 @@
       line-height: 1.75;
     }
 
-    .code-cmt { color: var(--text-tertiary); }
-    .code-cmd { color: var(--accent-red); }
-    .code-flg { color: var(--accent-purple); }
+    .code-cmt { color: var(--text-dim); }
+    .code-cmd { color: var(--red); }
+    .code-flg { color: var(--purple); }
     .code-str { color: #34D399; }
 
     /* Services Grid */
@@ -746,7 +745,7 @@
 
     .service-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
       padding: 2.25rem;
       transition: all 0.3s ease;
@@ -763,7 +762,7 @@
       position: absolute;
       top: 1.5rem;
       right: 1.5rem;
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: 2.2rem;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.04);
@@ -778,26 +777,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-cyan);
+      color: var(--cyan);
       margin-bottom: 1.5rem;
     }
 
     .service-card-title {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: 1.25rem;
       margin-bottom: 0.75rem;
     }
 
     .service-card-desc {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-size: 0.92rem;
       line-height: 1.65;
     }
 
-    /* Founders Section */
+    /* About Section */
     .about-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
       padding: 3.5rem;
       display: grid;
@@ -816,19 +815,19 @@
       height: 270px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--accent-red);
-      box-shadow: 0 0 35px var(--accent-red-glow);
+      border: 2px solid var(--red);
+      box-shadow: 0 0 35px var(--red-glow);
     }
 
     .about-bio-text p {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-size: 1.02rem;
       line-height: 1.75;
       margin-bottom: 1.25rem;
     }
 
     .about-bio-text strong {
-      color: var(--text-primary);
+      color: var(--text-main);
     }
 
     .stack-badges {
@@ -845,7 +844,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-red);
       border-radius: var(--radius-full);
-      color: var(--text-primary);
+      color: var(--text-main);
     }
 
     /* YouTube Videos Grid */
@@ -857,11 +856,11 @@
 
     .yt-item-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 1.5rem;
       text-decoration: none;
-      color: var(--text-primary);
+      color: var(--text-main);
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -870,7 +869,7 @@
     }
 
     .yt-item-card:hover {
-      border-color: var(--accent-red);
+      border-color: var(--red);
       transform: translateY(-5px);
     }
 
@@ -897,29 +896,29 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       text-decoration: none;
       font-family: var(--font-mono);
       font-size: 0.85rem;
       padding: 0.6rem 1.25rem;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-full);
       transition: all 0.25s ease;
     }
 
     .social-pill-link:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
+      border-color: var(--cyan);
+      color: var(--cyan);
       transform: translateY(-2px);
     }
 
     /* Footer */
     footer {
       background: #020305;
-      border-top: 1px solid var(--border-light);
+      border-top: 1px solid var(--border-color);
       padding: 3rem 0;
-      color: var(--text-tertiary);
+      color: var(--text-dim);
       font-size: 0.88rem;
       position: relative;
       z-index: 2;
@@ -955,14 +954,14 @@
     }
 
     .modal-content-box {
-      background: #090D16;
+      background: #0B0F19;
       border: 1px solid var(--border-red);
       border-radius: var(--radius-lg);
       max-width: 520px;
       width: 100%;
       padding: 2.5rem;
       position: relative;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 40px var(--accent-red-glow);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 40px var(--red-glow);
     }
 
     .modal-close-btn {
@@ -971,7 +970,7 @@
       right: 1.25rem;
       background: transparent;
       border: none;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       cursor: pointer;
     }
 
@@ -984,14 +983,14 @@
       display: block;
       font-family: var(--font-mono);
       font-size: 0.78rem;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       margin-bottom: 0.4rem;
     }
 
     .form-input {
       width: 100%;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 0.8rem 1rem;
       color: #FFF;
@@ -1001,7 +1000,7 @@
 
     .form-input:focus {
       outline: none;
-      border-color: var(--accent-red);
+      border-color: var(--red);
     }
 
     .toast-popup {
@@ -1009,8 +1008,8 @@
       bottom: 2rem;
       right: 2rem;
       background: var(--bg-surface);
-      border: 1px solid var(--accent-cyan);
-      color: var(--accent-cyan);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
       padding: 0.9rem 1.5rem;
       border-radius: var(--radius-full);
       font-family: var(--font-mono);
@@ -1106,7 +1105,7 @@
       </ul>
 
       <div class="nav-action-btn">
-        <button onclick="toggleModal('contact-modal', true)" class="btn btn-glow-red">
+        <button onclick="toggleModal('contact-modal', true)" class="btn btn-red">
           <i data-lucide="mail"></i> Hire Us
         </button>
       </div>
@@ -1125,7 +1124,7 @@
     <a href="#sandbox" class="nav-link" onclick="closeDrawer()">Sandbox</a>
     <a href="#about" class="nav-link" onclick="closeDrawer()">About</a>
     <a href="#youtube" class="nav-link" onclick="closeDrawer()">YouTube</a>
-    <button onclick="closeDrawer(); toggleModal('contact-modal', true)" class="btn btn-glow-red" style="width:100%">
+    <button onclick="closeDrawer(); toggleModal('contact-modal', true)" class="btn btn-red" style="width:100%">
       <i data-lucide="mail"></i> Hire Us
     </button>
   </div>
@@ -1149,7 +1148,7 @@
         </p>
 
         <div class="hero-cta-group">
-          <a href="#products" class="btn btn-glow-red">
+          <a href="#products" class="btn btn-red">
             <i data-lucide="sparkles"></i> Explore Products
           </a>
           <a href="#simulator" class="btn btn-glass">
@@ -1201,10 +1200,10 @@
             <span class="mac-dot y"></span>
             <span class="mac-dot g"></span>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary)">
+          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted)">
             <i data-lucide="cpu" size="14"></i> Sagenta Multi-Agent Orchestrator (Live Demo)
           </div>
-          <i data-lucide="sliders" size="14" style="color:var(--text-tertiary)"></i>
+          <i data-lucide="sliders" size="14" style="color:var(--text-dim)"></i>
         </div>
 
         <div class="sim-layout">
@@ -1212,22 +1211,22 @@
             <span class="preset-selector-label">Select Task Prompt:</span>
             <button class="sim-preset-card active" onclick="pickSimPreset(0, this)">
               <strong>1. Build FastAPI Auth System</strong>
-              <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:0.2rem">OAuth2 routes with Argon2 password hashing and refresh tokens</div>
+              <div style="font-size:0.78rem; color:var(--text-dim); margin-top:0.2rem">OAuth2 routes with Argon2 password hashing and refresh tokens</div>
             </button>
 
             <button class="sim-preset-card" onclick="pickSimPreset(1, this)">
               <strong>2. Analyze 40k-Line Repository</strong>
-              <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:0.2rem">Run RepoMind parser & generate architectural AST map</div>
+              <div style="font-size:0.78rem; color:var(--text-dim); margin-top:0.2rem">Run RepoMind parser & generate architectural AST map</div>
             </button>
 
             <button class="sim-preset-card" onclick="pickSimPreset(2, this)">
               <strong>3. Optimize Token Cost for RAG</strong>
-              <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:0.2rem">Audit chunk size, embeddings, & prompt compression</div>
+              <div style="font-size:0.78rem; color:var(--text-dim); margin-top:0.2rem">Audit chunk size, embeddings, & prompt compression</div>
             </button>
 
             <div class="sim-input-row">
               <input type="text" id="sim-prompt-field" class="sim-text-input" placeholder="Or type your own agent instruction...">
-              <button class="btn btn-glow-red" onclick="executeSimSwarm()">Run Swarm</button>
+              <button class="btn btn-red" onclick="executeSimSwarm()">Run Swarm</button>
             </div>
           </div>
 
@@ -1275,7 +1274,7 @@
           <span class="product-tag-badge badge-red">Flagship · 2026</span>
           <div>
             <div class="product-icon-box"><i data-lucide="bot" size="28"></i></div>
-            <h3 class="product-name-title">SAGENTA<span style="color:var(--accent-red)">.</span></h3>
+            <h3 class="product-name-title">SAGENTA<span style="color:var(--red)">.</span></h3>
             <p class="product-description">Conversational multi-agent AI system that builds entire software features from natural text — with full agent decision visibility and approval gates.</p>
             <div class="chips-group">
               <span class="chip-item">Multi-Agent</span>
@@ -1286,7 +1285,7 @@
           </div>
           <div class="product-bottom-row">
             <div class="price-value">$20<small>/month · Launching Q2</small></div>
-            <button onclick="toggleModal('waitlist-modal', true)" class="btn btn-glow-red">Join Waitlist →</button>
+            <button onclick="toggleModal('waitlist-modal', true)" class="btn btn-red">Join Waitlist →</button>
           </div>
         </div>
 
@@ -1295,7 +1294,7 @@
           <span class="product-tag-badge badge-cyan">Live SaaS</span>
           <div>
             <div class="product-icon-box"><i data-lucide="search" size="28"></i></div>
-            <h3 class="product-name-title">REPO<span style="color:var(--accent-cyan)">MIND</span></h3>
+            <h3 class="product-name-title">REPO<span style="color:var(--cyan)">MIND</span></h3>
             <p class="product-description">Turn any GitHub repository into a single, token-optimized context file. Interrogate codebases with ChatGPT or Claude without manual navigation.</p>
             <div class="chips-group">
               <span class="chip-item">Developer Tool</span>
@@ -1315,7 +1314,7 @@
           <span class="product-tag-badge badge-purple">CLI Tool</span>
           <div>
             <div class="product-icon-box"><i data-lucide="terminal" size="28"></i></div>
-            <h3 class="product-name-title">CODE<span style="color:var(--accent-purple)">CONTEXT</span></h3>
+            <h3 class="product-name-title">CODE<span style="color:var(--purple)">CONTEXT</span></h3>
             <p class="product-description">A high-speed CLI tool that packages your entire codebase into a clean context file filtered by `.gitignore`. Token counted and LLM ready.</p>
             <div class="chips-group">
               <span class="chip-item">Python CLI</span>
@@ -1372,7 +1371,7 @@
     <div class="container">
       <div class="section-title-wrap reveal-item">
         <div class="section-badge"><i data-lucide="briefcase"></i> Client Engineering</div>
-        <h2 class="section-title-heading">Custom AI <span class="text-gradient">Engineering Services</span></h2>
+        <h2 class="section-heading">Custom AI <span class="text-gradient">Engineering Services</span></h2>
         <p class="section-desc">We build enterprise-ready AI solutions customized for your exact workflows.</p>
       </div>
 
@@ -1434,13 +1433,13 @@
       <div class="about-card reveal-item">
         <div class="about-avatar-center">
           <img src="assets/profile.png" alt="DevDuo Co-Founders" class="about-avatar-img">
-          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-tertiary); margin-top:1rem">
+          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-dim); margin-top:1rem">
             DevDuo Co-Founders & AI Engineers
           </div>
         </div>
 
         <div class="about-bio-text">
-          <h3 style="font-family:var(--font-display); font-size:1.6rem; margin-bottom:1rem">Two Founders. Four Engineers. Karachi, Pakistan.</h3>
+          <h3 style="font-family:var(--font-heading); font-size:1.6rem; margin-bottom:1rem">Two Founders. Four Engineers. Karachi, Pakistan.</h3>
           <p>
             DevDuo Innovations is led by two <strong>co-founders & AI engineers</strong> leading a tight-knit engineering team of four.
           </p>
@@ -1478,38 +1477,38 @@
       <div class="yt-grid">
         <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// DEMO</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// DEMO</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Sagenta Multi-Agent End-to-End Build</h4>
-            <p style="font-size:0.85rem; color:var(--text-secondary)">Watch Sagenta build a complete auth system with approval gates.</p>
+            <p style="font-size:0.85rem; color:var(--text-muted)">Watch Sagenta build a complete auth system with approval gates.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
         <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// EXPLAINER</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// EXPLAINER</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Why Single LLMs Fail at Complex Tasks</h4>
-            <p style="font-size:0.85rem; color:var(--text-secondary)">The engineering behind agent swarms and stateful graph execution.</p>
+            <p style="font-size:0.85rem; color:var(--text-muted)">The engineering behind agent swarms and stateful graph execution.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
         <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// CASE STUDY</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// CASE STUDY</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">RepoMind Workflow for 40k-Line Repos</h4>
-            <p style="font-size:0.85rem; color:var(--text-secondary)">Real metrics comparing manual code exploration vs RepoMind context files.</p>
+            <p style="font-size:0.85rem; color:var(--text-muted)">Real metrics comparing manual code exploration vs RepoMind context files.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
         <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// FOUNDER LOG</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// FOUNDER LOG</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Building a Dev Studio in Karachi</h4>
-            <p style="font-size:0.85rem; color:var(--text-secondary)">Revenue transparency, engineering challenges, and studio growth milestones.</p>
+            <p style="font-size:0.85rem; color:var(--text-muted)">Revenue transparency, engineering challenges, and studio growth milestones.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
         </a>
       </div>
     </div>
@@ -1528,7 +1527,7 @@
         </p>
 
         <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap">
-          <button onclick="toggleModal('contact-modal', true)" class="btn btn-glow-red">
+          <button onclick="toggleModal('contact-modal', true)" class="btn btn-red">
             <i data-lucide="send"></i> Email Us Direct
           </button>
           <a href="mailto:devduoinnovations@gmail.com" class="btn btn-glass">
@@ -1555,10 +1554,10 @@
       </div>
 
       <div style="display:flex; gap:1.5rem">
-        <a href="#simulator" style="color:var(--text-tertiary); text-decoration:none">Simulator</a>
-        <a href="#products" style="color:var(--text-tertiary); text-decoration:none">Products</a>
-        <a href="#services" style="color:var(--text-tertiary); text-decoration:none">Services</a>
-        <a href="#about" style="color:var(--text-tertiary); text-decoration:none">About</a>
+        <a href="#simulator" style="color:var(--text-dim); text-decoration:none">Simulator</a>
+        <a href="#products" style="color:var(--text-dim); text-decoration:none">Products</a>
+        <a href="#services" style="color:var(--text-dim); text-decoration:none">Services</a>
+        <a href="#about" style="color:var(--text-dim); text-decoration:none">About</a>
       </div>
     </div>
   </footer>
@@ -1567,8 +1566,8 @@
   <div class="modal-backdrop" id="contact-modal">
     <div class="modal-content-box">
       <button class="modal-close-btn" onclick="toggleModal('contact-modal', false)"><i data-lucide="x"></i></button>
-      <h3 style="font-family:var(--font-display); font-size:1.5rem; margin-bottom:0.5rem">Work With <span style="color:var(--accent-red)">DevDuo</span></h3>
-      <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.5rem">Tell us about your project requirements and we'll reply within 24 hours.</p>
+      <h3 style="font-family:var(--font-heading); font-size:1.5rem; margin-bottom:0.5rem">Work With <span style="color:var(--red)">DevDuo</span></h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem">Tell us about your project requirements and we'll reply within 24 hours.</p>
       
       <form onsubmit="onFormSubmit(event, 'Inquiry Sent! We will get back to you shortly.')">
         <div class="form-field">
@@ -1583,7 +1582,7 @@
           <label>Project Brief</label>
           <textarea class="form-input" rows="3" placeholder="Describe what you want to build..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-glow-red" style="width:100%">Send Inquiry →</button>
+        <button type="submit" class="btn btn-red" style="width:100%">Send Inquiry →</button>
       </form>
     </div>
   </div>
@@ -1592,38 +1591,44 @@
   <div class="modal-backdrop" id="waitlist-modal">
     <div class="modal-content-box">
       <button class="modal-close-btn" onclick="toggleModal('waitlist-modal', false)"><i data-lucide="x"></i></button>
-      <h3 style="font-family:var(--font-display); font-size:1.5rem; margin-bottom:0.5rem">Join <span style="color:var(--accent-red)">Sagenta</span> Waitlist</h3>
-      <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.5rem">Be among the first engineers to access Sagenta Multi-Agent System upon launch.</p>
+      <h3 style="font-family:var(--font-heading); font-size:1.5rem; margin-bottom:0.5rem">Join <span style="color:var(--red)">Sagenta</span> Waitlist</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem">Be among the first engineers to access Sagenta Multi-Agent System upon launch.</p>
       
       <form onsubmit="onFormSubmit(event, 'You are reserved on the waitlist!')">
         <div class="form-field">
           <label>Work Email</label>
           <input type="email" class="form-input" placeholder="developer@domain.com" required>
         </div>
-        <button type="submit" class="btn btn-glow-red" style="width:100%">Reserve Spot →</button>
+        <button type="submit" class="btn btn-red" style="width:100%">Reserve Spot →</button>
       </form>
     </div>
   </div>
 
   <div class="toast-popup" id="toast-el">Notification</div>
 
-  <!-- Interactive Scripts & Three.js WebGL Engine -->
+  <!-- Three.js 3D WebGL Neural Swarm Engine & Interactive Scripts -->
   <script>
     lucide.createIcons();
 
-    // Mobile Menu Toggle
+    // Mobile Navigation Toggle
     const mobileBtn = document.getElementById('mobile-toggle');
     const mobileDrawer = document.getElementById('mobile-drawer');
 
     mobileBtn.addEventListener('click', () => {
       mobileDrawer.classList.toggle('open');
+      if (mobileDrawer.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
     });
 
     function closeDrawer() {
       mobileDrawer.classList.remove('open');
+      document.body.style.overflow = 'auto';
     }
 
-    // Header Scroll Blur & Scroll Progress
+    // Scroll Progress & Navbar Effects
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
       const prog = document.getElementById('scroll-progress');
@@ -1640,7 +1645,7 @@
       }
     });
 
-    // Intersection Observer Reveal
+    // Reveal Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) e.target.classList.add('visible');
@@ -1735,7 +1740,7 @@
       }, 650);
     }
 
-    // Sandbox Terminal Logic
+    // Sandbox Logic
     const sandboxSnippets = [
       `<span class="code-cmt"># Install CodeContext CLI via pip</span><br><span class="code-cmd">pip</span> install codecontext-cli<br><br><span class="code-cmt"># Verify installation</span><br><span class="code-cmd">codecontext</span> <span class="code-flg">--version</span><br><span class="code-str">CodeContext CLI v2.1.0 [DevDuo Innovations]</span>`,
       `<span class="code-cmt"># Package current project directory into LLM context</span><br><span class="code-cmd">codecontext</span> pack <span class="code-flg">--out</span> context.txt <span class="code-flg">--ignore</span> <span class="code-str">".git,node_modules"</span><br><br><span class="code-str">✓ 148 files processed</span><br><span class="code-str">✓ Total tokens: 28,450 [Optimized for Claude 3.7 / GPT-4o]</span>`,
@@ -1776,110 +1781,184 @@
       showToast(msg);
     }
 
-    // Three.js 3D WebGL Constellation & Wave Background Engine
-    let scene, camera, renderer, particleSystem, wireframeMesh;
+    /* 
+      ===============================================================
+      ADVANCED THREE.JS WEBGL AI NEURAL SWARM & CYBER GRID ENGINE
+      ===============================================================
+    */
+    let scene, camera, renderer;
+    let nodeGroup, lineMesh, dataParticlesMesh;
     let mouseX = 0, mouseY = 0;
+    let targetCameraZ = 350;
+    let targetCameraY = 0;
 
-    function initThreeJS() {
+    function initThreeEngine() {
       const canvasEl = document.getElementById('webgl-canvas');
       scene = new THREE.Scene();
 
-      camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-      camera.position.z = 400;
+      // Fog for deep spatial cyber perception
+      scene.fog = new THREE.FogExp2(0x040609, 0.0018);
 
-      renderer = new THREE.WebGLRenderer({ canvas: canvasEl, alpha: true, antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 2000);
+      camera.position.set(0, 0, 350);
+
+      renderer = new THREE.WebGLRenderer({
+        canvas: canvasEl,
+        alpha: true,
+        antialias: true,
+        powerPreference: "high-performance"
+      });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.2;
 
-      // 1. Particle Cloud System
-      const particleCount = 700;
-      const geometry = new THREE.BufferGeometry();
-      const positions = new Float32Array(particleCount * 3);
-      const colors = new Float32Array(particleCount * 3);
+      // Group holding Neural Agent Nodes & Connections
+      nodeGroup = new THREE.Group();
+      scene.add(nodeGroup);
 
-      const color1 = new THREE.Color(0x00f0ff); // Cyan
-      const color2 = new THREE.Color(0xff2a4b); // Red
-      const color3 = new THREE.Color(0x9d4edd); // Purple
+      // 1. Create AI Neural Agent Nodes
+      const nodeCount = 45;
+      const nodePositions = [];
+      const nodeGeom = new THREE.SphereGeometry(2.5, 16, 16);
+      const nodeMatRed = new THREE.MeshBasicMaterial({ color: 0xFF2A4B });
+      const nodeMatCyan = new THREE.MeshBasicMaterial({ color: 0x00F0FF });
+      const nodeMatPurple = new THREE.MeshBasicMaterial({ color: 0x9D4EDD });
 
-      for (let i = 0; i < particleCount; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 1200;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 1200;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 800;
+      for (let i = 0; i < nodeCount; i++) {
+        const x = (Math.random() - 0.5) * 550;
+        const y = (Math.random() - 0.5) * 450;
+        const z = (Math.random() - 0.5) * 350;
 
-        const mixedColor = Math.random() > 0.6 ? color1 : (Math.random() > 0.3 ? color2 : color3);
-        colors[i * 3] = mixedColor.r;
-        colors[i * 3 + 1] = mixedColor.g;
-        colors[i * 3 + 2] = mixedColor.b;
+        nodePositions.push(new THREE.Vector3(x, y, z));
+
+        const mat = i % 3 === 0 ? nodeMatRed : (i % 3 === 1 ? nodeMatCyan : nodeMatPurple);
+        const mesh = new THREE.Mesh(nodeGeom, mat);
+        mesh.position.set(x, y, z);
+        nodeGroup.add(mesh);
       }
 
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      // 2. Create Synaptic Line Connections between nearby Nodes
+      const linePositions = [];
+      const lineColors = [];
+      const colorRed = new THREE.Color(0xFF2A4B);
+      const colorCyan = new THREE.Color(0x00F0FF);
 
-      const particleMaterial = new THREE.PointsMaterial({
-        size: 3,
+      for (let i = 0; i < nodePositions.length; i++) {
+        for (let j = i + 1; j < nodePositions.length; j++) {
+          const dist = nodePositions[i].distanceTo(nodePositions[j]);
+          if (dist < 130) {
+            linePositions.push(nodePositions[i].x, nodePositions[i].y, nodePositions[i].z);
+            linePositions.push(nodePositions[j].x, nodePositions[j].y, nodePositions[j].z);
+
+            const col = Math.random() > 0.5 ? colorRed : colorCyan;
+            lineColors.push(col.r, col.g, col.b);
+            lineColors.push(col.r, col.g, col.b);
+          }
+        }
+      }
+
+      const lineGeom = new THREE.BufferGeometry();
+      lineGeom.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+      lineGeom.setAttribute('color', new THREE.Float32BufferAttribute(lineColors, 3));
+
+      const lineMat = new THREE.LineBasicMaterial({
         vertexColors: true,
         transparent: true,
-        opacity: 0.7,
+        opacity: 0.25,
         blending: THREE.AdditiveBlending
       });
 
-      particleSystem = new THREE.Points(geometry, particleMaterial);
-      scene.add(particleSystem);
+      lineMesh = new THREE.LineSegments(lineGeom, lineMat);
+      nodeGroup.add(lineMesh);
 
-      // 2. Glowing Geometric Neural Mesh Wireframe Sphere
-      const icoGeo = new THREE.IcosahedronGeometry(120, 2);
-      const wireMat = new THREE.MeshBasicMaterial({
-        color: 0x00f0ff,
-        wireframe: true,
+      // 3. Floating Data Pulse Particles traversing the Neural Network
+      const particleCount = 400;
+      const partGeom = new THREE.BufferGeometry();
+      const partPos = new Float32Array(particleCount * 3);
+      const partCols = new Float32Array(particleCount * 3);
+
+      for (let i = 0; i < particleCount; i++) {
+        partPos[i * 3] = (Math.random() - 0.5) * 600;
+        partPos[i * 3 + 1] = (Math.random() - 0.5) * 500;
+        partPos[i * 3 + 2] = (Math.random() - 0.5) * 400;
+
+        const col = i % 2 === 0 ? colorRed : colorCyan;
+        partCols[i * 3] = col.r;
+        partCols[i * 3 + 1] = col.g;
+        partCols[i * 3 + 2] = col.b;
+      }
+
+      partGeom.setAttribute('position', new THREE.BufferAttribute(partPos, 3));
+      partGeom.setAttribute('color', new THREE.BufferAttribute(partCols, 3));
+
+      const partMat = new THREE.PointsMaterial({
+        size: 3.5,
+        vertexColors: true,
         transparent: true,
-        opacity: 0.08
+        opacity: 0.65,
+        blending: THREE.AdditiveBlending
       });
-      wireframeMesh = new THREE.Mesh(icoGeo, wireMat);
-      wireframeMesh.position.set(300, 50, -100);
-      scene.add(wireframeMesh);
 
-      // Mouse interactive movement
-      window.addEventListener('mousemove', onMouseMove);
-      window.addEventListener('resize', onWindowResize);
+      dataParticlesMesh = new THREE.Points(partGeom, partMat);
+      nodeGroup.add(dataParticlesMesh);
+
+      // 4. Holographic Floor Grid Plane
+      const gridHelper = new THREE.GridHelper(1000, 40, 0xFF2A4B, 0x00F0FF);
+      gridHelper.position.y = -220;
+      gridHelper.material.opacity = 0.15;
+      gridHelper.material.transparent = true;
+      scene.add(gridHelper);
+
+      // Mouse & Scroll Event Listeners
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('scroll', handleScroll3D);
+      window.addEventListener('resize', handleWindowResize);
     }
 
-    function onMouseMove(event) {
-      mouseX = (event.clientX - window.innerWidth / 2) * 0.05;
-      mouseY = (event.clientY - window.innerHeight / 2) * 0.05;
+    function handleMouseMove(e) {
+      mouseX = (e.clientX - window.innerWidth / 2) * 0.08;
+      mouseY = (e.clientY - window.innerHeight / 2) * 0.08;
     }
 
-    function onWindowResize() {
+    function handleScroll3D() {
+      const scrollY = window.scrollY;
+      targetCameraY = -scrollY * 0.15;
+      targetCameraZ = 350 + Math.sin(scrollY * 0.002) * 40;
+    }
+
+    function handleWindowResize() {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
-    function animateThreeJS() {
-      requestAnimationFrame(animateThreeJS);
+    function renderLoop() {
+      requestAnimationFrame(renderLoop);
 
-      // Rotate particle cloud & wireframe mesh
-      if (particleSystem) {
-        particleSystem.rotation.y += 0.0008;
-        particleSystem.rotation.x += 0.0004;
+      // Slow organic rotation of the AI Neural Node Network
+      if (nodeGroup) {
+        nodeGroup.rotation.y += 0.0012;
+        nodeGroup.rotation.x += 0.0006;
       }
 
-      if (wireframeMesh) {
-        wireframeMesh.rotation.y += 0.002;
-        wireframeMesh.rotation.x += 0.001;
+      if (dataParticlesMesh) {
+        dataParticlesMesh.rotation.y -= 0.0008;
       }
 
-      // Parallax smooth camera movement based on mouse & scroll
-      camera.position.x += (mouseX - camera.position.x) * 0.05;
-      camera.position.y += (-mouseY - camera.position.y) * 0.05;
+      // Smooth camera interpolation (Parallax + Scroll response)
+      camera.position.x += (mouseX - camera.position.x) * 0.04;
+      camera.position.y += (-mouseY + targetCameraY - camera.position.y) * 0.04;
+      camera.position.z += (targetCameraZ - camera.position.z) * 0.04;
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
     }
 
-    // Initialize WebGL & Simulator
+    // Launch Three.js Engine on Load
     window.addEventListener('DOMContentLoaded', () => {
-      initThreeJS();
-      animateThreeJS();
+      initThreeEngine();
+      renderLoop();
       executeSimSwarm();
     });
   </script>
