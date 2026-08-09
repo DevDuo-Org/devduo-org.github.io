@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevDuo Innovations | Cyberpunk AI Systems & SaaS Studio</title>
+  <title>DevDuo Innovations | Enterprise Multi-Agent AI Systems & Studio</title>
   <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Cyberpunk HUD engineering studio.">
   
   <!-- Open Graph -->
@@ -67,7 +67,7 @@
       position: relative;
       min-height: 100vh;
       background-image: 
-        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 30, 67, 0.18), transparent 70%),
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 30, 67, 0.22), transparent 70%),
         radial-gradient(ellipse 70% 50% at 85% 50%, rgba(213, 0, 249, 0.12), transparent 70%),
         radial-gradient(ellipse 60% 50% at 15% 85%, rgba(0, 240, 255, 0.12), transparent 70%);
       background-attachment: fixed;
@@ -129,11 +129,12 @@
     .hud-box::before, .hud-box::after {
       content: '';
       position: absolute;
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-color: var(--neon-red);
       border-style: solid;
       pointer-events: none;
+      z-index: 5;
     }
 
     .hud-box::before {
@@ -174,7 +175,7 @@
     }
 
     header.scrolled {
-      background: rgba(7, 4, 7, 0.92);
+      background: rgba(7, 4, 7, 0.94);
       backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border-hud-red);
       padding: 0.85rem 0;
@@ -335,20 +336,11 @@
       transform: translateY(0);
     }
 
-    /* Hero Section */
+    /* Centered Cinematic Hero Section */
     .hero {
-      padding-top: 170px;
-      padding-bottom: 110px;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
-      align-items: center;
+      padding-top: 155px;
+      padding-bottom: 90px;
+      text-align: center;
     }
 
     .hero-pill-hud {
@@ -361,7 +353,7 @@
       font-family: var(--font-mono);
       font-size: 0.78rem;
       color: var(--neon-red);
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
     }
 
@@ -380,40 +372,30 @@
 
     .hero-headline-title {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 6vw, 4.8rem);
+      font-size: clamp(3.2rem, 7vw, 5.8rem);
       line-height: 1.02;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .text-metallic-white {
       color: #FFFFFF;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      text-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
     }
 
     .text-neon-red {
       color: var(--neon-red);
-      text-shadow: 0 0 25px var(--neon-red-glow);
-    }
-
-    .text-neon-cyan {
-      color: var(--neon-cyan);
-      text-shadow: 0 0 25px var(--neon-cyan-glow);
-    }
-
-    .text-neon-purple {
-      color: var(--neon-purple);
-      text-shadow: 0 0 25px var(--neon-purple-glow);
+      text-shadow: 0 0 30px var(--neon-red-glow);
     }
 
     .hero-subtext {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
       line-height: 1.75;
-      margin-bottom: 2.25rem;
-      max-width: 580px;
+      margin: 0 auto 2rem auto;
+      max-width: 750px;
     }
 
     .hero-subtext strong {
@@ -423,18 +405,19 @@
     /* Cyber HUD Icon Badges: BUILD • INNOVATE • COLLABORATE */
     .hud-badges-row {
       display: flex;
-      gap: 1rem;
+      justify-content: center;
+      gap: 1.25rem;
       flex-wrap: wrap;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.25rem;
     }
 
     .hud-badge-item {
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      padding: 0.45rem 1rem;
+      padding: 0.5rem 1.25rem;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       border: 1px solid transparent;
       background: rgba(255, 255, 255, 0.03);
@@ -444,41 +427,114 @@
       border-color: var(--border-hud-red);
       color: var(--neon-red);
       background: rgba(255, 30, 67, 0.1);
-      box-shadow: 0 0 15px rgba(255, 30, 67, 0.2);
+      box-shadow: 0 0 18px rgba(255, 30, 67, 0.2);
     }
 
     .hud-badge-purple {
       border-color: var(--border-hud-purple);
       color: var(--neon-purple);
       background: rgba(213, 0, 249, 0.1);
-      box-shadow: 0 0 15px rgba(213, 0, 249, 0.2);
+      box-shadow: 0 0 18px rgba(213, 0, 249, 0.2);
     }
 
     .hud-badge-cyan {
       border-color: var(--border-hud-cyan);
       color: var(--neon-cyan);
       background: rgba(0, 240, 255, 0.1);
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+      box-shadow: 0 0 18px rgba(0, 240, 255, 0.2);
     }
 
     .hero-cta-group {
       display: flex;
+      justify-content: center;
       gap: 1.25rem;
       flex-wrap: wrap;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    /* Full-Width Cinematic Banner Frame Showcase */
+    .hero-cinematic-showcase {
+      max-width: 1200px;
+      margin: 0 auto 3.5rem auto;
+      position: relative;
+    }
+
+    .hero-banner-frame {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hud-red);
+      padding: 0.85rem;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 60px var(--neon-red-glow);
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    .hero-banner-frame:hover {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.95), 0 0 70px var(--neon-cyan-glow);
+      transform: translateY(-5px);
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Animated Live Overlay Badge on Cinematic Banner */
+    .banner-hud-live-tag {
+      position: absolute;
+      bottom: 1.75rem;
+      left: 1.75rem;
+      right: 1.75rem;
+      background: rgba(14, 7, 18, 0.92);
+      border: 1px solid var(--border-hud-cyan);
+      padding: 0.85rem 1.5rem;
+      backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .hud-progress-meter {
+      width: 160px;
+      height: 9px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--neon-red);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hud-progress-bar-fill {
+      height: 100%;
+      width: 89%;
+      background: linear-gradient(90deg, var(--neon-red), var(--neon-purple));
+      box-shadow: 0 0 12px var(--neon-red);
+      animation: fillGlow 2s infinite alternate;
+    }
+
+    @keyframes fillGlow {
+      0% { opacity: 0.7; } 100% { opacity: 1; }
     }
 
     .hero-stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
-      padding-top: 2rem;
+      padding-top: 2.5rem;
       border-top: 1px solid var(--border-hud-red);
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .hero-stat-val {
       font-family: var(--font-display);
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 800;
       color: var(--text-main);
       line-height: 1;
@@ -494,67 +550,6 @@
       color: var(--text-dim);
       text-transform: uppercase;
       margin-top: 0.4rem;
-    }
-
-    /* Cyber Hero Banner Frame */
-    .hero-banner-frame {
-      position: relative;
-      background: var(--bg-card);
-      border: 1px solid var(--border-hud-red);
-      padding: 0.75rem;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px var(--neon-red-glow);
-      transition: transform 0.4s ease, border-color 0.4s ease;
-    }
-
-    .hero-banner-frame:hover {
-      border-color: var(--neon-cyan);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 50px var(--neon-cyan-glow);
-      transform: translateY(-6px);
-    }
-
-    .hero-banner-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* Live AI HUD Status Box inside Banner Frame */
-    .banner-hud-live-tag {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      right: 1.5rem;
-      background: rgba(14, 7, 18, 0.88);
-      border: 1px solid var(--border-hud-cyan);
-      padding: 0.75rem 1.25rem;
-      backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-    }
-
-    .hud-progress-meter {
-      width: 120px;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid var(--neon-red);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hud-progress-bar-fill {
-      height: 100%;
-      width: 89%;
-      background: linear-gradient(90deg, var(--neon-red), var(--neon-purple));
-      box-shadow: 0 0 10px var(--neon-red);
-      animation: fillGlow 2s infinite alternate;
-    }
-
-    @keyframes fillGlow {
-      0% { opacity: 0.7; } 100% { opacity: 1; }
     }
 
     /* Section Styles */
@@ -1260,9 +1255,8 @@
     /* Responsive Breakpoints */
     @media (max-width: 1024px) {
       .container { padding: 0 1.5rem; }
-      .hero-layout { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-      .hero-subtext { margin-left: auto; margin-right: auto; }
-      .hud-badges-row, .hero-cta-group { justify-content: center; }
+      .hero { padding-top: 130px; }
+      .hero-subtext { max-width: 100%; }
       .hero-stats-row { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
       .products-grid, .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
       .sim-layout { grid-template-columns: 1fr; padding: 1.75rem; gap: 1.75rem; }
@@ -1273,19 +1267,20 @@
     @media (max-width: 768px) {
       .nav-menu, .nav-action-btn { display: none; }
       .nav-toggle-btn { display: block; }
-      .hero { padding-top: 130px; padding-bottom: 70px; }
-      .hero-headline-title { font-size: clamp(2.2rem, 7vw, 3.2rem); }
+      .hero { padding-top: 120px; padding-bottom: 60px; }
+      .hero-headline-title { font-size: clamp(2.2rem, 8vw, 3.8rem); }
       .hero-stats-row { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
       .products-grid, .services-grid, .yt-grid { grid-template-columns: 1fr; gap: 1.25rem; }
       .swarm-nodes-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
       .sim-layout { padding: 1.25rem; }
       .product-glass-card { padding: 1.75rem; }
       .contact-glass-box { padding: 3rem 1.5rem; }
+      .banner-hud-live-tag { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
     }
 
     @media (max-width: 480px) {
       .container { padding: 0 1rem; }
-      .hero-headline-title { font-size: 2rem; }
+      .hero-headline-title { font-size: 2.2rem; }
       .hero-pill-hud { font-size: 0.68rem; padding: 0.3rem 0.75rem; }
       .hero-subtext { font-size: 0.98rem; }
       .btn { padding: 0.65rem 1.15rem; font-size: 0.8rem; width: 100%; justify-content: center; }
@@ -1359,10 +1354,10 @@
     </button>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Full-Width Cinematic Banner Showcase -->
   <section class="hero" id="hero">
-    <div class="container hero-layout">
-      <div class="hero-left reveal-item">
+    <div class="container">
+      <div class="reveal-item">
         <div class="hero-pill-hud">
           <span class="hero-pill-dot"></span>
           BUILDING INTELLIGENCE. SHAPING TOMORROW. &gt;&gt;&gt; _L1...
@@ -1398,29 +1393,10 @@
             <i data-lucide="play-circle"></i> Swarm Simulator
           </a>
         </div>
-
-        <div class="hero-stats-row">
-          <div>
-            <div class="hero-stat-val">3<span>+</span></div>
-            <div class="hero-stat-lbl">Live SaaS Tools</div>
-          </div>
-          <div>
-            <div class="hero-stat-val">4<span>x</span></div>
-            <div class="hero-stat-lbl">Core Dev Team</div>
-          </div>
-          <div>
-            <div class="hero-stat-val">50k<span>+</span></div>
-            <div class="hero-stat-lbl">Lines Shipped</div>
-          </div>
-          <div>
-            <div class="hero-stat-val">60<span>%</span></div>
-            <div class="hero-stat-lbl">Token Cost Cut</div>
-          </div>
-        </div>
       </div>
 
-      <!-- Cyber Hero Banner Frame with Live AI HUD Meter -->
-      <div class="hero-banner-container reveal-item">
+      <!-- Massive Full-Width Cinematic Banner Showcase -->
+      <div class="hero-cinematic-showcase reveal-item">
         <div class="hero-banner-frame hud-box">
           <img src="assets/Banner.png" alt="DevDuo Innovations Cyberpunk Banner" class="hero-banner-img">
           
@@ -1429,13 +1405,33 @@
               <i data-lucide="cpu" size="16"></i>
               <span>AI MODEL TRAINING...</span>
             </div>
-            <div style="display:flex; align-items:center; gap:0.75rem">
+            <div style="display:flex; align-items:center; gap:0.85rem">
               <span style="color:var(--neon-cyan); font-weight:700">89%</span>
               <div class="hud-progress-meter">
                 <div class="hud-progress-bar-fill"></div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Hero Stats Row -->
+      <div class="hero-stats-row reveal-item">
+        <div>
+          <div class="hero-stat-val">3<span>+</span></div>
+          <div class="hero-stat-lbl">Live SaaS Tools</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">4<span>x</span></div>
+          <div class="hero-stat-lbl">Core Dev Team</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">50k<span>+</span></div>
+          <div class="hero-stat-lbl">Lines Shipped</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">60<span>%</span></div>
+          <div class="hero-stat-lbl">Token Cost Cut</div>
         </div>
       </div>
     </div>
