@@ -491,6 +491,54 @@
       object-fit: cover;
     }
 
+    /* Pixel-Perfect Interactive Overlay Button on Banner Image */
+    .banner-overlay-btn {
+      position: absolute;
+      bottom: 5.5%;
+      left: 5%;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 1.4rem;
+      background: rgba(255, 30, 67, 0.9);
+      border: 1px solid var(--neon-red);
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      font-size: clamp(0.72rem, 1.2vw, 0.95rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px var(--neon-red-glow), inset 0 0 15px rgba(255, 255, 255, 0.2);
+      clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10;
+    }
+
+    .banner-overlay-btn:hover {
+      background: #FF3557;
+      border-color: #FFF;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 35px rgba(255, 30, 67, 0.9), 0 0 20px var(--neon-cyan-glow);
+      color: #FFFFFF;
+    }
+
+    .overlay-btn-glow {
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(90deg, var(--neon-red), var(--neon-purple), var(--neon-cyan));
+      z-index: -1;
+      opacity: 0.4;
+      filter: blur(6px);
+      transition: opacity 0.3s ease;
+    }
+
+    .banner-overlay-btn:hover .overlay-btn-glow {
+      opacity: 0.9;
+    }
+
     /* Animated Live Overlay Badge on Cinematic Banner */
     .banner-hud-live-tag {
       position: absolute;
@@ -1369,6 +1417,13 @@
       <div class="hero-cinematic-showcase reveal-item">
         <div class="hero-banner-frame hud-box">
           <img src="assets/ChatGPT_Image.png" alt="DevDuo Innovations Studio Showcase" class="hero-banner-img">
+          
+          <!-- Pixel-Perfect Overlay CTA Button over "build the future" banner section -->
+          <a href="#contact" onclick="toggleModal('contact-modal', true); return false;" class="banner-overlay-btn" title="Build The Future — Start A Project">
+            <span class="overlay-btn-glow"></span>
+            <i data-lucide="terminal" size="14"></i>
+            <span>START A PROJECT // BUILD THE FUTURE →</span>
+          </a>
         </div>
       </div>
 
