@@ -3,69 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevDuo Innovations | Production AI Systems & SaaS Engineering</title>
-  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Based in Karachi, Pakistan.">
-  <meta name="keywords" content="AI Engineering, Multi-Agent Systems, LangGraph, RAG Pipelines, DevDuo, Sagenta, RepoMind, CodeContext, LLM Integration, Karachi">
+  <title>DevDuo Innovations | Premium Production AI & SaaS Engineering</title>
+  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Minimalist, high-performance software engineering studio.">
   
-  <!-- Open Graph / Social Media -->
-  <meta property="og:type" content="website">
+  <!-- Open Graph -->
   <meta property="og:title" content="DevDuo Innovations | Production AI Systems">
-  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Not prototypes. Production software.">
+  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Sleek. Minimalist. Production-grade.">
   <meta property="og:image" content="assets/Banner.png">
-  
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/profile.png">
   
-  <!-- Google Fonts -->
+  <!-- Premium Fonts: Plus Jakarta Sans, Inter, JetBrains Mono, Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Orbitron:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Lucide Icons CDN -->
+  <!-- Lucide Icons & Three.js CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
     :root {
-      /* Brand Color System derived from Assets */
-      --red: #E8192C;
-      --red-bright: #FF2A3D;
-      --red-dim: #8B0F1A;
-      --red-glow: rgba(232, 25, 44, 0.4);
-      --red-glass: rgba(232, 25, 44, 0.12);
+      /* Luxury Minimal Dark Color Palette */
+      --bg-main: #030508;
+      --bg-card: rgba(12, 16, 26, 0.65);
+      --bg-card-hover: rgba(18, 24, 38, 0.85);
+      --bg-surface: #090D16;
       
-      --cyan: #00D4FF;
-      --cyan-dim: #0088A8;
-      --cyan-glow: rgba(0, 212, 255, 0.35);
-      --cyan-glass: rgba(0, 212, 255, 0.1);
+      --accent-red: #FF2A4B;
+      --accent-red-glow: rgba(255, 42, 75, 0.35);
+      --accent-cyan: #00F0FF;
+      --accent-cyan-glow: rgba(0, 240, 255, 0.3);
+      --accent-purple: #9D4EDD;
       
-      --purple: #8B26B1;
-      --purple-bright: #A832D7;
-      --purple-glow: rgba(139, 38, 177, 0.4);
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-tertiary: #64748B;
       
-      /* Backgrounds & Surfaces */
-      --bg-dark: #05070A;
-      --bg-card: #0A0D14;
-      --bg-card-hover: #101522;
-      --bg-surface: #141A28;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-red: rgba(232, 25, 44, 0.3);
-      --border-cyan: rgba(0, 212, 255, 0.3);
+      --border-light: rgba(255, 255, 255, 0.07);
+      --border-red: rgba(255, 42, 75, 0.25);
+      --border-cyan: rgba(0, 240, 255, 0.25);
       
-      /* Text */
-      --text-main: #F1F5F9;
-      --text-muted: #94A3B8;
-      --text-dim: #64748B;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
       
-      /* Radii & Shadows */
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
-      --shadow-glow: 0 0 30px rgba(232, 25, 44, 0.15);
-      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
-      
-      --font-heading: 'Orbitron', sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
-      --font-tech: 'Rajdhani', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
@@ -77,20 +61,19 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      overflow-x: hidden;
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
       position: relative;
+      min-height: 100vh;
     }
 
-    /* Ambient Background Canvas & Grid Overlay */
-    #ambient-canvas {
+    /* Fixed WebGL 3D Canvas Background */
+    #webgl-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -98,638 +81,480 @@
       height: 100vh;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.6;
     }
 
-    .bg-grid {
+    /* Top Reading Progress Bar */
+    #scroll-progress {
       position: fixed;
-      inset: 0;
-      background-image: 
-        linear-gradient(rgba(232, 25, 44, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-      z-index: 1;
-      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%);
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-red), var(--accent-cyan));
+      z-index: 2000;
+      width: 0%;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px var(--accent-cyan);
     }
 
-    .scanline {
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.25) 51%);
-      background-size: 100% 4px;
-      pointer-events: none;
-      z-index: 99;
-      opacity: 0.4;
-    }
-
-    /* Typography Utilities */
-    h1, h2, h3, h4 {
-      font-family: var(--font-heading);
-      letter-spacing: -0.02em;
-    }
-
-    .text-red { color: var(--red); }
-    .text-cyan { color: var(--cyan); }
-    .text-purple { color: var(--purple-bright); }
-    .text-gradient-red {
-      background: linear-gradient(135deg, #FFF 0%, var(--red) 70%, var(--purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .text-gradient-cyan {
-      background: linear-gradient(135deg, #FFF 0%, var(--cyan) 70%, var(--purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .mono { font-family: var(--font-mono); }
-
-    /* Layout Wrapper */
+    /* Container Utility */
     .container {
-      max-width: 1280px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 2rem;
       position: relative;
       z-index: 2;
     }
 
-    /* Header & Navigation */
+    /* Luxury Header Navigation */
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(5, 7, 10, 0.8);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.3s ease;
+      padding: 1.25rem 0;
+      transition: all 0.4s ease;
     }
 
     header.scrolled {
-      background: rgba(5, 7, 10, 0.95);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      border-bottom-color: rgba(232, 25, 44, 0.2);
+      background: rgba(3, 5, 8, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0.9rem 0;
     }
 
-    .nav-container {
+    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
     }
 
-    .nav-brand {
+    .brand-logo {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       text-decoration: none;
     }
 
-    .nav-logo-img {
-      height: 42px;
+    .logo-img {
+      height: 38px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 0 8px rgba(232, 25, 44, 0.3));
+      filter: drop-shadow(0 0 12px rgba(255, 42, 75, 0.4));
     }
 
-    .nav-links {
+    .nav-menu {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 2.25rem;
       list-style: none;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-light);
+      padding: 0.4rem 1.5rem;
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(12px);
     }
 
     .nav-link {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       text-decoration: none;
-      font-family: var(--font-tech);
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: all 0.2s ease;
-      position: relative;
-      padding: 0.5rem 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: all 0.25s ease;
     }
 
     .nav-link:hover, .nav-link.active {
-      color: var(--cyan);
+      color: var(--text-primary);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
 
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--cyan);
-      box-shadow: var(--cyan-glow);
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after, .nav-link.active::after {
-      width: 100%;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      padding: 0.75rem 1.5rem;
-      font-family: var(--font-tech);
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: var(--radius-sm);
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       border: 1px solid transparent;
-      position: relative;
-      overflow: hidden;
     }
 
-    .btn-red {
-      background: var(--red);
+    .btn-glow-red {
+      background: var(--accent-red);
       color: #FFF;
-      box-shadow: 0 0 15px rgba(232, 25, 44, 0.3);
-      border-color: var(--red-bright);
-      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+      box-shadow: 0 0 25px var(--accent-red-glow);
     }
 
-    .btn-red:hover {
-      background: var(--red-bright);
-      box-shadow: 0 0 25px rgba(232, 25, 44, 0.6);
-      transform: translateY(-2px);
+    .btn-glow-red:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 35px rgba(255, 42, 75, 0.6);
     }
 
-    .btn-cyan {
-      background: rgba(0, 212, 255, 0.1);
-      color: var(--cyan);
-      border-color: var(--cyan);
-      box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
-    }
-
-    .btn-cyan:hover {
-      background: var(--cyan);
-      color: #05070A;
-      box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-main);
-      border-color: var(--border-color);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--text-muted);
+    .btn-glass {
       background: rgba(255, 255, 255, 0.05);
-      color: #FFF;
+      color: var(--text-primary);
+      border-color: var(--border-light);
+      backdrop-filter: blur(12px);
     }
 
-    .nav-toggle {
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .nav-toggle-btn {
       display: none;
       background: transparent;
       border: none;
-      color: var(--text-main);
+      color: var(--text-primary);
       cursor: pointer;
-      padding: 0.5rem;
     }
 
-    /* Mobile Drawer */
-    .mobile-nav {
+    /* Mobile Nav Drawer */
+    .mobile-menu {
       position: fixed;
-      top: 80px;
+      top: 75px;
       left: 0;
       right: 0;
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border-red);
-      padding: 1.5rem;
+      background: rgba(9, 13, 22, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
       transform: translateY(-150%);
-      transition: transform 0.3s ease;
+      transition: transform 0.35s ease;
       z-index: 999;
     }
 
-    .mobile-nav.open {
+    .mobile-menu.open {
       transform: translateY(0);
     }
 
     /* Hero Section */
     .hero {
-      padding-top: 140px;
-      padding-bottom: 80px;
+      padding-top: 170px;
+      padding-bottom: 100px;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      position: relative;
     }
 
-    .hero-grid-layout {
+    .hero-layout {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3.5rem;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4rem;
       align-items: center;
     }
 
-    .hero-badge {
+    .hero-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      padding: 0.4rem 1rem;
-      background: var(--red-glass);
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 42, 75, 0.08);
       border: 1px solid var(--border-red);
-      border-radius: 50px;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--red);
-      margin-bottom: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--accent-red);
+      margin-bottom: 1.75rem;
     }
 
-    .hero-badge-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--red);
+    .hero-pill-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--red);
-      animation: pulse 1.5s infinite;
+      background: var(--accent-red);
+      box-shadow: 0 0 10px var(--accent-red);
+      animation: pulseDot 2s infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
     }
 
-    .hero-title {
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
       line-height: 1.05;
-      font-weight: 900;
+      font-weight: 700;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
     }
 
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: var(--text-muted);
+    .text-gradient {
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-cyan) 60%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-red {
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-red) 70%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtext {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
       margin-bottom: 2.5rem;
       max-width: 580px;
-      line-height: 1.7;
+      font-weight: 400;
     }
 
-    .hero-subtitle em {
-      color: var(--cyan);
+    .hero-subtext em {
+      color: var(--accent-cyan);
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    .hero-btns {
+    .hero-cta-group {
       display: flex;
-      gap: 1.2rem;
+      gap: 1.25rem;
       flex-wrap: wrap;
       margin-bottom: 3.5rem;
     }
 
-    .hero-stats {
+    .hero-stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-light);
     }
 
-    .stat-box {
-      text-align: left;
-    }
-
-    .stat-number {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--text-main);
+    .hero-stat-val {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
       line-height: 1;
     }
 
-    .stat-number span {
-      color: var(--red);
+    .hero-stat-val span {
+      color: var(--accent-red);
     }
 
-    .stat-label {
+    .hero-stat-lbl {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-dim);
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
       text-transform: uppercase;
       margin-top: 0.4rem;
     }
 
-    /* Hero Banner Visual Card */
-    .hero-visual {
+    /* Hero Interactive 3D Visual Card */
+    .hero-card-container {
       position: relative;
+      perspective: 1000px;
     }
 
-    .banner-card {
-      position: relative;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--border-red);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), var(--shadow-glow);
-      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    .hero-card {
       background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 0.75rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 240, 255, 0.08);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+      overflow: hidden;
     }
 
-    .banner-card:hover {
-      transform: translateY(-6px) scale(1.01);
+    .hero-card:hover {
+      border-color: var(--border-cyan);
+      transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
     }
 
-    .banner-img {
+    .hero-banner-image {
       width: 100%;
       height: auto;
+      border-radius: var(--radius-md);
       display: block;
       object-fit: cover;
     }
 
-    .banner-overlay-badge {
-      position: absolute;
-      bottom: 1.25rem;
-      left: 1.25rem;
-      right: 1.25rem;
-      background: rgba(10, 13, 20, 0.85);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-cyan);
-      border-radius: var(--radius-sm);
-      padding: 0.9rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .badge-info {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .badge-status {
-      width: 10px;
-      height: 10px;
-      background: #10B981;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #10B981;
-    }
-
-    .badge-text {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-main);
-    }
-
-    /* Marquee Ticker */
-    .marquee-section {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border-red);
-      border-bottom: 1px solid var(--border-red);
-      padding: 1rem 0;
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-      z-index: 2;
-    }
-
-    .marquee-track {
-      display: inline-flex;
-      gap: 3rem;
-      animation: marquee 25s linear infinite;
-    }
-
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .marquee-item i {
-      color: var(--red);
-      width: 16px;
-      height: 16px;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Section Global Styles */
+    /* Section Component Architecture */
     section {
-      padding: 100px 0;
+      padding: 120px 0;
       position: relative;
       z-index: 2;
     }
 
-    .section-header {
+    .section-title-wrap {
       text-align: center;
-      max-width: 700px;
+      max-width: 650px;
       margin: 0 auto 4rem auto;
     }
 
-    .section-tag {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--red);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 0.75rem;
+    .section-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.8rem;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 3.5vw, 3rem);
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      line-height: 1.15;
+      font-weight: 700;
       margin-bottom: 1rem;
-      font-weight: 800;
     }
 
     .section-desc {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-size: 1.05rem;
       line-height: 1.7;
     }
 
     /* Interactive Agent Simulator Widget */
-    .simulator-card {
+    .simulator-window {
       background: var(--bg-card);
       border: 1px solid var(--border-cyan);
       border-radius: var(--radius-lg);
+      backdrop-filter: blur(24px);
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 212, 255, 0.15);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--accent-cyan-glow);
     }
 
-    .sim-header {
-      background: var(--bg-surface);
+    .sim-topbar {
+      background: rgba(9, 13, 22, 0.9);
       padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-light);
     }
 
-    .sim-dots {
+    .sim-mac-dots {
       display: flex;
       gap: 0.5rem;
     }
 
-    .sim-dot {
-      width: 12px;
-      height: 12px;
+    .mac-dot {
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
     }
+    .mac-dot.r { background: #FF5F56; }
+    .mac-dot.y { background: #FFBD2E; }
+    .mac-dot.g { background: #27C93F; }
 
-    .sim-dot.red { background: #FF5F56; }
-    .sim-dot.yellow { background: #FFBD2E; }
-    .sim-dot.green { background: #27C93F; }
-
-    .sim-title {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .sim-body {
-      padding: 2rem;
+    .sim-layout {
+      padding: 2.25rem;
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 2rem;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 2.5rem;
     }
 
-    .sim-controls label {
-      display: block;
+    .preset-selector-label {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--cyan);
-      margin-bottom: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
       text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
     }
 
-    .sim-preset-btn {
-      display: block;
+    .sim-preset-card {
       width: 100%;
       text-align: left;
-      padding: 0.9rem 1.2rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      color: var(--text-main);
+      padding: 1rem 1.25rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
       font-family: var(--font-body);
       font-size: 0.9rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
     }
 
-    .sim-preset-btn:hover, .sim-preset-btn.active {
-      border-color: var(--cyan);
-      background: var(--cyan-glass);
-      color: var(--cyan);
+    .sim-preset-card:hover, .sim-preset-card.active {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 240, 255, 0.08);
     }
 
-    .sim-input-box {
+    .sim-input-row {
       display: flex;
       gap: 0.75rem;
       margin-top: 1.25rem;
     }
 
-    .sim-input {
+    .sim-text-input {
       flex: 1;
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-full);
+      padding: 0.75rem 1.25rem;
       color: #FFF;
       font-family: var(--font-mono);
       font-size: 0.85rem;
     }
 
-    .sim-input:focus {
+    .sim-text-input:focus {
       outline: none;
-      border-color: var(--cyan);
+      border-color: var(--accent-cyan);
     }
 
-    /* Agent Swarm Node Flow */
-    .agent-swarm-flow {
+    .swarm-nodes-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0.75rem;
       margin-bottom: 1.5rem;
     }
 
-    .agent-node {
+    .swarm-node-item {
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-sm);
       padding: 0.75rem;
       text-align: center;
       transition: all 0.3s ease;
     }
 
-    .agent-node.active {
-      border-color: var(--red);
-      background: var(--red-glass);
-      box-shadow: 0 0 15px rgba(232, 25, 44, 0.3);
+    .swarm-node-item.active {
+      border-color: var(--accent-red);
+      background: rgba(255, 42, 75, 0.15);
+      box-shadow: 0 0 15px rgba(255, 42, 75, 0.3);
     }
 
-    .agent-node.completed {
+    .swarm-node-item.done {
       border-color: #10B981;
       background: rgba(16, 185, 129, 0.1);
     }
 
-    .agent-icon {
-      font-size: 1.25rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .agent-name {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      font-weight: 700;
-    }
-
-    /* Output Console */
-    .sim-console {
-      background: #06080E;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
+    .terminal-output-box {
+      background: #04060A;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
       padding: 1.25rem;
       font-family: var(--font-mono);
       font-size: 0.8rem;
-      min-height: 240px;
-      max-height: 280px;
+      min-height: 250px;
+      max-height: 290px;
       overflow-y: auto;
       color: #E2E8F0;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    .console-line {
+    .log-line {
       margin-bottom: 0.4rem;
       opacity: 0;
       animation: fadeIn 0.3s forwards;
@@ -737,208 +562,179 @@
 
     @keyframes fadeIn { to { opacity: 1; } }
 
-    .console-tag {
-      padding: 0.1rem 0.4rem;
-      border-radius: 3px;
-      font-size: 0.7rem;
-      margin-right: 0.5rem;
-    }
+    .badge-planner { background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-coder { background: rgba(255, 42, 75, 0.15); color: var(--accent-red); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-security { background: rgba(157, 78, 221, 0.15); color: var(--accent-purple); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-success { background: rgba(16, 185, 129, 0.15); color: #10B981; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
 
-    .tag-planner { background: rgba(0, 212, 255, 0.2); color: var(--cyan); }
-    .tag-coder { background: rgba(232, 25, 44, 0.2); color: var(--red-bright); }
-    .tag-security { background: rgba(139, 38, 177, 0.2); color: var(--purple-bright); }
-    .tag-success { background: rgba(16, 185, 129, 0.2); color: #10B981; }
-
-    /* Products Cards Grid */
+    /* Products Cards Layout */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
 
-    .product-card {
+    .product-glass-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 2.25rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      backdrop-filter: blur(16px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-      overflow: hidden;
-      transition: all 0.35s ease;
     }
 
-    .product-card:hover {
+    .product-glass-card:hover {
       border-color: var(--border-red);
-      background: var(--bg-card-hover);
       transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), var(--shadow-glow);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--accent-red-glow);
     }
 
-    .product-card.featured {
-      border-color: var(--red);
-      background: linear-gradient(180deg, rgba(232, 25, 44, 0.08) 0%, var(--bg-card) 100%);
+    .product-glass-card.featured {
+      border-color: var(--accent-red);
+      background: linear-gradient(180deg, rgba(255, 42, 75, 0.06) 0%, var(--bg-card) 100%);
     }
 
-    .product-badge-flag {
+    .product-tag-badge {
       position: absolute;
       top: 1.5rem;
       right: 1.5rem;
       font-family: var(--font-mono);
-      font-size: 0.65rem;
+      font-size: 0.68rem;
       padding: 0.25rem 0.75rem;
-      border-radius: 50px;
+      border-radius: var(--radius-full);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
     }
 
-    .badge-flag-red { background: var(--red-glass); color: var(--red); border: 1px solid var(--border-red); }
-    .badge-flag-cyan { background: var(--cyan-glass); color: var(--cyan); border: 1px solid var(--border-cyan); }
-    .badge-flag-purple { background: rgba(139, 38, 177, 0.15); color: var(--purple-bright); border: 1px solid var(--purple); }
+    .badge-red { background: rgba(255, 42, 75, 0.12); color: var(--accent-red); border: 1px solid var(--border-red); }
+    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--accent-cyan); border: 1px solid var(--border-cyan); }
+    .badge-purple { background: rgba(157, 78, 221, 0.12); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
 
-    .product-icon-wrap {
-      width: 56px;
-      height: 56px;
-      border-radius: var(--radius-sm);
+    .product-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
-      color: var(--cyan);
+      color: var(--accent-cyan);
+      margin-bottom: 1.75rem;
     }
 
-    .product-card.featured .product-icon-wrap {
-      color: var(--red);
+    .product-glass-card.featured .product-icon-box {
+      color: var(--accent-red);
       border-color: var(--border-red);
     }
 
-    .product-name {
-      font-size: 1.5rem;
+    .product-name-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
       margin-bottom: 0.75rem;
     }
 
-    .product-desc {
-      color: var(--text-muted);
+    .product-description {
+      color: var(--text-secondary);
       font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
     }
 
-    .product-tags {
+    .chips-group {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       margin-bottom: 2rem;
     }
 
-    .ptag {
+    .chip-item {
       font-family: var(--font-mono);
       font-size: 0.7rem;
       padding: 0.25rem 0.65rem;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      color: var(--text-tertiary);
     }
 
-    .product-footer {
+    .product-bottom-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-top: 1.25rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-light);
     }
 
-    .product-price {
-      font-family: var(--font-heading);
+    .price-value {
+      font-family: var(--font-display);
       font-size: 1.4rem;
       font-weight: 700;
-      color: var(--text-main);
     }
 
-    .product-price small {
+    .price-value small {
       font-family: var(--font-body);
       font-size: 0.75rem;
-      color: var(--text-dim);
-      font-weight: 400;
+      color: var(--text-tertiary);
       display: block;
+      font-weight: 400;
     }
 
     /* Terminal Sandbox Component */
-    .terminal-sandbox {
+    .sandbox-container {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
     }
 
-    .term-header {
-      background: var(--bg-surface);
-      padding: 0.8rem 1.5rem;
+    .sandbox-header {
+      background: rgba(9, 13, 22, 0.9);
+      padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-light);
     }
 
-    .term-tabs {
+    .sandbox-tabs {
       display: flex;
       gap: 0.5rem;
     }
 
-    .term-tab {
+    .sandbox-tab-btn {
       padding: 0.4rem 1rem;
       background: transparent;
       border: none;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-family: var(--font-mono);
       font-size: 0.8rem;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: var(--radius-full);
       transition: all 0.2s ease;
     }
 
-    .term-tab.active {
+    .sandbox-tab-btn.active {
       background: rgba(255, 255, 255, 0.08);
-      color: var(--cyan);
+      color: var(--accent-cyan);
     }
 
-    .term-copy-btn {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 0.35rem 0.75rem;
-      border-radius: 4px;
+    .sandbox-code-area {
+      padding: 1.75rem;
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s ease;
-    }
-
-    .term-copy-btn:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-    }
-
-    .term-code {
-      padding: 1.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: #38BDF8;
-      line-height: 1.7;
-      overflow-x: auto;
+      line-height: 1.75;
     }
 
-    .code-comment { color: var(--text-dim); }
-    .code-cmd { color: var(--red-bright); }
-    .code-flag { color: var(--purple-bright); }
+    .code-cmt { color: var(--text-tertiary); }
+    .code-cmd { color: var(--accent-red); }
+    .code-flg { color: var(--accent-purple); }
     .code-str { color: #34D399; }
 
     /* Services Grid */
@@ -950,246 +746,186 @@
 
     .service-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 2rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
       transition: all 0.3s ease;
+      backdrop-filter: blur(16px);
       position: relative;
     }
 
     .service-card:hover {
       border-color: var(--border-cyan);
-      background: var(--bg-card-hover);
-      transform: translateY(-5px);
+      transform: translateY(-6px);
     }
 
-    .service-num {
+    .service-idx {
       position: absolute;
       top: 1.5rem;
       right: 1.5rem;
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.05);
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.04);
     }
 
-    .service-icon {
+    .service-icon-box {
       width: 48px;
       height: 48px;
-      border-radius: var(--radius-sm);
-      background: var(--cyan-glass);
+      border-radius: var(--radius-md);
+      background: rgba(0, 240, 255, 0.08);
       border: 1px solid var(--border-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
-      margin-bottom: 1.25rem;
+      color: var(--accent-cyan);
+      margin-bottom: 1.5rem;
     }
 
-    .service-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .service-desc {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    /* Case Studies & Testimonials */
-    .cases-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .case-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 2.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-    }
-
-    .case-card:hover {
-      border-color: var(--border-red);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .case-metric {
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--red);
-      margin-bottom: 0.5rem;
-    }
-
-    .case-title {
+    .service-card-title {
+      font-family: var(--font-display);
       font-size: 1.25rem;
       margin-bottom: 0.75rem;
     }
 
-    .case-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
+    .service-card-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.65;
     }
 
-    /* About Us Layout */
-    .about-box {
+    /* Founders Section */
+    .about-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
       padding: 3.5rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 0.8fr 1.2fr;
       gap: 4rem;
       align-items: center;
+      backdrop-filter: blur(20px);
     }
 
-    .about-avatar-wrap {
-      position: relative;
+    .about-avatar-center {
       text-align: center;
     }
 
     .about-avatar-img {
-      width: 280px;
-      height: 280px;
+      width: 270px;
+      height: 270px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--red);
-      box-shadow: 0 0 40px rgba(232, 25, 44, 0.4);
+      border: 2px solid var(--accent-red);
+      box-shadow: 0 0 35px var(--accent-red-glow);
     }
 
-    .about-bio p {
-      color: var(--text-muted);
-      font-size: 1rem;
+    .about-bio-text p {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      line-height: 1.75;
       margin-bottom: 1.25rem;
-      line-height: 1.7;
     }
 
-    .about-bio strong {
-      color: var(--text-main);
+    .about-bio-text strong {
+      color: var(--text-primary);
     }
 
-    .tech-stack-grid {
+    .stack-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.5rem;
       margin-top: 1.5rem;
     }
 
-    .stack-chip {
+    .stack-pill {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      padding: 0.4rem 0.8rem;
+      padding: 0.35rem 0.8rem;
       background: var(--bg-surface);
       border: 1px solid var(--border-red);
-      border-radius: 4px;
-      color: var(--text-main);
+      border-radius: var(--radius-full);
+      color: var(--text-primary);
     }
 
-    /* YouTube Content Grid */
+    /* YouTube Videos Grid */
     .yt-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
 
-    .yt-card {
+    .yt-item-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
       padding: 1.5rem;
-      transition: all 0.3s ease;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--text-primary);
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      backdrop-filter: blur(12px);
     }
 
-    .yt-card:hover {
-      border-color: var(--red);
+    .yt-item-card:hover {
+      border-color: var(--accent-red);
       transform: translateY(-5px);
     }
 
-    .yt-tag {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--red);
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    .yt-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-    }
-
-    .yt-desc {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
     /* Contact Banner */
-    .contact-banner {
-      background: linear-gradient(135deg, rgba(232, 25, 44, 0.15) 0%, rgba(139, 38, 177, 0.1) 50%, var(--bg-card) 100%);
+    .contact-glass-box {
+      background: linear-gradient(135deg, rgba(255, 42, 75, 0.12) 0%, rgba(157, 78, 221, 0.08) 50%, var(--bg-card) 100%);
       border: 1px solid var(--border-red);
       border-radius: var(--radius-lg);
-      padding: 4rem 2rem;
+      padding: 4.5rem 2rem;
       text-align: center;
-      box-shadow: var(--shadow-glow);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 50px rgba(255, 42, 75, 0.15);
     }
 
-    .contact-socials {
+    .social-links-row {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1.25rem;
       margin-top: 2.5rem;
       flex-wrap: wrap;
     }
 
-    .social-link {
+    .social-pill-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       text-decoration: none;
       font-family: var(--font-mono);
       font-size: 0.85rem;
-      padding: 0.6rem 1.2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      transition: all 0.2s ease;
+      padding: 0.6rem 1.25rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-full);
+      transition: all 0.25s ease;
     }
 
-    .social-link:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
+    .social-pill-link:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
       transform: translateY(-2px);
     }
 
     /* Footer */
     footer {
-      background: #030407;
-      border-top: 1px solid var(--border-color);
+      background: #020305;
+      border-top: 1px solid var(--border-light);
       padding: 3rem 0;
-      color: var(--text-dim);
-      font-size: 0.9rem;
+      color: var(--text-tertiary);
+      font-size: 0.88rem;
       position: relative;
       z-index: 2;
     }
 
-    .footer-flex {
+    .footer-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1198,12 +934,12 @@
     }
 
     /* Modals */
-    .modal-overlay {
+    .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 2000;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(12px);
+      z-index: 3000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1213,324 +949,287 @@
       transition: opacity 0.3s ease;
     }
 
-    .modal-overlay.active {
+    .modal-backdrop.active {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .modal-box {
-      background: var(--bg-card);
+    .modal-content-box {
+      background: #090D16;
       border: 1px solid var(--border-red);
-      border-radius: var(--radius-md);
-      max-width: 550px;
+      border-radius: var(--radius-lg);
+      max-width: 520px;
       width: 100%;
       padding: 2.5rem;
       position: relative;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), var(--shadow-glow);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 40px var(--accent-red-glow);
     }
 
-    .modal-close {
+    .modal-close-btn {
       position: absolute;
       top: 1.25rem;
       right: 1.25rem;
       background: transparent;
       border: none;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       cursor: pointer;
     }
 
-    .modal-close:hover { color: #FFF; }
-
-    /* Form Styles */
-    .form-group {
+    .form-field {
       margin-bottom: 1.25rem;
       text-align: left;
     }
 
-    .form-group label {
+    .form-field label {
       display: block;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
       margin-bottom: 0.4rem;
     }
 
-    .form-control {
+    .form-input {
       width: 100%;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
       padding: 0.8rem 1rem;
       color: #FFF;
       font-family: var(--font-body);
       font-size: 0.95rem;
     }
 
-    .form-control:focus {
+    .form-input:focus {
       outline: none;
-      border-color: var(--red);
+      border-color: var(--accent-red);
     }
 
-    /* Toast Notification */
-    .toast {
+    .toast-popup {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      background: var(--bg-card);
-      border: 1px solid var(--cyan);
-      color: var(--cyan);
+      background: var(--bg-surface);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
       padding: 0.9rem 1.5rem;
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-full);
       font-family: var(--font-mono);
       font-size: 0.85rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-      z-index: 3000;
+      z-index: 4000;
       transform: translateY(150%);
       transition: transform 0.3s ease;
     }
 
-    .toast.show {
+    .toast-popup.show {
       transform: translateY(0);
     }
 
-    /* Scroll Reveal Animation */
-    .reveal {
+    /* Scroll Animations */
+    .reveal-item {
       opacity: 0;
       transform: translateY(30px);
-      transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .reveal.visible {
+    .reveal-item.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Media Queries for 100% Responsiveness */
+    /* Responsive Breakpoints */
     @media (max-width: 1024px) {
-      .hero-grid-layout { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-      .hero-subtitle { margin-left: auto; margin-right: auto; }
-      .hero-btns { justify-content: center; }
-      .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .hero-layout { grid-template-columns: 1fr; text-align: center; }
+      .hero-subtext { margin-left: auto; margin-right: auto; }
+      .hero-cta-group { justify-content: center; }
+      .hero-stats-row { grid-template-columns: repeat(2, 1fr); }
       .products-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .sim-body { grid-template-columns: 1fr; }
-      .about-box { grid-template-columns: 1fr; text-align: center; }
-      .about-avatar-wrap { margin-bottom: 2rem; }
+      .sim-layout { grid-template-columns: 1fr; }
+      .about-card { grid-template-columns: 1fr; text-align: center; }
       .yt-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
-      .nav-links, .nav-actions { display: none; }
-      .nav-toggle { display: block; }
-      .products-grid, .services-grid, .cases-grid, .yt-grid { grid-template-columns: 1fr; }
-      .hero-stats { grid-template-columns: repeat(2, 1fr); }
-      .agent-swarm-flow { grid-template-columns: repeat(2, 1fr); }
-      .section-header { margin-bottom: 2.5rem; }
-      .about-box { padding: 2rem 1.5rem; }
+      .nav-menu, .nav-action-btn { display: none; }
+      .nav-toggle-btn { display: block; }
+      .products-grid, .services-grid, .yt-grid { grid-template-columns: 1fr; }
+      .swarm-nodes-row { grid-template-columns: repeat(2, 1fr); }
+      .hero-stats-row { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Particle Canvas -->
-  <canvas id="ambient-canvas"></canvas>
-  <div class="bg-grid"></div>
-  <div class="scanline"></div>
+  <!-- Top Reading Scroll Progress -->
+  <div id="scroll-progress"></div>
 
-  <!-- Header / Navigation -->
-  <header id="header">
-    <div class="container nav-container">
-      <a href="#" class="nav-brand">
-        <img src="assets/logo.png" alt="DevDuo Innovations" class="nav-logo-img">
+  <!-- WebGL 3D Canvas Background -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Navigation -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand-logo">
+        <img src="assets/logo.png" alt="DevDuo Innovations Logo" class="logo-img">
       </a>
 
-      <ul class="nav-links">
+      <ul class="nav-menu">
         <li><a href="#simulator" class="nav-link">Simulator</a></li>
         <li><a href="#products" class="nav-link">Products</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#cases" class="nav-link">Case Studies</a></li>
         <li><a href="#sandbox" class="nav-link">Sandbox</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#youtube" class="nav-link">YouTube</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <button onclick="openModal('contact-modal')" class="btn btn-red">
+      <div class="nav-action-btn">
+        <button onclick="toggleModal('contact-modal', true)" class="btn btn-glow-red">
           <i data-lucide="mail"></i> Hire Us
         </button>
       </div>
 
-      <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle Navigation">
+      <button class="nav-toggle-btn" id="mobile-toggle" aria-label="Toggle Menu">
         <i data-lucide="menu" size="28"></i>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Drawer Navigation -->
-  <div class="mobile-nav" id="mobile-nav">
-    <a href="#simulator" class="nav-link" onclick="closeMobileNav()">Simulator</a>
-    <a href="#products" class="nav-link" onclick="closeMobileNav()">Products</a>
-    <a href="#services" class="nav-link" onclick="closeMobileNav()">Services</a>
-    <a href="#cases" class="nav-link" onclick="closeMobileNav()">Case Studies</a>
-    <a href="#sandbox" class="nav-link" onclick="closeMobileNav()">Sandbox</a>
-    <a href="#about" class="nav-link" onclick="closeMobileNav()">About</a>
-    <a href="#youtube" class="nav-link" onclick="closeMobileNav()">YouTube</a>
-    <button onclick="closeMobileNav(); openModal('contact-modal');" class="btn btn-red" style="width:100%">
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu" id="mobile-drawer">
+    <a href="#simulator" class="nav-link" onclick="closeDrawer()">Simulator</a>
+    <a href="#products" class="nav-link" onclick="closeDrawer()">Products</a>
+    <a href="#services" class="nav-link" onclick="closeDrawer()">Services</a>
+    <a href="#sandbox" class="nav-link" onclick="closeDrawer()">Sandbox</a>
+    <a href="#about" class="nav-link" onclick="closeDrawer()">About</a>
+    <a href="#youtube" class="nav-link" onclick="closeDrawer()">YouTube</a>
+    <button onclick="closeDrawer(); toggleModal('contact-modal', true)" class="btn btn-glow-red" style="width:100%">
       <i data-lucide="mail"></i> Hire Us
     </button>
   </div>
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <div class="container hero-grid-layout">
-      <div class="hero-content reveal">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          KARACHI, PAKISTAN · EST. 2025 · STUDIO STATUS: ONLINE
+    <div class="container hero-layout">
+      <div class="hero-left reveal-item">
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          KARACHI, PAKISTAN · EST. 2025 · MULTI-AGENT AI STUDIO
         </div>
-        
-        <h1 class="hero-title">
+
+        <h1 class="hero-headline">
           BUILDING <span class="text-gradient-red">INTELLIGENCE.</span><br>
-          SHAPING <span class="text-gradient-cyan">TOMORROW.</span>
+          SHAPING <span class="text-gradient">TOMORROW.</span>
         </h1>
 
-        <p class="hero-subtitle">
-          We build <em>AI-native products</em> that ship — multi-agent systems, LLM tools, and production SaaS platforms. Not pitch decks. Not hype. <em>Production software.</em>
+        <p class="hero-subtext">
+          We build <em>AI-native products</em> that ship — multi-agent systems, LLM tools, and production SaaS platforms. Sleek. Minimalist. <em>Production software.</em>
         </p>
 
-        <div class="hero-btns">
-          <a href="#products" class="btn btn-red">
+        <div class="hero-cta-group">
+          <a href="#products" class="btn btn-glow-red">
             <i data-lucide="sparkles"></i> Explore Products
           </a>
-          <a href="#simulator" class="btn btn-cyan">
-            <i data-lucide="cpu"></i> Try Agent Swarm Demo
+          <a href="#simulator" class="btn btn-glass">
+            <i data-lucide="cpu"></i> Agent Swarm Demo
           </a>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat-box">
-            <div class="stat-number">3<span>+</span></div>
-            <div class="stat-label">Live Products</div>
+        <div class="hero-stats-row">
+          <div>
+            <div class="hero-stat-val">3<span>+</span></div>
+            <div class="hero-stat-lbl">Live Products</div>
           </div>
-          <div class="stat-box">
-            <div class="stat-number">4<span>x</span></div>
-            <div class="stat-label">Core Team</div>
+          <div>
+            <div class="hero-stat-val">4<span>x</span></div>
+            <div class="hero-stat-lbl">Core Team</div>
           </div>
-          <div class="stat-box">
-            <div class="stat-number">50k<span>+</span></div>
-            <div class="stat-label">Lines Shipped</div>
+          <div>
+            <div class="hero-stat-val">50k<span>+</span></div>
+            <div class="hero-stat-lbl">Lines Shipped</div>
           </div>
-          <div class="stat-box">
-            <div class="stat-number">60<span>%</span></div>
-            <div class="stat-label">Token Savings</div>
+          <div>
+            <div class="hero-stat-val">60<span>%</span></div>
+            <div class="hero-stat-lbl">Token Savings</div>
           </div>
         </div>
       </div>
 
-      <div class="hero-visual reveal">
-        <div class="banner-card">
-          <img src="assets/Banner.png" alt="DevDuo Innovations Banner" class="banner-img">
-          <div class="banner-overlay-badge">
-            <div class="badge-info">
-              <span class="badge-status"></span>
-              <span class="badge-text">Sagenta Agent System v2.4 Active</span>
-            </div>
-            <i data-lucide="terminal" style="color:var(--cyan)"></i>
-          </div>
+      <div class="hero-card-container reveal-item">
+        <div class="hero-card">
+          <img src="assets/Banner.png" alt="DevDuo Innovations Banner" class="hero-banner-image">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Marquee Ticker -->
-  <div class="marquee-section">
-    <div class="marquee-track">
-      <div class="marquee-item"><i data-lucide="bot"></i> Multi-Agent AI Systems</div>
-      <div class="marquee-item"><i data-lucide="database"></i> RAG Pipelines & Semantic Search</div>
-      <div class="marquee-item"><i data-lucide="code"></i> SaaS Engineering</div>
-      <div class="marquee-item"><i data-lucide="zap"></i> Claude 3.7 & GPT-4o & Gemini</div>
-      <div class="marquee-item"><i data-lucide="layers"></i> LangGraph Orchestration</div>
-      <div class="marquee-item"><i data-lucide="terminal"></i> CodeContext CLI</div>
-      <div class="marquee-item"><i data-lucide="shield-check"></i> Enterprise Security</div>
-      <div class="marquee-item"><i data-lucide="bot"></i> Multi-Agent AI Systems</div>
-      <div class="marquee-item"><i data-lucide="database"></i> RAG Pipelines & Semantic Search</div>
-      <div class="marquee-item"><i data-lucide="code"></i> SaaS Engineering</div>
-      <div class="marquee-item"><i data-lucide="zap"></i> Claude 3.7 & GPT-4o & Gemini</div>
-      <div class="marquee-item"><i data-lucide="layers"></i> LangGraph Orchestration</div>
-      <div class="marquee-item"><i data-lucide="terminal"></i> CodeContext CLI</div>
-      <div class="marquee-item"><i data-lucide="shield-check"></i> Enterprise Security</div>
-    </div>
-  </div>
-
-  <!-- Interactive Multi-Agent Demo Simulator Section -->
+  <!-- Interactive Multi-Agent Swarm Simulator -->
   <section id="simulator">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag"><i data-lucide="play-circle"></i> Live Interactive Sandbox</div>
-        <h2 class="section-title">Multi-Agent <span class="text-gradient-red">Swarm Simulator</span></h2>
-        <p class="section-desc">Experience how Sagenta orchestrates real-time specialized agents with full visibility and approval checkpoints before executing tasks.</p>
+      <div class="section-title-wrap reveal-item">
+        <div class="section-badge"><i data-lucide="play-circle"></i> Live Interactive Playground</div>
+        <h2 class="section-heading">Multi-Agent <span class="text-gradient-red">Swarm Simulator</span></h2>
+        <p class="section-desc">Experience how Sagenta orchestrates autonomous sub-agents with full visibility and approval checkpoints.</p>
       </div>
 
-      <div class="simulator-card reveal">
-        <div class="sim-header">
-          <div class="sim-dots">
-            <span class="sim-dot red"></span>
-            <span class="sim-dot yellow"></span>
-            <span class="sim-dot green"></span>
+      <div class="simulator-window reveal-item">
+        <div class="sim-topbar">
+          <div class="sim-mac-dots">
+            <span class="mac-dot r"></span>
+            <span class="mac-dot y"></span>
+            <span class="mac-dot g"></span>
           </div>
-          <div class="sim-title">
-            <i data-lucide="cpu" size="16"></i> Sagenta Multi-Agent Orchestrator v2.4 (Live Interactive)
+          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary)">
+            <i data-lucide="cpu" size="14"></i> Sagenta Multi-Agent Orchestrator (Live Demo)
           </div>
-          <i data-lucide="settings" size="16" style="color:var(--text-dim)"></i>
+          <i data-lucide="sliders" size="14" style="color:var(--text-tertiary)"></i>
         </div>
 
-        <div class="sim-body">
-          <div class="sim-controls">
-            <label>Select Sample Task Prompt:</label>
-            <button class="sim-preset-btn active" onclick="selectSimPreset(0, this)">
-              <strong>1. Build JWT Auth System</strong>
-              <div style="font-size:0.75rem; color:var(--text-dim); margin-top:0.2rem">Create FastAPI auth routes with Argon2 hashing and refresh tokens</div>
+        <div class="sim-layout">
+          <div>
+            <span class="preset-selector-label">Select Task Prompt:</span>
+            <button class="sim-preset-card active" onclick="pickSimPreset(0, this)">
+              <strong>1. Build FastAPI Auth System</strong>
+              <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:0.2rem">OAuth2 routes with Argon2 password hashing and refresh tokens</div>
             </button>
 
-            <button class="sim-preset-btn" onclick="selectSimPreset(1, this)">
-              <strong>2. Analyze 40k-Line Codebase</strong>
-              <div style="font-size:0.75rem; color:var(--text-dim); margin-top:0.2rem">Run RepoMind parser and generate architectural dependency graph</div>
+            <button class="sim-preset-card" onclick="pickSimPreset(1, this)">
+              <strong>2. Analyze 40k-Line Repository</strong>
+              <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:0.2rem">Run RepoMind parser & generate architectural AST map</div>
             </button>
 
-            <button class="sim-preset-btn" onclick="selectSimPreset(2, this)">
+            <button class="sim-preset-card" onclick="pickSimPreset(2, this)">
               <strong>3. Optimize Token Cost for RAG</strong>
-              <div style="font-size:0.75rem; color:var(--text-dim); margin-top:0.2rem">Audit chunk size, embeddings strategy, and prompt compression</div>
+              <div style="font-size:0.78rem; color:var(--text-tertiary); margin-top:0.2rem">Audit chunk size, embeddings, & prompt compression</div>
             </button>
 
-            <div class="sim-input-box">
-              <input type="text" id="custom-sim-prompt" class="sim-input" placeholder="Or type your own agent instruction...">
-              <button class="btn btn-red" onclick="runSimSwarm()">Run Swarm</button>
+            <div class="sim-input-row">
+              <input type="text" id="sim-prompt-field" class="sim-text-input" placeholder="Or type your own agent instruction...">
+              <button class="btn btn-glow-red" onclick="executeSimSwarm()">Run Swarm</button>
             </div>
           </div>
 
-          <div class="sim-display">
-            <!-- Agent Swarm Visual Nodes -->
-            <div class="agent-swarm-flow">
-              <div class="agent-node" id="node-planner">
-                <div class="agent-icon">🧠</div>
-                <div class="agent-name">Planner</div>
+          <div>
+            <div class="swarm-nodes-row">
+              <div class="swarm-node-item" id="sn-planner">
+                <div style="font-size:1.2rem">🧠</div>
+                <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:700">Planner</div>
               </div>
-              <div class="agent-node" id="node-coder">
-                <div class="agent-icon">💻</div>
-                <div class="agent-name">Coder</div>
+              <div class="swarm-node-item" id="sn-coder">
+                <div style="font-size:1.2rem">💻</div>
+                <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:700">Coder</div>
               </div>
-              <div class="agent-node" id="node-security">
-                <div class="agent-icon">🛡️</div>
-                <div class="agent-name">Security</div>
+              <div class="swarm-node-item" id="sn-security">
+                <div style="font-size:1.2rem">🛡️</div>
+                <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:700">Security</div>
               </div>
-              <div class="agent-node" id="node-qa">
-                <div class="agent-icon">⚡</div>
-                <div class="agent-name">QA & Deploy</div>
+              <div class="swarm-node-item" id="sn-qa">
+                <div style="font-size:1.2rem">⚡</div>
+                <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:700">QA & Deploy</div>
               </div>
             </div>
 
-            <!-- Terminal Console Logs -->
-            <div class="sim-console" id="sim-console-output">
-              <div class="console-line"><span class="console-tag tag-planner">[SYSTEM]</span> Ready. Select a task or click "Run Swarm" to initiate autonomous execution.</div>
+            <div class="terminal-output-box" id="sim-log-box">
+              <div class="log-line"><span class="badge-planner">[SYSTEM]</span> Ready. Click "Run Swarm" to test live orchestration.</div>
             </div>
           </div>
         </div>
@@ -1541,96 +1240,71 @@
   <!-- Products Section -->
   <section id="products">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag"><i data-lucide="box"></i> Built By Studio</div>
-        <h2 class="section-title">Our Flagship <span class="text-gradient-cyan">Products</span></h2>
-        <p class="section-desc">Tools engineered for developers, technical founders, and enterprise teams who demand reliable, production-grade AI.</p>
+      <div class="section-title-wrap reveal-item">
+        <div class="section-badge"><i data-lucide="layers"></i> Suite</div>
+        <h2 class="section-heading">Our Flagship <span class="text-gradient">Products</span></h2>
+        <p class="section-desc">Software tools engineered for developers and engineering teams who demand reliable, production-grade AI.</p>
       </div>
 
       <div class="products-grid">
-        <!-- Product 1: Sagenta -->
-        <div class="product-card featured reveal">
-          <span class="product-badge-flag badge-flag-red">Flagship · 2026</span>
+        <!-- Sagenta Card -->
+        <div class="product-glass-card featured reveal-item">
+          <span class="product-tag-badge badge-red">Flagship · 2026</span>
           <div>
-            <div class="product-icon-wrap">
-              <i data-lucide="bot" size="30"></i>
-            </div>
-            <h3 class="product-name">SAGENTA<span class="text-red">.</span></h3>
-            <p class="product-desc">
-              Conversational multi-agent AI system that builds entire software features from natural text. Full visibility into every agent sub-task with explicit user approval checkpoints.
-            </p>
-            <div class="product-tags">
-              <span class="ptag">Multi-Agent</span>
-              <span class="ptag">LangGraph</span>
-              <span class="ptag">Claude 3.7</span>
-              <span class="ptag">CLI + VSCode</span>
+            <div class="product-icon-box"><i data-lucide="bot" size="28"></i></div>
+            <h3 class="product-name-title">SAGENTA<span style="color:var(--accent-red)">.</span></h3>
+            <p class="product-description">Conversational multi-agent AI system that builds entire software features from natural text — with full agent decision visibility and approval gates.</p>
+            <div class="chips-group">
+              <span class="chip-item">Multi-Agent</span>
+              <span class="chip-item">LangGraph</span>
+              <span class="chip-item">Claude 3.7</span>
+              <span class="chip-item">VSCode Extension</span>
             </div>
           </div>
-
-          <div class="product-footer">
-            <div class="product-price">
-              $20<small>/month · Launching Q2</small>
-            </div>
-            <button onclick="openModal('waitlist-modal')" class="btn btn-red">
-              Join Waitlist →
-            </button>
+          <div class="product-bottom-row">
+            <div class="price-value">$20<small>/month · Launching Q2</small></div>
+            <button onclick="toggleModal('waitlist-modal', true)" class="btn btn-glow-red">Join Waitlist →</button>
           </div>
         </div>
 
-        <!-- Product 2: RepoMind -->
-        <div class="product-card reveal">
-          <span class="product-badge-flag badge-flag-cyan">Live SaaS</span>
+        <!-- RepoMind Card -->
+        <div class="product-glass-card reveal-item">
+          <span class="product-tag-badge badge-cyan">Live SaaS</span>
           <div>
-            <div class="product-icon-wrap">
-              <i data-lucide="search" size="30"></i>
-            </div>
-            <h3 class="product-name">REPO<span class="text-cyan">MIND</span></h3>
-            <p class="product-desc">
-              Turn any GitHub repository into a single structured, token-optimized context file. Interrogate complex codebases with ChatGPT or Claude without manual file browsing.
-            </p>
-            <div class="product-tags">
-              <span class="ptag">Developer Tool</span>
-              <span class="ptag">LLM Context</span>
-              <span class="ptag">GitHub API</span>
-              <span class="ptag">Web App</span>
+            <div class="product-icon-box"><i data-lucide="search" size="28"></i></div>
+            <h3 class="product-name-title">REPO<span style="color:var(--accent-cyan)">MIND</span></h3>
+            <p class="product-description">Turn any GitHub repository into a single, token-optimized context file. Interrogate codebases with ChatGPT or Claude without manual navigation.</p>
+            <div class="chips-group">
+              <span class="chip-item">Developer Tool</span>
+              <span class="chip-item">LLM Context</span>
+              <span class="chip-item">GitHub API</span>
+              <span class="chip-item">SaaS</span>
             </div>
           </div>
-
-          <div class="product-footer">
-            <div class="product-price">
-              $9<small>/month · Free tier</small>
-            </div>
-            <a href="https://repomind.dev" target="_blank" class="btn btn-cyan">
-              Get RepoMind →
-            </a>
+          <div class="product-bottom-row">
+            <div class="price-value">$9<small>/month · Free tier</small></div>
+            <a href="https://repomind.dev" target="_blank" class="btn btn-glass">Get RepoMind →</a>
           </div>
         </div>
 
-        <!-- Product 3: CodeContext -->
-        <div class="product-card reveal">
-          <span class="product-badge-flag badge-flag-purple">CLI Tool</span>
+        <!-- CodeContext Card -->
+        <div class="product-glass-card reveal-item">
+          <span class="product-tag-badge badge-purple">CLI Tool</span>
           <div>
-            <div class="product-icon-wrap">
-              <i data-lucide="terminal" size="30"></i>
-            </div>
-            <h3 class="product-name">CODE<span class="text-purple">CONTEXT</span></h3>
-            <p class="product-desc">
-              A high-speed CLI tool that packages your entire codebase into a clean, token-counted context file filtered by `.gitignore`. Compatible with ChatGPT, Cursor, and Claude.
-            </p>
-            <div class="product-tags">
-              <span class="ptag">Python CLI</span>
-              <span class="ptag">Fast Parser</span>
-              <span class="ptag">LLM Ready</span>
-              <span class="ptag">One-Time</span>
+            <div class="product-icon-box"><i data-lucide="terminal" size="28"></i></div>
+            <h3 class="product-name-title">CODE<span style="color:var(--accent-purple)">CONTEXT</span></h3>
+            <p class="product-description">A high-speed CLI tool that packages your entire codebase into a clean context file filtered by `.gitignore`. Token counted and LLM ready.</p>
+            <div class="chips-group">
+              <span class="chip-item">Python CLI</span>
+              <span class="chip-item">Fast Parser</span>
+              <span class="chip-item">LLM Ready</span>
+              <span class="chip-item">One-Time</span>
             </div>
           </div>
-
-          <div class="product-footer">
-            <div class="product-price">
-              $9–$49<small>One-time license</small>
-            </div>
-            <button onclick="copyToClipboard('pip install codecontext-cli', 'Command copied!')" class="btn btn-outline">
-              <i data-lucide="copy" size="14"></i> Install CLI
+          <div class="product-bottom-row">
+            <div class="price-value">$9–$49<small>One-time license</small></div>
+            <button onclick="copyToClipboard('pip install codecontext-cli', 'CLI Command Copied!')" class="btn btn-glass">
+              <i data-lucide="copy" size="14"></i> Copy Install
             </button>
           </div>
         </div>
@@ -1638,163 +1312,131 @@
     </div>
   </section>
 
-  <!-- Interactive Terminal Sandbox Section -->
+  <!-- CodeContext Sandbox -->
   <section id="sandbox">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag"><i data-lucide="code"></i> Developer Sandbox</div>
-        <h2 class="section-title">CodeContext <span class="text-gradient-red">Terminal Sandbox</span></h2>
-        <p class="section-desc">Try out CLI commands directly or copy them for instant execution in your local environment.</p>
+      <div class="section-title-wrap reveal-item">
+        <div class="section-badge"><i data-lucide="terminal"></i> CLI Sandbox</div>
+        <h2 class="section-heading">Developer <span class="text-gradient-red">Terminal Sandbox</span></h2>
+        <p class="section-desc">Try out CodeContext CLI snippets directly in your terminal.</p>
       </div>
 
-      <div class="terminal-sandbox reveal">
-        <div class="term-header">
-          <div class="term-tabs">
-            <button class="term-tab active" onclick="switchTermTab(0)">1. Installation</button>
-            <button class="term-tab" onclick="switchTermTab(1)">2. Pack Repository</button>
-            <button class="term-tab" onclick="switchTermTab(2)">3. Token Estimate</button>
+      <div class="sandbox-container reveal-item">
+        <div class="sandbox-header">
+          <div class="sandbox-tabs">
+            <button class="sandbox-tab-btn active" onclick="switchSandbox(0)">1. Installation</button>
+            <button class="sandbox-tab-btn" onclick="switchSandbox(1)">2. Pack Repository</button>
+            <button class="sandbox-tab-btn" onclick="switchSandbox(2)">3. Token Estimate</button>
           </div>
-          <button class="term-copy-btn" id="term-copy-trigger" onclick="copyTermCode()">
+          <button onclick="copySandboxScript()" class="btn btn-glass" style="padding:0.4rem 0.9rem; font-size:0.75rem">
             <i data-lucide="copy" size="14"></i> Copy Script
           </button>
         </div>
 
-        <div class="term-code" id="term-code-display">
-          <span class="code-comment"># Install CodeContext CLI via pip or npx</span><br>
+        <div class="sandbox-code-area" id="sandbox-display">
+          <span class="code-cmt"># Install CodeContext CLI via pip</span><br>
           <span class="code-cmd">pip</span> install codecontext-cli<br><br>
-          <span class="code-comment"># Verify installation</span><br>
-          <span class="code-cmd">codecontext</span> <span class="code-flag">--version</span><br>
+          <span class="code-cmt"># Verify installation</span><br>
+          <span class="code-cmd">codecontext</span> <span class="code-flg">--version</span><br>
           <span class="code-str">CodeContext CLI v2.1.0 [DevDuo Innovations]</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Client Services Section -->
+  <!-- Custom Services -->
   <section id="services">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag"><i data-lucide="briefcase"></i> Client Engineering</div>
-        <h2 class="section-title">Custom AI <span class="text-gradient-red">Engineering Services</span></h2>
-        <p class="section-desc">We build enterprise-ready AI solutions customized for your exact workflows and infrastructure.</p>
+      <div class="section-title-wrap reveal-item">
+        <div class="section-badge"><i data-lucide="briefcase"></i> Client Engineering</div>
+        <h2 class="section-title-heading">Custom AI <span class="text-gradient">Engineering Services</span></h2>
+        <p class="section-desc">We build enterprise-ready AI solutions customized for your exact workflows.</p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card reveal">
-          <span class="service-num">01</span>
-          <div class="service-icon"><i data-lucide="database"></i></div>
-          <h3 class="service-title">RAG Systems & Knowledge Bases</h3>
-          <p class="service-desc">Custom document Q&A systems, semantic search, and hybrid vector retrieval powered by Pinecone, Weaviate, or Pgvector.</p>
+        <div class="service-card reveal-item">
+          <span class="service-idx">01</span>
+          <div class="service-icon-box"><i data-lucide="database"></i></div>
+          <h3 class="service-card-title">RAG Systems & Knowledge Bases</h3>
+          <p class="service-card-desc">Custom document Q&A systems and semantic search powered by Pinecone, Weaviate, or Pgvector.</p>
         </div>
 
-        <div class="service-card reveal">
-          <span class="service-num">02</span>
-          <div class="service-icon"><i data-lucide="cpu"></i></div>
-          <h3 class="service-title">Multi-Agent Automation</h3>
-          <p class="service-desc">Autonomous AI agent workflows built with LangGraph that plan, execute, audit, and self-correct complex enterprise tasks.</p>
+        <div class="service-card reveal-item">
+          <span class="service-idx">02</span>
+          <div class="service-icon-box"><i data-lucide="cpu"></i></div>
+          <h3 class="service-card-title">Multi-Agent Automation</h3>
+          <p class="service-card-desc">Autonomous AI agent workflows built with LangGraph that plan, execute, and self-correct tasks.</p>
         </div>
 
-        <div class="service-card reveal">
-          <span class="service-num">03</span>
-          <div class="service-icon"><i data-lucide="zap"></i></div>
-          <h3 class="service-title">LLM API Integration</h3>
-          <p class="service-desc">Seamless integration of OpenAI, Anthropic Claude, Gemini, or fine-tuned open-source LLMs into your production backend.</p>
+        <div class="service-card reveal-item">
+          <span class="service-idx">03</span>
+          <div class="service-icon-box"><i data-lucide="zap"></i></div>
+          <h3 class="service-card-title">LLM API Integration</h3>
+          <p class="service-card-desc">Seamless integration of OpenAI, Claude 3.7, Gemini, or open-source LLMs into your production backend.</p>
         </div>
 
-        <div class="service-card reveal">
-          <span class="service-num">04</span>
-          <div class="service-icon"><i data-lucide="layers"></i></div>
-          <h3 class="service-title">End-to-End AI SaaS Development</h3>
-          <p class="service-desc">Full-stack web app development from architecture to cloud deployment, complete with Stripe payments, auth, and monitoring.</p>
+        <div class="service-card reveal-item">
+          <span class="service-idx">04</span>
+          <div class="service-icon-box"><i data-lucide="layers"></i></div>
+          <h3 class="service-card-title">AI SaaS Development</h3>
+          <p class="service-card-desc">Full-stack web application development from architecture to cloud deployment with Stripe and auth.</p>
         </div>
 
-        <div class="service-card reveal">
-          <span class="service-num">05</span>
-          <div class="service-icon"><i data-lucide="trending-down"></i></div>
-          <h3 class="service-title">Token & Cost Optimization</h3>
-          <p class="service-desc">Audit prompts and system architectures to trim token overhead by 30%–60% while simultaneously raising response precision.</p>
+        <div class="service-card reveal-item">
+          <span class="service-idx">05</span>
+          <div class="service-icon-box"><i data-lucide="trending-down"></i></div>
+          <h3 class="service-card-title">Token & Cost Optimization</h3>
+          <p class="service-card-desc">Audit prompts and system architectures to reduce token invoice costs by 30%–60%.</p>
         </div>
 
-        <div class="service-card reveal">
-          <span class="service-num">06</span>
-          <div class="service-icon"><i data-lucide="compass"></i></div>
-          <h3 class="service-title">AI Strategy & Technical Scoping</h3>
-          <p class="service-desc">Pragmatic architectural consulting. We eliminate overengineering and select the exact AI models suitable for your domain.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Studies & Testimonials Section -->
-  <section id="cases">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag"><i data-lucide="award"></i> Proven Track Record</div>
-        <h2 class="section-title">Case Studies & <span class="text-gradient-cyan">Impact</span></h2>
-        <p class="section-desc">Measurable outcomes achieved for our clients and open-source ecosystem.</p>
-      </div>
-
-      <div class="cases-grid">
-        <div class="case-card reveal">
-          <div>
-            <div class="case-metric">18 Mins</div>
-            <h3 class="case-title">Fast Onboarding to 40k-Line Codebase</h3>
-            <p class="case-desc">Using RepoMind, a senior engineer indexed an entire legacy codebase, generated structured architectural context, and resolved an initial bug in under 20 minutes.</p>
-          </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan)">// TOOL UTILIZED: REPOMIND</div>
-        </div>
-
-        <div class="case-card reveal">
-          <div>
-            <div class="case-metric">54%</div>
-            <h3 class="case-title">API Token Cost Reduction</h3>
-            <p class="case-desc">Refactored a legal tech firm's document analysis RAG pipeline, cutting context window bloat and reducing monthly LLM invoice costs by over half.</p>
-          </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--red)">// AUDIT TYPE: PROMPT & VECTOR OPTIMIZATION</div>
+        <div class="service-card reveal-item">
+          <span class="service-idx">06</span>
+          <div class="service-icon-box"><i data-lucide="compass"></i></div>
+          <h3 class="service-card-title">AI Strategy & Technical Scoping</h3>
+          <p class="service-card-desc">Pragmatic architectural consulting. We select the exact AI models suitable for your domain.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Us Section -->
+  <!-- About Founders Section -->
   <section id="about">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag"><i data-lucide="user-check"></i> Founders & Studio</div>
-        <h2 class="section-title">Built By <span class="text-gradient-red">Builders</span></h2>
+      <div class="section-title-wrap reveal-item">
+        <div class="section-badge"><i data-lucide="users"></i> Founders & Studio</div>
+        <h2 class="section-heading">Built By <span class="text-gradient-red">Builders</span></h2>
         <p class="section-desc">Proof of craft under pressure. We don't sell slide decks — we ship production software.</p>
       </div>
 
-      <div class="about-box reveal">
-        <div class="about-avatar-wrap">
+      <div class="about-card reveal-item">
+        <div class="about-avatar-center">
           <img src="assets/profile.png" alt="DevDuo Co-Founders" class="about-avatar-img">
-          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted); margin-top:1rem">
+          <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-tertiary); margin-top:1rem">
             DevDuo Co-Founders & AI Engineers
           </div>
         </div>
 
-        <div class="about-bio">
-          <h3 style="font-size:1.6rem; margin-bottom:1rem">Two Founders. Four Engineers. Karachi, Pakistan.</h3>
+        <div class="about-bio-text">
+          <h3 style="font-family:var(--font-display); font-size:1.6rem; margin-bottom:1rem">Two Founders. Four Engineers. Karachi, Pakistan.</h3>
           <p>
             DevDuo Innovations is led by two <strong>co-founders & AI engineers</strong> leading a tight-knit engineering team of four.
           </p>
           <p>
             We hold our client work to the exact same rigorous standard as our own flagship products (<strong>Sagenta, RepoMind, CodeContext</strong>). If we wouldn't use it ourselves, we won't build it for you.
           </p>
-          <p style="margin-bottom:0.5rem"><strong>Core Tech Stack:</strong></p>
-          <div class="tech-stack-grid">
-            <span class="stack-chip">Python</span>
-            <span class="stack-chip">LangChain</span>
-            <span class="stack-chip">LangGraph</span>
-            <span class="stack-chip">FastAPI</span>
-            <span class="stack-chip">Claude 3.7 API</span>
-            <span class="stack-chip">OpenAI API</span>
-            <span class="stack-chip">Pinecone</span>
-            <span class="stack-chip">Weaviate</span>
-            <span class="stack-chip">TypeScript</span>
-            <span class="stack-chip">Next.js</span>
-            <span class="stack-chip">Docker</span>
-            <span class="stack-chip">AWS</span>
+          <div class="stack-badges">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">LangChain</span>
+            <span class="stack-pill">LangGraph</span>
+            <span class="stack-pill">FastAPI</span>
+            <span class="stack-pill">Claude 3.7 API</span>
+            <span class="stack-pill">OpenAI API</span>
+            <span class="stack-pill">Pinecone</span>
+            <span class="stack-pill">Weaviate</span>
+            <span class="stack-pill">TypeScript</span>
+            <span class="stack-pill">Next.js</span>
+            <span class="stack-pill">Docker</span>
+            <span class="stack-pill">AWS</span>
           </div>
         </div>
       </div>
@@ -1804,78 +1446,78 @@
   <!-- YouTube Section -->
   <section id="youtube">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag"><i data-lucide="youtube"></i> Build In Public</div>
-        <h2 class="section-title">YouTube & <span class="text-gradient-cyan">Content</span></h2>
-        <p class="section-desc">Weekly deep dives into AI engineering, multi-agent architectures, and startup building from Pakistan.</p>
+      <div class="section-title-wrap reveal-item">
+        <div class="section-badge"><i data-lucide="youtube"></i> Content</div>
+        <h2 class="section-heading">YouTube & <span class="text-gradient">Build In Public</span></h2>
+        <p class="section-desc">Weekly deep-dives into AI engineering, agent architectures, and SaaS product builds.</p>
       </div>
 
       <div class="yt-grid">
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-card reveal">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
           <div>
-            <div class="yt-tag">// PRODUCT DEMO</div>
-            <h4 class="yt-title">Sagenta Multi-Agent End-to-End Build</h4>
-            <p class="yt-desc">Watch Sagenta generate a complete authentication system with approval gates.</p>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// DEMO</div>
+            <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Sagenta Multi-Agent End-to-End Build</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary)">Watch Sagenta build a complete auth system with approval gates.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-card reveal">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
           <div>
-            <div class="yt-tag">// EXPLAINER</div>
-            <h4 class="yt-title">Why Single LLMs Fail at Complex Tasks</h4>
-            <p class="yt-desc">The engineering behind agent swarms and stateful graph execution.</p>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// EXPLAINER</div>
+            <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Why Single LLMs Fail at Complex Tasks</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary)">The engineering behind agent swarms and stateful graph execution.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-card reveal">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
           <div>
-            <div class="yt-tag">// CASE STUDY</div>
-            <h4 class="yt-title">RepoMind Workflow for 40k-Line Codebases</h4>
-            <p class="yt-desc">Real metrics comparing manual code exploration vs RepoMind context files.</p>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// CASE STUDY</div>
+            <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">RepoMind Workflow for 40k-Line Repos</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary)">Real metrics comparing manual code exploration vs RepoMind context files.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-card reveal">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
           <div>
-            <div class="yt-tag">// FOUNDER LOG</div>
-            <h4 class="yt-title">Building a Dev Studio in Karachi</h4>
-            <p class="yt-desc">Revenue transparency, engineering challenges, and studio growth milestones.</p>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// FOUNDER LOG</div>
+            <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Building a Dev Studio in Karachi</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary)">Revenue transparency, engineering challenges, and studio growth milestones.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Contact & CTA Banner -->
+  <!-- Contact Banner -->
   <section id="contact">
     <div class="container">
-      <div class="contact-banner reveal">
-        <div class="section-tag" style="justify-content:center"><i data-lucide="mail"></i> Get In Touch</div>
-        <h2 class="section-title" style="font-size:clamp(2rem, 4vw, 3.2rem); margin-bottom:1rem">
+      <div class="contact-glass-box reveal-item">
+        <div class="section-badge" style="justify-content:center"><i data-lucide="mail"></i> Get In Touch</div>
+        <h2 class="section-heading" style="font-size:clamp(2.2rem, 4.5vw, 3.5rem); margin-bottom:1rem">
           Ready to build <span class="text-gradient-red">something real?</span>
         </h2>
-        <p class="section-desc" style="max-width:600px; margin:0 auto 2rem auto">
+        <p class="section-desc" style="max-width:550px; margin:0 auto 2rem auto">
           Whether you need a custom AI agent system, RAG pipeline, or want to collaborate with DevDuo Innovations, let's talk.
         </p>
 
-        <div class="hero-btns" style="justify-content:center; margin-bottom:0">
-          <button onclick="openModal('contact-modal')" class="btn btn-red">
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap">
+          <button onclick="toggleModal('contact-modal', true)" class="btn btn-glow-red">
             <i data-lucide="send"></i> Email Us Direct
           </button>
-          <a href="mailto:business@devduo.dev" class="btn btn-cyan">
+          <a href="mailto:business@devduo.dev" class="btn btn-glass">
             business@devduo.dev
           </a>
         </div>
 
-        <div class="contact-socials">
-          <a href="https://youtube.com/@devduoinnovations" target="_blank" class="social-link"><i data-lucide="youtube" size="16"></i> YouTube</a>
-          <a href="https://github.com/devduoinnovations" target="_blank" class="social-link"><i data-lucide="github" size="16"></i> GitHub</a>
-          <a href="https://twitter.com/devduoinnovations" target="_blank" class="social-link"><i data-lucide="twitter" size="16"></i> Twitter/X</a>
-          <a href="https://linkedin.com/company/devduoinnovations" target="_blank" class="social-link"><i data-lucide="linkedin" size="16"></i> LinkedIn</a>
+        <div class="social-links-row">
+          <a href="https://youtube.com/@devduoinnovations" target="_blank" class="social-pill-link"><i data-lucide="youtube" size="16"></i> YouTube</a>
+          <a href="https://github.com/devduoinnovations" target="_blank" class="social-pill-link"><i data-lucide="github" size="16"></i> GitHub</a>
+          <a href="https://twitter.com/devduoinnovations" target="_blank" class="social-pill-link"><i data-lucide="twitter" size="16"></i> Twitter/X</a>
+          <a href="https://linkedin.com/company/devduoinnovations" target="_blank" class="social-pill-link"><i data-lucide="linkedin" size="16"></i> LinkedIn</a>
         </div>
       </div>
     </div>
@@ -1883,317 +1525,340 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container footer-flex">
+    <div class="container footer-row">
       <div style="display:flex; align-items:center; gap:0.75rem">
-        <img src="assets/logo.png" alt="DevDuo Logo" style="height:28px">
+        <img src="assets/logo.png" alt="DevDuo Logo" style="height:26px">
         <span>© 2025–2026 DevDuo Innovations · Karachi, Pakistan</span>
       </div>
 
       <div style="display:flex; gap:1.5rem">
-        <a href="#simulator" style="color:var(--text-dim); text-decoration:none">Simulator</a>
-        <a href="#products" style="color:var(--text-dim); text-decoration:none">Products</a>
-        <a href="#services" style="color:var(--text-dim); text-decoration:none">Services</a>
-        <a href="#about" style="color:var(--text-dim); text-decoration:none">About</a>
+        <a href="#simulator" style="color:var(--text-tertiary); text-decoration:none">Simulator</a>
+        <a href="#products" style="color:var(--text-tertiary); text-decoration:none">Products</a>
+        <a href="#services" style="color:var(--text-tertiary); text-decoration:none">Services</a>
+        <a href="#about" style="color:var(--text-tertiary); text-decoration:none">About</a>
       </div>
     </div>
   </footer>
 
   <!-- Contact Modal -->
-  <div class="modal-overlay" id="contact-modal">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('contact-modal')"><i data-lucide="x"></i></button>
-      <h3 style="font-size:1.5rem; margin-bottom:0.5rem">Work With <span class="text-red">DevDuo</span></h3>
-      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem">Tell us about your project requirements and we'll reply within 24 hours.</p>
+  <div class="modal-backdrop" id="contact-modal">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" onclick="toggleModal('contact-modal', false)"><i data-lucide="x"></i></button>
+      <h3 style="font-family:var(--font-display); font-size:1.5rem; margin-bottom:0.5rem">Work With <span style="color:var(--accent-red)">DevDuo</span></h3>
+      <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.5rem">Tell us about your project requirements and we'll reply within 24 hours.</p>
       
-      <form onsubmit="handleFormSubmit(event, 'Contact inquiry sent!')">
-        <div class="form-group">
+      <form onsubmit="onFormSubmit(event, 'Inquiry Sent! We will get back to you shortly.')">
+        <div class="form-field">
           <label>Your Name</label>
-          <input type="text" class="form-control" placeholder="Alex Morgan" required>
+          <input type="text" class="form-input" placeholder="Alex Morgan" required>
         </div>
-        <div class="form-group">
+        <div class="form-field">
           <label>Email Address</label>
-          <input type="email" class="form-control" placeholder="name@company.com" required>
+          <input type="email" class="form-input" placeholder="name@company.com" required>
         </div>
-        <div class="form-group">
-          <label>Project Type</label>
-          <select class="form-control" style="background:#141A28">
-            <option>Multi-Agent AI System</option>
-            <option>RAG & Document Intelligence</option>
-            <option>AI SaaS Development</option>
-            <option>Token Cost & Performance Audit</option>
-          </select>
+        <div class="form-field">
+          <label>Project Brief</label>
+          <textarea class="form-input" rows="3" placeholder="Describe what you want to build..." required></textarea>
         </div>
-        <div class="form-group">
-          <label>Project Brief & Details</label>
-          <textarea class="form-control" rows="3" placeholder="Describe what you want to build..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-red" style="width:100%">Send Inquiry →</button>
+        <button type="submit" class="btn btn-glow-red" style="width:100%">Send Inquiry →</button>
       </form>
     </div>
   </div>
 
   <!-- Waitlist Modal -->
-  <div class="modal-overlay" id="waitlist-modal">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('waitlist-modal')"><i data-lucide="x"></i></button>
-      <h3 style="font-size:1.5rem; margin-bottom:0.5rem">Join <span class="text-red">Sagenta</span> Waitlist</h3>
-      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem">Be among the first engineers to access Sagenta Multi-Agent System upon launch.</p>
+  <div class="modal-backdrop" id="waitlist-modal">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" onclick="toggleModal('waitlist-modal', false)"><i data-lucide="x"></i></button>
+      <h3 style="font-family:var(--font-display); font-size:1.5rem; margin-bottom:0.5rem">Join <span style="color:var(--accent-red)">Sagenta</span> Waitlist</h3>
+      <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.5rem">Be among the first engineers to access Sagenta Multi-Agent System upon launch.</p>
       
-      <form onsubmit="handleFormSubmit(event, 'You are on the waitlist!')">
-        <div class="form-group">
-          <label>Your Email</label>
-          <input type="email" class="form-control" placeholder="developer@domain.com" required>
+      <form onsubmit="onFormSubmit(event, 'You are reserved on the waitlist!')">
+        <div class="form-field">
+          <label>Work Email</label>
+          <input type="email" class="form-input" placeholder="developer@domain.com" required>
         </div>
-        <button type="submit" class="btn btn-red" style="width:100%">Reserve Spot →</button>
+        <button type="submit" class="btn btn-glow-red" style="width:100%">Reserve Spot →</button>
       </form>
     </div>
   </div>
 
-  <!-- Toast Notification -->
-  <div class="toast" id="toast-msg">Notification Message</div>
+  <div class="toast-popup" id="toast-el">Notification</div>
 
-  <!-- JavaScript Scripts -->
+  <!-- Interactive Scripts & Three.js WebGL Engine -->
   <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Mobile Navigation Toggle
-    const navToggleBtn = document.getElementById('nav-toggle-btn');
-    const mobileNav = document.getElementById('mobile-nav');
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
 
-    navToggleBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('open');
+    mobileBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('open');
     });
 
-    function closeMobileNav() {
-      mobileNav.classList.remove('open');
+    function closeDrawer() {
+      mobileDrawer.classList.remove('open');
     }
 
-    // Header Scroll Effect
+    // Header Scroll Blur & Scroll Progress
     window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+      const nav = document.getElementById('navbar');
+      const prog = document.getElementById('scroll-progress');
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      
+      prog.style.width = scrolled + '%';
+
+      if (window.scrollY > 40) {
+        nav.classList.add('scrolled');
       } else {
-        header.classList.remove('scrolled');
+        nav.classList.remove('scrolled');
       }
     });
 
-    // Scroll Reveal Observer
-    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+    // Intersection Observer Reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
       });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
 
-    // Interactive Agent Swarm Simulator Logic
-    const simPresets = [
+    // Agent Simulator Logic
+    const presets = [
       {
-        prompt: "Build FastAPI Auth System with JWT and Argon2 password hashing",
+        prompt: "Build FastAPI Auth System with JWT and Argon2 hashing",
         logs: [
-          { tag: "tag-planner", text: "[PLANNER AGENT] Analyzing requirements: FastAPI, JWT tokens, Argon2 hashing." },
-          { tag: "tag-planner", text: "[PLANNER AGENT] Created execution plan: 1. Create auth router 2. Add password utils 3. Add token middleware." },
-          { tag: "tag-coder", text: "[CODER AGENT] Generating app/auth/router.py with OAuth2PasswordBearer..." },
-          { tag: "tag-coder", text: "[CODER AGENT] Injecting Argon2id hashing algorithms via passlib..." },
-          { tag: "tag-security", text: "[SECURITY AGENT] Auditing generated endpoints: Verified CSRF protection & expiration payload." },
-          { tag: "tag-success", text: "[QA AGENT] All 12 unit tests passed. Auth feature ready for PR merge!" }
+          { tag: "badge-planner", text: "[PLANNER AGENT] Analyzing specs: FastAPI, JWT tokens, Argon2 hashing." },
+          { tag: "badge-planner", text: "[PLANNER AGENT] Execution graph built: auth/router.py -> utils/security.py -> middleware." },
+          { tag: "badge-coder", text: "[CODER AGENT] Generating OAuth2PasswordBearer endpoints with expiration payload..." },
+          { tag: "badge-coder", text: "[CODER AGENT] Injecting Argon2id hashing algorithms via passlib..." },
+          { tag: "badge-security", text: "[SECURITY AGENT] Audit complete: Verified CSRF protection & secret key entropy." },
+          { tag: "badge-success", text: "[QA AGENT] All 12 unit tests green. Auth module ready for PR merge!" }
         ]
       },
       {
-        prompt: "Analyze 40k-Line GitHub Repository Architecture with RepoMind",
+        prompt: "Analyze 40k-Line GitHub Repository with RepoMind",
         logs: [
-          { tag: "tag-planner", text: "[REPOMIND PARSER] Cloned repo AST into memory buffer..." },
-          { tag: "tag-planner", text: "[REPOMIND PARSER] Filtering non-essential files using .gitignore rules..." },
-          { tag: "tag-coder", text: "[TOKEN AGENT] Token budget calculated: 34,200 tokens across 142 source files." },
-          { tag: "tag-security", text: "[SECURITY AGENT] Checking secrets: Zero API keys or credentials exposed." },
-          { tag: "tag-success", text: "[REPOMIND AGENT] Structured context file repo_context.md generated successfully!" }
+          { tag: "badge-planner", text: "[REPOMIND PARSER] Cloned repo AST into memory buffer..." },
+          { tag: "badge-planner", text: "[REPOMIND PARSER] Filtering non-essential files using .gitignore rules..." },
+          { tag: "badge-coder", text: "[TOKEN AGENT] Token budget calculated: 34,200 tokens across 142 source files." },
+          { tag: "badge-security", text: "[SECURITY AGENT] Checking secrets: Zero API keys exposed." },
+          { tag: "badge-success", text: "[REPOMIND AGENT] Structured context file repo_context.md generated!" }
         ]
       },
       {
         prompt: "Audit RAG Pipeline & Reduce Token Invoice Costs",
         logs: [
-          { tag: "tag-planner", text: "[AUDIT AGENT] Inspecting vector DB chunking strategy (current: 1024 tokens)..." },
-          { tag: "tag-coder", text: "[CODER AGENT] Adjusting chunk overlap to 512 tokens with semantic sentence splitting..." },
-          { tag: "tag-security", text: "[PROMPT AGENT] Injecting instruction-level context compression..." },
-          { tag: "tag-success", text: "[OPTIMIZER] Token footprint reduced by 54% with zero loss in retrieval recall!" }
+          { tag: "badge-planner", text: "[AUDIT AGENT] Inspecting vector DB chunking strategy..." },
+          { tag: "badge-coder", text: "[CODER AGENT] Adjusting chunk overlap to 512 tokens with semantic splitting..." },
+          { tag: "badge-security", text: "[PROMPT AGENT] Injecting context compression..." },
+          { tag: "badge-success", text: "[OPTIMIZER] Token footprint reduced by 54% with zero loss in recall!" }
         ]
       }
     ];
 
-    let currentPresetIndex = 0;
+    let activePreset = 0;
 
-    function selectSimPreset(index, btnElement) {
-      document.querySelectorAll('.sim-preset-btn').forEach(b => b.classList.remove('active'));
-      if (btnElement) btnElement.classList.add('active');
-      currentPresetIndex = index;
-      document.getElementById('custom-sim-prompt').value = simPresets[index].prompt;
-      runSimSwarm();
+    function pickSimPreset(idx, btn) {
+      document.querySelectorAll('.sim-preset-card').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      activePreset = idx;
+      document.getElementById('sim-prompt-field').value = presets[idx].prompt;
+      executeSimSwarm();
     }
 
-    function runSimSwarm() {
-      const consoleOutput = document.getElementById('sim-console-output');
-      const customPrompt = document.getElementById('custom-sim-prompt').value;
-      const logsToRun = simPresets[currentPresetIndex] ? simPresets[currentPresetIndex].logs : [
-        { tag: "tag-planner", text: `[PLANNER AGENT] Received user prompt: "${customPrompt}"` },
-        { tag: "tag-coder", text: "[CODER AGENT] Synthesizing module graph and data models..." },
-        { tag: "tag-security", text: "[SECURITY AGENT] Validating parameters against OWASP top 10..." },
-        { tag: "tag-success", text: "[SWARM] Task executed successfully with full approval log." }
+    function executeSimSwarm() {
+      const logContainer = document.getElementById('sim-log-box');
+      const val = document.getElementById('sim-prompt-field').value;
+      const logs = presets[activePreset] ? presets[activePreset].logs : [
+        { tag: "badge-planner", text: `[PLANNER AGENT] Received instruction: "${val}"` },
+        { tag: "badge-coder", text: "[CODER AGENT] Synthesizing graph models & API schema..." },
+        { tag: "badge-security", text: "[SECURITY AGENT] Auditing security rules..." },
+        { tag: "badge-success", text: "[SWARM] Task executed successfully with approval checkpoint!" }
       ];
 
-      consoleOutput.innerHTML = '';
-      
-      // Node highlighting sequence
-      const nodes = ['node-planner', 'node-coder', 'node-security', 'node-qa'];
-      nodes.forEach(n => {
-        const el = document.getElementById(n);
-        el.className = 'agent-node';
-      });
+      logContainer.innerHTML = '';
+      const nodeIds = ['sn-planner', 'sn-coder', 'sn-security', 'sn-qa'];
+      nodeIds.forEach(id => document.getElementById(id).className = 'swarm-node-item');
 
-      let step = 0;
-      const interval = setInterval(() => {
-        if (step < logsToRun.length) {
-          const log = logsToRun[step];
-          const lineDiv = document.createElement('div');
-          lineDiv.className = 'console-line';
-          lineDiv.innerHTML = `<span class="console-tag ${log.tag}">${log.tag.replace('tag-', '').toUpperCase()}</span> ${log.text}`;
-          consoleOutput.appendChild(lineDiv);
-          consoleOutput.scrollTop = consoleOutput.scrollHeight;
+      let i = 0;
+      const timer = setInterval(() => {
+        if (i < logs.length) {
+          const l = logs[i];
+          const div = document.createElement('div');
+          div.className = 'log-line';
+          div.innerHTML = `<span class="${l.tag}">${l.tag.replace('badge-', '').toUpperCase()}</span> ${l.text}`;
+          logContainer.appendChild(div);
+          logContainer.scrollTop = logContainer.scrollHeight;
 
-          // Highlight node based on step
-          if (step === 0 || step === 1) {
-            document.getElementById('node-planner').className = 'agent-node active';
-          } else if (step === 2 || step === 3) {
-            document.getElementById('node-planner').className = 'agent-node completed';
-            document.getElementById('node-coder').className = 'agent-node active';
-          } else if (step === 4) {
-            document.getElementById('node-coder').className = 'agent-node completed';
-            document.getElementById('node-security').className = 'agent-node active';
-          } else if (step === 5) {
-            document.getElementById('node-security').className = 'agent-node completed';
-            document.getElementById('node-qa').className = 'agent-node completed';
+          if (i === 0 || i === 1) document.getElementById('sn-planner').className = 'swarm-node-item active';
+          else if (i === 2 || i === 3) {
+            document.getElementById('sn-planner').className = 'swarm-node-item done';
+            document.getElementById('sn-coder').className = 'swarm-node-item active';
+          } else if (i === 4) {
+            document.getElementById('sn-coder').className = 'swarm-node-item done';
+            document.getElementById('sn-security').className = 'swarm-node-item active';
+          } else if (i === 5) {
+            document.getElementById('sn-security').className = 'swarm-node-item done';
+            document.getElementById('sn-qa').className = 'swarm-node-item done';
           }
-
-          step++;
+          i++;
         } else {
-          clearInterval(interval);
+          clearInterval(timer);
         }
-      }, 700);
+      }, 650);
     }
 
-    // Terminal Sandbox Tabs
+    // Sandbox Terminal Logic
     const sandboxSnippets = [
-      `<span class="code-comment"># Install CodeContext CLI via pip or npx</span><br><span class="code-cmd">pip</span> install codecontext-cli<br><br><span class="code-comment"># Verify installation</span><br><span class="code-cmd">codecontext</span> <span class="code-flag">--version</span><br><span class="code-str">CodeContext CLI v2.1.0 [DevDuo Innovations]</span>`,
-      `<span class="code-comment"># Package current project directory into LLM context</span><br><span class="code-cmd">codecontext</span> pack <span class="code-flag">--out</span> context.txt <span class="code-flag">--ignore</span> <span class="code-str">".git,node_modules"</span><br><br><span class="code-str">✓ 148 files processed</span><br><span class="code-str">✓ Total tokens: 28,450 [Optimized for Claude 3.7 / GPT-4o]</span>`,
-      `<span class="code-comment"># Calculate token density before feeding to LLM</span><br><span class="code-cmd">codecontext</span> estimate <span class="code-flag">--target</span> claude-3-7-sonnet<br><br><span class="code-str">Context fit: 14.2% of 200k window</span>`
+      `<span class="code-cmt"># Install CodeContext CLI via pip</span><br><span class="code-cmd">pip</span> install codecontext-cli<br><br><span class="code-cmt"># Verify installation</span><br><span class="code-cmd">codecontext</span> <span class="code-flg">--version</span><br><span class="code-str">CodeContext CLI v2.1.0 [DevDuo Innovations]</span>`,
+      `<span class="code-cmt"># Package current project directory into LLM context</span><br><span class="code-cmd">codecontext</span> pack <span class="code-flg">--out</span> context.txt <span class="code-flg">--ignore</span> <span class="code-str">".git,node_modules"</span><br><br><span class="code-str">✓ 148 files processed</span><br><span class="code-str">✓ Total tokens: 28,450 [Optimized for Claude 3.7 / GPT-4o]</span>`,
+      `<span class="code-cmt"># Calculate token density before feeding to LLM</span><br><span class="code-cmd">codecontext</span> estimate <span class="code-flg">--target</span> claude-3-7-sonnet<br><br><span class="code-str">Context fit: 14.2% of 200k window</span>`
     ];
 
-    let currentTermTab = 0;
-    function switchTermTab(idx) {
-      currentTermTab = idx;
-      document.querySelectorAll('.term-tab').forEach((t, i) => {
-        t.classList.toggle('active', i === idx);
-      });
-      document.getElementById('term-code-display').innerHTML = sandboxSnippets[idx];
+    let currentSandboxIdx = 0;
+    function switchSandbox(idx) {
+      currentSandboxIdx = idx;
+      document.querySelectorAll('.sandbox-tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+      document.getElementById('sandbox-display').innerHTML = sandboxSnippets[idx];
     }
 
-    function copyTermCode() {
-      const rawText = [
-        "pip install codecontext-cli",
-        "codecontext pack --out context.txt --ignore \".git,node_modules\"",
-        "codecontext estimate --target claude-3-7-sonnet"
-      ][currentTermTab];
-      copyToClipboard(rawText, 'Terminal script copied!');
+    function copySandboxScript() {
+      const text = ["pip install codecontext-cli", "codecontext pack --out context.txt --ignore \".git,node_modules\"", "codecontext estimate --target claude-3-7-sonnet"][currentSandboxIdx];
+      copyToClipboard(text, 'Script copied to clipboard!');
     }
 
-    // Modal Control Functions
-    function openModal(id) {
-      document.getElementById(id).classList.add('active');
+    function toggleModal(id, open) {
+      document.getElementById(id).classList.toggle('active', open);
     }
 
-    function closeModal(id) {
-      document.getElementById(id).classList.remove('active');
-    }
-
-    function handleFormSubmit(e, message) {
+    function onFormSubmit(e, msg) {
       e.preventDefault();
-      document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
-      showToast(message);
+      document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
+      showToast(msg);
     }
 
-    // Toast Notification System
     function showToast(msg) {
-      const toast = document.getElementById('toast-msg');
-      toast.innerText = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3500);
+      const t = document.getElementById('toast-el');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
     }
 
     function copyToClipboard(text, msg) {
       navigator.clipboard.writeText(text);
-      showToast(msg || 'Copied to clipboard!');
+      showToast(msg);
     }
 
-    // Ambient Canvas Animation Background
-    const canvas = document.getElementById('ambient-canvas');
-    const ctx = canvas.getContext('2d');
+    // Three.js 3D WebGL Constellation & Wave Background Engine
+    let scene, camera, renderer, particleSystem, wireframeMesh;
+    let mouseX = 0, mouseY = 0;
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    function initThreeJS() {
+      const canvasEl = document.getElementById('webgl-canvas');
+      scene = new THREE.Scene();
 
-    class Particle {
-      constructor() {
-        this.reset();
+      camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+      camera.position.z = 400;
+
+      renderer = new THREE.WebGLRenderer({ canvas: canvasEl, alpha: true, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // 1. Particle Cloud System
+      const particleCount = 700;
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+      const colors = new Float32Array(particleCount * 3);
+
+      const color1 = new THREE.Color(0x00f0ff); // Cyan
+      const color2 = new THREE.Color(0xff2a4b); // Red
+      const color3 = new THREE.Color(0x9d4edd); // Purple
+
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 1200;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 1200;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 800;
+
+        const mixedColor = Math.random() > 0.6 ? color1 : (Math.random() > 0.3 ? color2 : color3);
+        colors[i * 3] = mixedColor.r;
+        colors[i * 3 + 1] = mixedColor.g;
+        colors[i * 3 + 2] = mixedColor.b;
       }
 
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
-        this.color = Math.random() > 0.5 ? 'rgba(232, 25, 44, ' : 'rgba(0, 212, 255, ';
-        this.alpha = Math.random() * 0.5 + 0.1;
-      }
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-          this.reset();
-        }
-      }
-
-      draw() {
-        ctx.fillStyle = this.color + this.alpha + ')';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    const particles = Array.from({ length: 60 }, () => new Particle());
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
+      const particleMaterial = new THREE.PointsMaterial({
+        size: 3,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.7,
+        blending: THREE.AdditiveBlending
       });
-      requestAnimationFrame(animateParticles);
+
+      particleSystem = new THREE.Points(geometry, particleMaterial);
+      scene.add(particleSystem);
+
+      // 2. Glowing Geometric Neural Mesh Wireframe Sphere
+      const icoGeo = new THREE.IcosahedronGeometry(120, 2);
+      const wireMat = new THREE.MeshBasicMaterial({
+        color: 0x00f0ff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.08
+      });
+      wireframeMesh = new THREE.Mesh(icoGeo, wireMat);
+      wireframeMesh.position.set(300, 50, -100);
+      scene.add(wireframeMesh);
+
+      // Mouse interactive movement
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('resize', onWindowResize);
     }
 
-    animateParticles();
-    runSimSwarm(); // Auto-start initial simulation step
+    function onMouseMove(event) {
+      mouseX = (event.clientX - window.innerWidth / 2) * 0.05;
+      mouseY = (event.clientY - window.innerHeight / 2) * 0.05;
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animateThreeJS() {
+      requestAnimationFrame(animateThreeJS);
+
+      // Rotate particle cloud & wireframe mesh
+      if (particleSystem) {
+        particleSystem.rotation.y += 0.0008;
+        particleSystem.rotation.x += 0.0004;
+      }
+
+      if (wireframeMesh) {
+        wireframeMesh.rotation.y += 0.002;
+        wireframeMesh.rotation.x += 0.001;
+      }
+
+      // Parallax smooth camera movement based on mouse & scroll
+      camera.position.x += (mouseX - camera.position.x) * 0.05;
+      camera.position.y += (-mouseY - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
+
+      renderer.render(scene, camera);
+    }
+
+    // Initialize WebGL & Simulator
+    window.addEventListener('DOMContentLoaded', () => {
+      initThreeJS();
+      animateThreeJS();
+      executeSimSwarm();
+    });
   </script>
 </body>
 </html>
