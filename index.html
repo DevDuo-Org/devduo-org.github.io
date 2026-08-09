@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevDuo Innovations | Enterprise Multi-Agent AI Systems & SaaS Engineering</title>
-  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Linear-grade software engineering studio.">
+  <title>DevDuo Innovations | Enterprise Multi-Agent AI Systems & Studio</title>
+  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Linear-grade glassmorphism software engineering studio.">
   
   <!-- Open Graph -->
   <meta property="og:title" content="DevDuo Innovations | Multi-Agent AI Systems">
-  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Hyper-sleek. Production-grade software studio.">
+  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Hyper-sleek glassmorphism software studio.">
   <meta property="og:image" content="assets/Banner.png">
   <link rel="icon" type="image/png" href="assets/profile.png">
   
@@ -17,13 +17,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Lucide Icons & Three.js r128 CDN -->
+  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
     :root {
-      /* Linear / Raycast / Vercel Dark Color System */
+      /* Linear & Vercel Dark Color System */
       --bg-dark: #08090C;
       --bg-surface: #0E1117;
       --bg-card: rgba(18, 22, 32, 0.65);
@@ -39,7 +38,7 @@
       --text-muted: #A1A1AA;
       --text-dim: #52525B;
       
-      --border-light: rgba(255, 255, 255, 0.07);
+      --border-light: rgba(255, 255, 255, 0.08);
       --border-red: rgba(255, 42, 75, 0.3);
       --border-cyan: rgba(0, 240, 255, 0.3);
       
@@ -71,17 +70,24 @@
     body {
       position: relative;
       min-height: 100vh;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 42, 75, 0.12), transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 240, 255, 0.08), transparent 70%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(157, 78, 221, 0.08), transparent 70%);
+      background-attachment: fixed;
     }
 
-    /* Fixed WebGL 3D Canvas Background */
-    #webgl-canvas {
+    /* Ambient Subtle Grid Overlay */
+    .bg-grid-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
       pointer-events: none;
-      z-index: 0;
+      z-index: 1;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%);
     }
 
     /* Top Reading Progress Bar */
@@ -118,8 +124,8 @@
 
     header.scrolled {
       background: rgba(8, 9, 12, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border-light);
       padding: 0.85rem 0;
     }
@@ -169,7 +175,7 @@
       color: var(--text-main);
     }
 
-    /* Raycast Style Command Palette Bar in Header */
+    /* Raycast Style Command Palette Bar Trigger */
     .cmd-bar-trigger {
       display: flex;
       align-items: center;
@@ -268,13 +274,14 @@
       transform: translateY(0);
     }
 
-    /* Spotlight Glow Effect for Cards */
+    /* Glassmorphism Card with Spotlight Physics */
     .spotlight-card {
       position: relative;
       background: var(--bg-card);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       overflow: hidden;
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -1097,7 +1104,7 @@
       transform: translateY(0);
     }
 
-    /* Scroll Animations */
+    /* Scroll Reveal Animations */
     .reveal-item {
       opacity: 0;
       transform: translateY(30px);
@@ -1155,11 +1162,11 @@
 </head>
 <body>
 
+  <!-- Ambient Grid Overlay -->
+  <div class="bg-grid-overlay"></div>
+
   <!-- Top Reading Scroll Progress -->
   <div id="scroll-progress"></div>
-
-  <!-- WebGL 3D Canvas Background -->
-  <canvas id="webgl-canvas"></canvas>
 
   <!-- Navigation -->
   <header id="navbar">
@@ -1712,7 +1719,7 @@
 
   <div class="toast-popup" id="toast-el">Notification</div>
 
-  <!-- Three.js WebGL Holographic Engine Scripts -->
+  <!-- Scripts -->
   <script>
     lucide.createIcons();
 
@@ -1732,7 +1739,7 @@
       });
     }
 
-    // Mouse Spotlight Tracking on Cards
+    // Mouse Spotlight Physics on Cards
     document.querySelectorAll('.spotlight-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
@@ -1914,195 +1921,7 @@
       showToast(msg);
     }
 
-    /* 
-      ==================================================================
-      THREE.JS WEBGL KINETIC SCROLL ENGINE - HOLOGRAPHIC AI CORE & MATRIX
-      ==================================================================
-    */
-    let scene, camera, renderer;
-    let aiCoreGroup, torusKnotMesh, coreSphereMesh, particleHaloMesh;
-    let agentOrbsGroup;
-    let mouseX = 0, mouseY = 0;
-    let targetCameraZ = 360, targetCameraY = 0, targetCameraX = 0;
-
-    function initThreeEngine() {
-      const canvasEl = document.getElementById('webgl-canvas');
-      scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0x08090C, 0.0016);
-
-      camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 2500);
-      camera.position.set(0, 0, 360);
-
-      renderer = new THREE.WebGLRenderer({
-        canvas: canvasEl,
-        alpha: true,
-        antialias: true,
-        powerPreference: "high-performance"
-      });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.25;
-
-      // 1. Holographic AI Brain Core Group
-      aiCoreGroup = new THREE.Group();
-      scene.add(aiCoreGroup);
-
-      // Torus Knot Outer Matrix Structure
-      const torusGeo = new THREE.TorusKnotGeometry(75, 18, 120, 16);
-      const torusMat = new THREE.MeshBasicMaterial({
-        color: 0x00F0FF,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.22
-      });
-      torusKnotMesh = new THREE.Mesh(torusGeo, torusMat);
-      aiCoreGroup.add(torusKnotMesh);
-
-      // Core Inner Pulsing Sphere
-      const sphereGeo = new THREE.SphereGeometry(35, 32, 32);
-      const sphereMat = new THREE.MeshBasicMaterial({
-        color: 0xFF2A4B,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.35
-      });
-      coreSphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
-      aiCoreGroup.add(coreSphereMesh);
-
-      // Particle Halo Cloud surrounding the AI Core
-      const haloParticleCount = 850;
-      const haloGeo = new THREE.BufferGeometry();
-      const haloPos = new Float32Array(haloParticleCount * 3);
-      const haloCols = new Float32Array(haloParticleCount * 3);
-
-      const colorRed = new THREE.Color(0xFF2A4B);
-      const colorCyan = new THREE.Color(0x00F0FF);
-      const colorPurple = new THREE.Color(0x9D4EDD);
-
-      for (let i = 0; i < haloParticleCount; i++) {
-        const u = Math.random();
-        const v = Math.random();
-        const theta = u * 2.0 * Math.PI;
-        const phi = Math.acos(2.0 * v - 1.0);
-        const r = 130 + Math.random() * 140;
-
-        haloPos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-        haloPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-        haloPos[i * 3 + 2] = r * Math.cos(phi);
-
-        const col = i % 3 === 0 ? colorRed : (i % 3 === 1 ? colorCyan : colorPurple);
-        haloCols[i * 3] = col.r;
-        haloCols[i * 3 + 1] = col.g;
-        haloCols[i * 3 + 2] = col.b;
-      }
-
-      haloGeo.setAttribute('position', new THREE.BufferAttribute(haloPos, 3));
-      haloGeo.setAttribute('color', new THREE.BufferAttribute(haloCols, 3));
-
-      const haloMat = new THREE.PointsMaterial({
-        size: 3.5,
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.75,
-        blending: THREE.AdditiveBlending
-      });
-
-      particleHaloMesh = new THREE.Points(haloGeo, haloMat);
-      aiCoreGroup.add(particleHaloMesh);
-
-      // 2. Orbiting 3D Agent Orbs (Planner, Coder, Security, Deployer)
-      agentOrbsGroup = new THREE.Group();
-      aiCoreGroup.add(agentOrbsGroup);
-
-      const orbPositions = [
-        { x: -160, y: 80, z: 40, col: 0x00F0FF },
-        { x: 160, y: -60, z: -30, col: 0xFF2A4B },
-        { x: 0, y: 150, z: -80, col: 0x9D4EDD },
-        { x: 80, y: -140, z: 90, col: 0x10B981 }
-      ];
-
-      orbPositions.forEach(p => {
-        const orbGeo = new THREE.SphereGeometry(12, 24, 24);
-        const orbMat = new THREE.MeshBasicMaterial({ color: p.col, wireframe: true, opacity: 0.65, transparent: true });
-        const orbMesh = new THREE.Mesh(orbGeo, orbMat);
-        orbMesh.position.set(p.x, p.y, p.z);
-        agentOrbsGroup.add(orbMesh);
-      });
-
-      // 3. Holographic Cyber Plane Floor
-      const gridHelper = new THREE.GridHelper(1200, 48, 0xFF2A4B, 0x00F0FF);
-      gridHelper.position.y = -240;
-      gridHelper.material.opacity = 0.16;
-      gridHelper.material.transparent = true;
-      scene.add(gridHelper);
-
-      // Mouse & Scroll Event Listeners
-      window.addEventListener('mousemove', onMouseMove3D);
-      window.addEventListener('scroll', onScrollKinetic3D);
-      window.addEventListener('resize', onResize3D);
-    }
-
-    function onMouseMove3D(e) {
-      mouseX = (e.clientX - window.innerWidth / 2) * 0.06;
-      mouseY = (e.clientY - window.innerHeight / 2) * 0.06;
-    }
-
-    function onScrollKinetic3D() {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = Math.min(1, Math.max(0, scrollY / docHeight));
-
-      // Kinetic camera journey morphing along 3D space
-      targetCameraY = -scrollY * 0.18;
-      targetCameraZ = 360 + Math.sin(progress * Math.PI * 2) * 80;
-      targetCameraX = Math.cos(progress * Math.PI) * 50;
-
-      if (aiCoreGroup) {
-        aiCoreGroup.rotation.z = progress * Math.PI * 1.5;
-        aiCoreGroup.scale.setScalar(1 + Math.sin(progress * Math.PI) * 0.3);
-      }
-    }
-
-    function onResize3D() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    }
-
-    function render3DLoop() {
-      requestAnimationFrame(render3DLoop);
-
-      if (torusKnotMesh) {
-        torusKnotMesh.rotation.x += 0.003;
-        torusKnotMesh.rotation.y += 0.005;
-      }
-
-      if (coreSphereMesh) {
-        coreSphereMesh.rotation.y -= 0.008;
-      }
-
-      if (particleHaloMesh) {
-        particleHaloMesh.rotation.y += 0.0012;
-      }
-
-      if (agentOrbsGroup) {
-        agentOrbsGroup.rotation.y += 0.004;
-      }
-
-      // Smooth Lerp Camera Controls
-      camera.position.x += (mouseX + targetCameraX - camera.position.x) * 0.04;
-      camera.position.y += (-mouseY + targetCameraY - camera.position.y) * 0.04;
-      camera.position.z += (targetCameraZ - camera.position.z) * 0.04;
-      camera.lookAt(scene.position);
-
-      renderer.render(scene, camera);
-    }
-
-    // Launch Engine
     window.addEventListener('DOMContentLoaded', () => {
-      initThreeEngine();
-      render3DLoop();
       executeSimSwarm();
     });
   </script>
