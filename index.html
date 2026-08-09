@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevDuo Innovations | Next-Gen Multi-Agent AI Systems & Studio</title>
-  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Minimalist, high-performance software engineering studio.">
+  <title>DevDuo Innovations | Enterprise Multi-Agent AI Systems & SaaS Engineering</title>
+  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Linear-grade software engineering studio.">
   
   <!-- Open Graph -->
   <meta property="og:title" content="DevDuo Innovations | Multi-Agent AI Systems">
@@ -12,10 +12,10 @@
   <meta property="og:image" content="assets/Banner.png">
   <link rel="icon" type="image/png" href="assets/profile.png">
   
-  <!-- Premium Fonts -->
+  <!-- Premium Fonts: Inter & Space Grotesk & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons & Three.js r128 CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -23,34 +23,33 @@
 
   <style>
     :root {
-      /* Deep-Tech Dark Aesthetic */
-      --bg-dark: #020306;
-      --bg-surface: #070B12;
-      --bg-card: rgba(10, 15, 26, 0.7);
-      --bg-card-hover: rgba(16, 24, 40, 0.85);
+      /* Linear / Raycast / Vercel Dark Color System */
+      --bg-dark: #08090C;
+      --bg-surface: #0E1117;
+      --bg-card: rgba(18, 22, 32, 0.65);
+      --bg-card-hover: rgba(26, 32, 46, 0.85);
       
-      --red: #FF2A4B;
-      --red-glow: rgba(255, 42, 75, 0.45);
-      --cyan: #00F0FF;
-      --cyan-glow: rgba(0, 240, 255, 0.4);
-      --purple: #A832D7;
-      --purple-glow: rgba(168, 50, 215, 0.4);
+      --accent-red: #FF2A4B;
+      --accent-red-glow: rgba(255, 42, 75, 0.35);
+      --accent-cyan: #00F0FF;
+      --accent-cyan-glow: rgba(0, 240, 255, 0.3);
+      --accent-purple: #9D4EDD;
       
-      --text-main: #F8FAFC;
-      --text-muted: #94A3B8;
-      --text-dim: #475569;
+      --text-main: #EDEDED;
+      --text-muted: #A1A1AA;
+      --text-dim: #52525B;
       
-      --border-light: rgba(255, 255, 255, 0.08);
-      --border-glow-red: rgba(255, 42, 75, 0.35);
-      --border-glow-cyan: rgba(0, 240, 255, 0.35);
+      --border-light: rgba(255, 255, 255, 0.07);
+      --border-red: rgba(255, 42, 75, 0.3);
+      --border-cyan: rgba(0, 240, 255, 0.3);
       
       --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
       --radius-full: 9999px;
       
       --font-display: 'Space Grotesk', sans-serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
@@ -65,6 +64,7 @@
       background-color: var(--bg-dark);
       color: var(--text-main);
       font-family: var(--font-body);
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       overflow-x: hidden;
     }
 
@@ -89,39 +89,39 @@
       position: fixed;
       top: 0;
       left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--red), var(--cyan), var(--purple));
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-red), var(--accent-cyan), var(--accent-purple));
       z-index: 3000;
       width: 0%;
-      box-shadow: 0 0 12px var(--cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
     }
 
     /* Container Utility */
     .container {
-      max-width: 1240px;
+      max-width: 1220px;
       margin: 0 auto;
       padding: 0 2rem;
       position: relative;
       z-index: 2;
     }
 
-    /* Header Navigation */
+    /* Navigation Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 1.25rem 0;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 1.2rem 0;
+      transition: all 0.35s ease;
     }
 
     header.scrolled {
-      background: rgba(2, 3, 6, 0.85);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      background: rgba(8, 9, 12, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-light);
-      padding: 0.9rem 0;
+      padding: 0.85rem 0;
     }
 
     .nav-inner {
@@ -138,20 +138,20 @@
     }
 
     .logo-img {
-      height: 38px;
+      height: 36px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 0 12px var(--red-glow));
+      filter: drop-shadow(0 0 10px var(--accent-red-glow));
     }
 
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 2.25rem;
+      gap: 2rem;
       list-style: none;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border-light);
-      padding: 0.45rem 1.75rem;
+      padding: 0.4rem 1.5rem;
       border-radius: var(--radius-full);
       backdrop-filter: blur(16px);
     }
@@ -161,13 +161,42 @@
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
       transition: all 0.25s ease;
     }
 
     .nav-link:hover, .nav-link.active {
       color: var(--text-main);
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Raycast Style Command Palette Bar in Header */
+    .cmd-bar-trigger {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 0.9rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-full);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .cmd-bar-trigger:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: rgba(0, 240, 255, 0.08);
+    }
+
+    .kbd-chip {
+      padding: 0.15rem 0.4rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      border: 1px solid var(--border-light);
     }
 
     /* Buttons */
@@ -175,7 +204,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
+      padding: 0.7rem 1.4rem;
       border-radius: var(--radius-full);
       font-size: 0.85rem;
       font-weight: 600;
@@ -186,14 +215,14 @@
     }
 
     .btn-red {
-      background: var(--red);
+      background: var(--accent-red);
       color: #FFF;
-      box-shadow: 0 0 25px var(--red-glow);
+      box-shadow: 0 0 20px var(--accent-red-glow);
     }
 
     .btn-red:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 35px rgba(255, 42, 75, 0.65);
+      box-shadow: 0 0 30px rgba(255, 42, 75, 0.6);
     }
 
     .btn-glass {
@@ -204,8 +233,8 @@
     }
 
     .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
       transform: translateY(-2px);
     }
 
@@ -223,7 +252,7 @@
       top: 75px;
       left: 0;
       right: 0;
-      background: rgba(7, 11, 18, 0.95);
+      background: rgba(14, 17, 23, 0.95);
       backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border-light);
       padding: 2rem;
@@ -254,7 +283,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 240, 255, 0.1), transparent 40%);
+      background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 240, 255, 0.08), transparent 40%);
       opacity: 0;
       transition: opacity 0.4s ease;
       pointer-events: none;
@@ -265,9 +294,9 @@
     }
 
     .spotlight-card:hover {
-      border-color: var(--border-glow-cyan);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--cyan-glow);
+      border-color: var(--border-cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-cyan-glow);
     }
 
     /* Hero Section */
@@ -293,10 +322,10 @@
       padding: 0.35rem 1rem;
       border-radius: var(--radius-full);
       background: rgba(255, 42, 75, 0.08);
-      border: 1px solid var(--border-glow-red);
+      border: 1px solid var(--border-red);
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--red);
+      color: var(--accent-red);
       margin-bottom: 1.75rem;
     }
 
@@ -304,8 +333,8 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--red);
-      box-shadow: 0 0 10px var(--red);
+      background: var(--accent-red);
+      box-shadow: 0 0 10px var(--accent-red);
       animation: pulseDot 2s infinite;
     }
 
@@ -323,13 +352,13 @@
     }
 
     .text-gradient {
-      background: linear-gradient(135deg, #FFFFFF 20%, var(--cyan) 60%, var(--purple) 100%);
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-cyan) 60%, var(--accent-purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .text-gradient-red {
-      background: linear-gradient(135deg, #FFFFFF 20%, var(--red) 70%, var(--purple) 100%);
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-red) 70%, var(--accent-purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -343,7 +372,7 @@
     }
 
     .hero-subtext em {
-      color: var(--cyan);
+      color: var(--accent-cyan);
       font-style: normal;
       font-weight: 500;
     }
@@ -372,7 +401,7 @@
     }
 
     .hero-stat-val span {
-      color: var(--red);
+      color: var(--accent-red);
     }
 
     .hero-stat-lbl {
@@ -400,7 +429,7 @@
     }
 
     .hero-card:hover {
-      border-color: var(--border-glow-cyan);
+      border-color: var(--border-cyan);
       transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
     }
 
@@ -431,7 +460,7 @@
       gap: 0.5rem;
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--cyan);
+      color: var(--accent-cyan);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-bottom: 0.8rem;
@@ -454,15 +483,15 @@
     /* Simulator Window */
     .simulator-window {
       background: var(--bg-card);
-      border: 1px solid var(--border-glow-cyan);
+      border: 1px solid var(--border-cyan);
       border-radius: var(--radius-lg);
       backdrop-filter: blur(24px);
       overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--cyan-glow);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--accent-cyan-glow);
     }
 
     .sim-topbar {
-      background: rgba(7, 11, 18, 0.9);
+      background: rgba(14, 17, 23, 0.9);
       padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
@@ -494,7 +523,7 @@
     .preset-selector-label {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--cyan);
+      color: var(--accent-cyan);
       text-transform: uppercase;
       margin-bottom: 1rem;
       display: block;
@@ -516,7 +545,7 @@
     }
 
     .sim-preset-card:hover, .sim-preset-card.active {
-      border-color: var(--cyan);
+      border-color: var(--accent-cyan);
       background: rgba(0, 240, 255, 0.08);
     }
 
@@ -539,7 +568,7 @@
 
     .sim-text-input:focus {
       outline: none;
-      border-color: var(--cyan);
+      border-color: var(--accent-cyan);
     }
 
     .swarm-nodes-row {
@@ -559,7 +588,7 @@
     }
 
     .swarm-node-item.active {
-      border-color: var(--red);
+      border-color: var(--accent-red);
       background: rgba(255, 42, 75, 0.15);
       box-shadow: 0 0 15px rgba(255, 42, 75, 0.3);
     }
@@ -570,7 +599,7 @@
     }
 
     .terminal-output-box {
-      background: #020306;
+      background: #050608;
       border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
       padding: 1.25rem;
@@ -591,12 +620,12 @@
 
     @keyframes fadeIn { to { opacity: 1; } }
 
-    .badge-planner { background: rgba(0, 240, 255, 0.15); color: var(--cyan); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
-    .badge-coder { background: rgba(255, 42, 75, 0.15); color: var(--red); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
-    .badge-security { background: rgba(168, 50, 215, 0.15); color: var(--purple); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-planner { background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-coder { background: rgba(255, 42, 75, 0.15); color: var(--accent-red); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-security { background: rgba(157, 78, 221, 0.15); color: var(--accent-purple); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
     .badge-success { background: rgba(16, 185, 129, 0.15); color: #10B981; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
 
-    /* Products Cards Grid */
+    /* Products Grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -612,7 +641,7 @@
     }
 
     .product-glass-card.featured {
-      border-color: var(--red);
+      border-color: var(--accent-red);
       background: linear-gradient(180deg, rgba(255, 42, 75, 0.08) 0%, var(--bg-card) 100%);
     }
 
@@ -627,9 +656,9 @@
       text-transform: uppercase;
     }
 
-    .badge-red { background: rgba(255, 42, 75, 0.12); color: var(--red); border: 1px solid var(--border-glow-red); }
-    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--cyan); border: 1px solid var(--border-glow-cyan); }
-    .badge-purple { background: rgba(168, 50, 215, 0.12); color: var(--purple); border: 1px solid var(--purple); }
+    .badge-red { background: rgba(255, 42, 75, 0.12); color: var(--accent-red); border: 1px solid var(--border-red); }
+    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--accent-cyan); border: 1px solid var(--border-cyan); }
+    .badge-purple { background: rgba(157, 78, 221, 0.12); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
 
     .product-icon-box {
       width: 52px;
@@ -640,13 +669,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
+      color: var(--accent-cyan);
       margin-bottom: 1.75rem;
     }
 
     .product-glass-card.featured .product-icon-box {
-      color: var(--red);
-      border-color: var(--border-glow-red);
+      color: var(--accent-red);
+      border-color: var(--border-red);
     }
 
     .product-name-title {
@@ -712,7 +741,7 @@
     }
 
     .sandbox-header {
-      background: rgba(7, 11, 18, 0.9);
+      background: rgba(14, 17, 23, 0.9);
       padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
@@ -739,7 +768,7 @@
 
     .sandbox-tab-btn.active {
       background: rgba(255, 255, 255, 0.08);
-      color: var(--cyan);
+      color: var(--accent-cyan);
     }
 
     .sandbox-code-area {
@@ -751,8 +780,8 @@
     }
 
     .code-cmt { color: var(--text-dim); }
-    .code-cmd { color: var(--red); }
-    .code-flg { color: var(--purple); }
+    .code-cmd { color: var(--accent-red); }
+    .code-flg { color: var(--accent-purple); }
     .code-str { color: #34D399; }
 
     /* Services Grid */
@@ -782,11 +811,11 @@
       height: 48px;
       border-radius: var(--radius-md);
       background: rgba(0, 240, 255, 0.08);
-      border: 1px solid var(--border-glow-cyan);
+      border: 1px solid var(--border-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
+      color: var(--accent-cyan);
       margin-bottom: 1.5rem;
     }
 
@@ -820,8 +849,8 @@
       height: 270px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--red);
-      box-shadow: 0 0 35px var(--red-glow);
+      border: 2px solid var(--accent-red);
+      box-shadow: 0 0 35px var(--accent-red-glow);
     }
 
     .about-bio-text p {
@@ -847,7 +876,7 @@
       font-size: 0.75rem;
       padding: 0.35rem 0.8rem;
       background: var(--bg-surface);
-      border: 1px solid var(--border-glow-red);
+      border: 1px solid var(--border-red);
       border-radius: var(--radius-full);
       color: var(--text-main);
     }
@@ -870,8 +899,8 @@
 
     /* Contact Banner */
     .contact-glass-box {
-      background: linear-gradient(135deg, rgba(255, 42, 75, 0.12) 0%, rgba(168, 50, 215, 0.08) 50%, var(--bg-card) 100%);
-      border: 1px solid var(--border-glow-red);
+      background: linear-gradient(135deg, rgba(255, 42, 75, 0.12) 0%, rgba(157, 78, 221, 0.08) 50%, var(--bg-card) 100%);
+      border: 1px solid var(--border-red);
       border-radius: var(--radius-lg);
       padding: 4.5rem 2rem;
       text-align: center;
@@ -903,14 +932,14 @@
     }
 
     .social-pill-link:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
       transform: translateY(-2px);
     }
 
     /* Footer */
     footer {
-      background: #020305;
+      background: #040508;
       border-top: 1px solid var(--border-light);
       padding: 3rem 0;
       color: var(--text-dim);
@@ -927,12 +956,12 @@
       gap: 1.5rem;
     }
 
-    /* Modals */
+    /* Modals & Command Palette */
     .modal-backdrop {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.88);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
       z-index: 3000;
       display: flex;
       align-items: center;
@@ -949,14 +978,63 @@
     }
 
     .modal-content-box {
-      background: #070B12;
-      border: 1px solid var(--border-glow-red);
+      background: #0E1117;
+      border: 1px solid var(--border-red);
       border-radius: var(--radius-lg);
-      max-width: 520px;
+      max-width: 540px;
       width: 100%;
       padding: 2.5rem;
       position: relative;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 40px var(--red-glow);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 40px var(--accent-red-glow);
+    }
+
+    .cmd-palette-box {
+      background: #0E1117;
+      border: 1px solid var(--border-cyan);
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 40px var(--accent-cyan-glow);
+    }
+
+    .cmd-search-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-light);
+      padding: 1.25rem 1.5rem;
+      color: #FFF;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+    }
+
+    .cmd-search-input:focus {
+      outline: none;
+    }
+
+    .cmd-list {
+      padding: 0.75rem;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    .cmd-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .cmd-item:hover {
+      background: rgba(0, 240, 255, 0.08);
+      color: var(--accent-cyan);
     }
 
     .modal-close-btn {
@@ -995,7 +1073,7 @@
 
     .form-input:focus {
       outline: none;
-      border-color: var(--red);
+      border-color: var(--accent-red);
     }
 
     .toast-popup {
@@ -1003,8 +1081,8 @@
       bottom: 2rem;
       right: 2rem;
       background: var(--bg-surface);
-      border: 1px solid var(--cyan);
-      color: var(--cyan);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
       padding: 0.9rem 1.5rem;
       border-radius: var(--radius-full);
       font-family: var(--font-mono);
@@ -1077,7 +1155,7 @@
 </head>
 <body>
 
-  <!-- Reading Progress Bar -->
+  <!-- Top Reading Scroll Progress -->
   <div id="scroll-progress"></div>
 
   <!-- WebGL 3D Canvas Background -->
@@ -1099,15 +1177,23 @@
         <li><a href="#youtube" class="nav-link">YouTube</a></li>
       </ul>
 
-      <div class="nav-action-btn">
-        <button onclick="toggleModal('contact-modal', true)" class="btn btn-red">
-          <i data-lucide="mail"></i> Hire Us
+      <div style="display:flex; align-items:center; gap:1rem">
+        <button onclick="toggleModal('cmd-modal', true)" class="cmd-bar-trigger">
+          <i data-lucide="search" size="14"></i>
+          <span>Search...</span>
+          <span class="kbd-chip">⌘K</span>
+        </button>
+
+        <div class="nav-action-btn">
+          <button onclick="toggleModal('contact-modal', true)" class="btn btn-red">
+            <i data-lucide="mail"></i> Hire Us
+          </button>
+        </div>
+
+        <button class="nav-toggle-btn" id="mobile-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu" size="28"></i>
         </button>
       </div>
-
-      <button class="nav-toggle-btn" id="mobile-toggle" aria-label="Toggle Menu">
-        <i data-lucide="menu" size="28"></i>
-      </button>
     </div>
   </header>
 
@@ -1139,7 +1225,7 @@
         </h1>
 
         <p class="hero-subtext">
-          We build <em>AI-native products</em> that ship — multi-agent systems, LLM tools, and production SaaS platforms. Sleek. Minimalist. <em>Production software.</em>
+          We build <em>AI-native products</em> that ship — multi-agent systems, LLM tools, and production SaaS platforms. Minimalist. Precise. <em>Production software.</em>
         </p>
 
         <div class="hero-cta-group">
@@ -1269,7 +1355,7 @@
           <span class="product-tag-badge badge-red">Flagship · 2026</span>
           <div>
             <div class="product-icon-box"><i data-lucide="bot" size="28"></i></div>
-            <h3 class="product-name-title">SAGENTA<span style="color:var(--red)">.</span></h3>
+            <h3 class="product-name-title">SAGENTA<span style="color:var(--accent-red)">.</span></h3>
             <p class="product-description">Conversational multi-agent AI system that builds entire software features from natural text — with full agent decision visibility and approval gates.</p>
             <div class="chips-group">
               <span class="chip-item">Multi-Agent</span>
@@ -1289,7 +1375,7 @@
           <span class="product-tag-badge badge-cyan">Live SaaS</span>
           <div>
             <div class="product-icon-box"><i data-lucide="search" size="28"></i></div>
-            <h3 class="product-name-title">REPO<span style="color:var(--cyan)">MIND</span></h3>
+            <h3 class="product-name-title">REPO<span style="color:var(--accent-cyan)">MIND</span></h3>
             <p class="product-description">Turn any GitHub repository into a single, token-optimized context file. Interrogate codebases with ChatGPT or Claude without manual navigation.</p>
             <div class="chips-group">
               <span class="chip-item">Developer Tool</span>
@@ -1309,7 +1395,7 @@
           <span class="product-tag-badge badge-purple">CLI Tool</span>
           <div>
             <div class="product-icon-box"><i data-lucide="terminal" size="28"></i></div>
-            <h3 class="product-name-title">CODE<span style="color:var(--purple)">CONTEXT</span></h3>
+            <h3 class="product-name-title">CODE<span style="color:var(--accent-purple)">CONTEXT</span></h3>
             <p class="product-description">A high-speed CLI tool that packages your entire codebase into a clean context file filtered by `.gitignore`. Token counted and LLM ready.</p>
             <div class="chips-group">
               <span class="chip-item">Python CLI</span>
@@ -1472,38 +1558,38 @@
       <div class="yt-grid">
         <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// DEMO</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// DEMO</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Sagenta Multi-Agent End-to-End Build</h4>
             <p style="font-size:0.85rem; color:var(--text-muted)">Watch Sagenta build a complete auth system with approval gates.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
         <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// EXPLAINER</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// EXPLAINER</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Why Single LLMs Fail at Complex Tasks</h4>
             <p style="font-size:0.85rem; color:var(--text-muted)">The engineering behind agent swarms and stateful graph execution.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
         <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// CASE STUDY</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// CASE STUDY</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">RepoMind Workflow for 40k-Line Repos</h4>
             <p style="font-size:0.85rem; color:var(--text-muted)">Real metrics comparing manual code exploration vs RepoMind context files.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
         <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
           <div>
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// FOUNDER LOG</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-red); margin-bottom:0.75rem">// FOUNDER LOG</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Building a Dev Studio in Karachi</h4>
             <p style="font-size:0.85rem; color:var(--text-muted)">Revenue transparency, engineering challenges, and studio growth milestones.</p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:1rem">Watch Video →</div>
         </a>
       </div>
     </div>
@@ -1561,7 +1647,7 @@
   <div class="modal-backdrop" id="contact-modal">
     <div class="modal-content-box">
       <button class="modal-close-btn" onclick="toggleModal('contact-modal', false)"><i data-lucide="x"></i></button>
-      <h3 style="font-family:var(--font-heading); font-size:1.5rem; margin-bottom:0.5rem">Work With <span style="color:var(--red)">DevDuo</span></h3>
+      <h3 style="font-family:var(--font-heading); font-size:1.5rem; margin-bottom:0.5rem">Work With <span style="color:var(--accent-red)">DevDuo</span></h3>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem">Tell us about your project requirements and we'll reply within 24 hours.</p>
       
       <form onsubmit="onFormSubmit(event, 'Inquiry Sent! We will get back to you shortly.')">
@@ -1586,7 +1672,7 @@
   <div class="modal-backdrop" id="waitlist-modal">
     <div class="modal-content-box">
       <button class="modal-close-btn" onclick="toggleModal('waitlist-modal', false)"><i data-lucide="x"></i></button>
-      <h3 style="font-family:var(--font-heading); font-size:1.5rem; margin-bottom:0.5rem">Join <span style="color:var(--red)">Sagenta</span> Waitlist</h3>
+      <h3 style="font-family:var(--font-heading); font-size:1.5rem; margin-bottom:0.5rem">Join <span style="color:var(--accent-red)">Sagenta</span> Waitlist</h3>
       <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem">Be among the first engineers to access Sagenta Multi-Agent System upon launch.</p>
       
       <form onsubmit="onFormSubmit(event, 'You are reserved on the waitlist!')">
@@ -1599,13 +1685,54 @@
     </div>
   </div>
 
+  <!-- Raycast Style Command Palette Modal -->
+  <div class="modal-backdrop" id="cmd-modal">
+    <div class="cmd-palette-box">
+      <input type="text" class="cmd-search-input" id="cmd-input" placeholder="Type a command or search studio tools..." onkeyup="filterCmds()">
+      <div class="cmd-list" id="cmd-list">
+        <a href="#simulator" class="cmd-item" onclick="toggleModal('cmd-modal', false)">
+          <span><i data-lucide="play-circle" size="16"></i> Run Multi-Agent Simulator</span>
+          <span class="kbd-chip">Jump</span>
+        </a>
+        <a href="#products" class="cmd-item" onclick="toggleModal('cmd-modal', false)">
+          <span><i data-lucide="bot" size="16"></i> View Sagenta & Products</span>
+          <span class="kbd-chip">Jump</span>
+        </a>
+        <a href="#sandbox" class="cmd-item" onclick="toggleModal('cmd-modal', false)">
+          <span><i data-lucide="terminal" size="16"></i> Open CodeContext CLI Sandbox</span>
+          <span class="kbd-chip">Jump</span>
+        </a>
+        <div class="cmd-item" onclick="toggleModal('cmd-modal', false); toggleModal('contact-modal', true)">
+          <span><i data-lucide="mail" size="16"></i> Contact DevDuo Studio</span>
+          <span class="kbd-chip">Email</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="toast-popup" id="toast-el">Notification</div>
 
-  <!-- Three.js 3D WebGL Neural Swarm Engine & Interactive Scripts -->
+  <!-- Three.js WebGL Holographic Engine Scripts -->
   <script>
     lucide.createIcons();
 
-    // Mouse Spotlight Position Tracking on Cards
+    // Keyboard shortcut ⌘K / Ctrl+K for Raycast Command Palette
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        toggleModal('cmd-modal', true);
+        document.getElementById('cmd-input').focus();
+      }
+    });
+
+    function filterCmds() {
+      const q = document.getElementById('cmd-input').value.toLowerCase();
+      document.querySelectorAll('#cmd-list .cmd-item').forEach(item => {
+        item.style.display = item.innerText.toLowerCase().includes(q) ? 'flex' : 'none';
+      });
+    }
+
+    // Mouse Spotlight Tracking on Cards
     document.querySelectorAll('.spotlight-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
@@ -1616,7 +1743,7 @@
       });
     });
 
-    // Mobile Navigation Toggle
+    // Mobile Nav Toggle
     const mobileBtn = document.getElementById('mobile-toggle');
     const mobileDrawer = document.getElementById('mobile-drawer');
 
@@ -1651,7 +1778,7 @@
       }
     });
 
-    // Reveal Observer
+    // Intersection Observer Reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) e.target.classList.add('visible');
@@ -1794,14 +1921,14 @@
     */
     let scene, camera, renderer;
     let aiCoreGroup, torusKnotMesh, coreSphereMesh, particleHaloMesh;
-    let synapticLinesMesh, agentOrbsGroup;
+    let agentOrbsGroup;
     let mouseX = 0, mouseY = 0;
     let targetCameraZ = 360, targetCameraY = 0, targetCameraX = 0;
 
     function initThreeEngine() {
       const canvasEl = document.getElementById('webgl-canvas');
       scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0x020306, 0.0016);
+      scene.fog = new THREE.FogExp2(0x08090C, 0.0016);
 
       camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 2500);
       camera.position.set(0, 0, 360);
@@ -1851,7 +1978,7 @@
 
       const colorRed = new THREE.Color(0xFF2A4B);
       const colorCyan = new THREE.Color(0x00F0FF);
-      const colorPurple = new THREE.Color(0xA832D7);
+      const colorPurple = new THREE.Color(0x9D4EDD);
 
       for (let i = 0; i < haloParticleCount; i++) {
         const u = Math.random();
@@ -1891,7 +2018,7 @@
       const orbPositions = [
         { x: -160, y: 80, z: 40, col: 0x00F0FF },
         { x: 160, y: -60, z: -30, col: 0xFF2A4B },
-        { x: 0, y: 150, z: -80, col: 0xA832D7 },
+        { x: 0, y: 150, z: -80, col: 0x9D4EDD },
         { x: 80, y: -140, z: 90, col: 0x10B981 }
       ];
 
@@ -1946,7 +2073,6 @@
     function render3DLoop() {
       requestAnimationFrame(render3DLoop);
 
-      // Continuous 3D Animations
       if (torusKnotMesh) {
         torusKnotMesh.rotation.x += 0.003;
         torusKnotMesh.rotation.y += 0.005;
@@ -1973,7 +2099,7 @@
       renderer.render(scene, camera);
     }
 
-    // Launch Three.js & Page Engine
+    // Launch Engine
     window.addEventListener('DOMContentLoaded', () => {
       initThreeEngine();
       render3DLoop();
