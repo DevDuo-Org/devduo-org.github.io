@@ -1090,18 +1090,57 @@
       background: var(--bg-surface);
       border: 1px solid var(--accent-cyan);
       color: var(--accent-cyan);
-      padding: 0.9rem 1.5rem;
+      padding: 0.8rem 1.4rem;
       border-radius: var(--radius-full);
       font-family: var(--font-mono);
       font-size: 0.85rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 20px var(--accent-cyan-glow);
       z-index: 4000;
-      transform: translateY(150%);
-      transition: transform 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .toast-popup.show {
+      opacity: 1;
+      pointer-events: auto;
       transform: translateY(0);
+    }
+
+    /* Floating Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(14, 17, 23, 0.85);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2500;
+      backdrop-filter: blur(12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #back-to-top:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px var(--accent-cyan-glow);
     }
 
     /* Scroll Reveal Animations */
@@ -1717,7 +1756,12 @@
     </div>
   </div>
 
-  <div class="toast-popup" id="toast-el">Notification</div>
+  <div class="toast-popup" id="toast-el"></div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+    <i data-lucide="arrow-up" size="20"></i>
+  </button>
 
   <!-- Scripts -->
   <script>
@@ -1768,12 +1812,13 @@
       document.body.style.overflow = 'auto';
     }
 
-    // Scroll Progress & Navbar Effects
+    // Scroll Progress, Navbar & Back to Top Effects
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
       const prog = document.getElementById('scroll-progress');
+      const btt = document.getElementById('back-to-top');
       const winScroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = (winScroll / height) * 100;
       
       prog.style.width = scrolled + '%';
@@ -1782,6 +1827,12 @@
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');
+      }
+
+      if (window.scrollY > 300) {
+        btt.classList.add('visible');
+      } else {
+        btt.classList.remove('visible');
       }
     });
 
