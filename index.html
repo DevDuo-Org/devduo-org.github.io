@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevDuo Innovations | Next-Gen Production AI Systems & Multi-Agent Engineering</title>
-  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Sleek. High-performance software engineering studio.">
+  <title>DevDuo Innovations | Next-Gen Multi-Agent AI Systems & Studio</title>
+  <meta name="description" content="DevDuo Innovations builds production-grade multi-agent AI systems, LLM tools, RAG pipelines, and AI SaaS platforms. Minimalist, high-performance software engineering studio.">
   
   <!-- Open Graph -->
   <meta property="og:title" content="DevDuo Innovations | Multi-Agent AI Systems">
-  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Sleek. Production-grade software studio.">
+  <meta property="og:description" content="We build AI-native products that ship — multi-agent systems, LLM tools, and SaaS platforms. Hyper-sleek. Production-grade software studio.">
   <meta property="og:image" content="assets/Banner.png">
   <link rel="icon" type="image/png" href="assets/profile.png">
   
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons & Three.js r128 CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -23,33 +23,33 @@
 
   <style>
     :root {
-      /* Luxury Minimal Cyber Theme */
-      --bg-dark: #040609;
-      --bg-card: rgba(10, 14, 23, 0.72);
-      --bg-card-hover: rgba(16, 22, 36, 0.9);
-      --bg-surface: #0B0F19;
+      /* Deep-Tech Dark Aesthetic */
+      --bg-dark: #020306;
+      --bg-surface: #070B12;
+      --bg-card: rgba(10, 15, 26, 0.7);
+      --bg-card-hover: rgba(16, 24, 40, 0.85);
       
       --red: #FF2A4B;
-      --red-glow: rgba(255, 42, 75, 0.4);
+      --red-glow: rgba(255, 42, 75, 0.45);
       --cyan: #00F0FF;
-      --cyan-glow: rgba(0, 240, 255, 0.35);
-      --purple: #9D4EDD;
-      --purple-glow: rgba(157, 78, 221, 0.35);
+      --cyan-glow: rgba(0, 240, 255, 0.4);
+      --purple: #A832D7;
+      --purple-glow: rgba(168, 50, 215, 0.4);
       
       --text-main: #F8FAFC;
       --text-muted: #94A3B8;
-      --text-dim: #64748B;
+      --text-dim: #475569;
       
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-red: rgba(255, 42, 75, 0.3);
-      --border-cyan: rgba(0, 240, 255, 0.3);
+      --border-light: rgba(255, 255, 255, 0.08);
+      --border-glow-red: rgba(255, 42, 75, 0.35);
+      --border-glow-cyan: rgba(0, 240, 255, 0.35);
       
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
       --radius-full: 9999px;
       
-      --font-heading: 'Space Grotesk', sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -84,7 +84,7 @@
       z-index: 0;
     }
 
-    /* Reading Progress Bar */
+    /* Top Reading Progress Bar */
     #scroll-progress {
       position: fixed;
       top: 0;
@@ -117,10 +117,10 @@
     }
 
     header.scrolled {
-      background: rgba(4, 6, 9, 0.85);
+      background: rgba(2, 3, 6, 0.85);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-light);
       padding: 0.9rem 0;
     }
 
@@ -150,7 +150,7 @@
       gap: 2.25rem;
       list-style: none;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       padding: 0.45rem 1.75rem;
       border-radius: var(--radius-full);
       backdrop-filter: blur(16px);
@@ -175,7 +175,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.7rem 1.4rem;
+      padding: 0.75rem 1.5rem;
       border-radius: var(--radius-full);
       font-size: 0.85rem;
       font-weight: 600;
@@ -193,19 +193,19 @@
 
     .btn-red:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 35px rgba(255, 42, 75, 0.6);
+      box-shadow: 0 0 35px rgba(255, 42, 75, 0.65);
     }
 
     .btn-glass {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text-main);
-      border-color: var(--border-color);
+      border-color: var(--border-light);
       backdrop-filter: blur(12px);
     }
 
     .btn-glass:hover {
       background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.25);
       transform: translateY(-2px);
     }
 
@@ -223,9 +223,9 @@
       top: 75px;
       left: 0;
       right: 0;
-      background: rgba(11, 15, 25, 0.95);
+      background: rgba(7, 11, 18, 0.95);
       backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-light);
       padding: 2rem;
       display: flex;
       flex-direction: column;
@@ -237,6 +237,37 @@
 
     .mobile-menu.open {
       transform: translateY(0);
+    }
+
+    /* Spotlight Glow Effect for Cards */
+    .spotlight-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 240, 255, 0.1), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    .spotlight-card:hover {
+      border-color: var(--border-glow-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--cyan-glow);
     }
 
     /* Hero Section */
@@ -262,7 +293,7 @@
       padding: 0.35rem 1rem;
       border-radius: var(--radius-full);
       background: rgba(255, 42, 75, 0.08);
-      border: 1px solid var(--border-red);
+      border: 1px solid var(--border-glow-red);
       font-family: var(--font-mono);
       font-size: 0.75rem;
       color: var(--red);
@@ -283,7 +314,7 @@
     }
 
     .hero-headline {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: clamp(2.8rem, 5.5vw, 4.5rem);
       line-height: 1.05;
       font-weight: 700;
@@ -329,11 +360,11 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-light);
     }
 
     .hero-stat-val {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 2.2rem;
       font-weight: 700;
       color: var(--text-main);
@@ -352,7 +383,6 @@
       margin-top: 0.4rem;
     }
 
-    /* Hero Card Visual */
     .hero-card-container {
       position: relative;
       perspective: 1000px;
@@ -360,7 +390,7 @@
 
     .hero-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
       padding: 0.75rem;
       backdrop-filter: blur(24px);
@@ -370,7 +400,7 @@
     }
 
     .hero-card:hover {
-      border-color: var(--border-cyan);
+      border-color: var(--border-glow-cyan);
       transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
     }
 
@@ -382,7 +412,7 @@
       object-fit: cover;
     }
 
-    /* Section Styles */
+    /* Section Global Styles */
     section {
       padding: 120px 0;
       position: relative;
@@ -408,7 +438,7 @@
     }
 
     .section-heading {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: clamp(2rem, 3.8vw, 3.2rem);
       line-height: 1.15;
       font-weight: 700;
@@ -424,7 +454,7 @@
     /* Simulator Window */
     .simulator-window {
       background: var(--bg-card);
-      border: 1px solid var(--border-cyan);
+      border: 1px solid var(--border-glow-cyan);
       border-radius: var(--radius-lg);
       backdrop-filter: blur(24px);
       overflow: hidden;
@@ -432,12 +462,12 @@
     }
 
     .sim-topbar {
-      background: rgba(11, 15, 25, 0.9);
+      background: rgba(7, 11, 18, 0.9);
       padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-light);
     }
 
     .sim-mac-dots {
@@ -475,7 +505,7 @@
       text-align: left;
       padding: 1rem 1.25rem;
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
       color: var(--text-main);
       font-family: var(--font-body);
@@ -499,7 +529,7 @@
     .sim-text-input {
       flex: 1;
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-full);
       padding: 0.75rem 1.25rem;
       color: #FFF;
@@ -521,7 +551,7 @@
 
     .swarm-node-item {
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-sm);
       padding: 0.75rem;
       text-align: center;
@@ -540,8 +570,8 @@
     }
 
     .terminal-output-box {
-      background: #040609;
-      border: 1px solid var(--border-color);
+      background: #020306;
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
       padding: 1.25rem;
       font-family: var(--font-mono);
@@ -563,10 +593,10 @@
 
     .badge-planner { background: rgba(0, 240, 255, 0.15); color: var(--cyan); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
     .badge-coder { background: rgba(255, 42, 75, 0.15); color: var(--red); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
-    .badge-security { background: rgba(157, 78, 221, 0.15); color: var(--purple); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
+    .badge-security { background: rgba(168, 50, 215, 0.15); color: var(--purple); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
     .badge-success { background: rgba(16, 185, 129, 0.15); color: #10B981; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; }
 
-    /* Products Grid */
+    /* Products Cards Grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -574,27 +604,16 @@
     }
 
     .product-glass-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
       padding: 2.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      backdrop-filter: blur(16px);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-    }
-
-    .product-glass-card:hover {
-      border-color: var(--border-red);
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--red-glow);
     }
 
     .product-glass-card.featured {
       border-color: var(--red);
-      background: linear-gradient(180deg, rgba(255, 42, 75, 0.06) 0%, var(--bg-card) 100%);
+      background: linear-gradient(180deg, rgba(255, 42, 75, 0.08) 0%, var(--bg-card) 100%);
     }
 
     .product-tag-badge {
@@ -608,16 +627,16 @@
       text-transform: uppercase;
     }
 
-    .badge-red { background: rgba(255, 42, 75, 0.12); color: var(--red); border: 1px solid var(--border-red); }
-    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--cyan); border: 1px solid var(--border-cyan); }
-    .badge-purple { background: rgba(157, 78, 221, 0.12); color: var(--purple); border: 1px solid var(--purple); }
+    .badge-red { background: rgba(255, 42, 75, 0.12); color: var(--red); border: 1px solid var(--border-glow-red); }
+    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--cyan); border: 1px solid var(--border-glow-cyan); }
+    .badge-purple { background: rgba(168, 50, 215, 0.12); color: var(--purple); border: 1px solid var(--purple); }
 
     .product-icon-box {
       width: 52px;
       height: 52px;
       border-radius: var(--radius-md);
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -627,11 +646,11 @@
 
     .product-glass-card.featured .product-icon-box {
       color: var(--red);
-      border-color: var(--border-red);
+      border-color: var(--border-glow-red);
     }
 
     .product-name-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 1.6rem;
       margin-bottom: 0.75rem;
     }
@@ -655,7 +674,7 @@
       font-size: 0.7rem;
       padding: 0.25rem 0.65rem;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-sm);
       color: var(--text-dim);
     }
@@ -665,11 +684,11 @@
       align-items: center;
       justify-content: space-between;
       padding-top: 1.25rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-light);
     }
 
     .price-value {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 1.4rem;
       font-weight: 700;
     }
@@ -685,7 +704,7 @@
     /* Sandbox Container */
     .sandbox-container {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
       overflow: hidden;
       backdrop-filter: blur(20px);
@@ -693,12 +712,12 @@
     }
 
     .sandbox-header {
-      background: rgba(11, 15, 25, 0.9);
+      background: rgba(7, 11, 18, 0.9);
       padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-light);
     }
 
     .sandbox-tabs {
@@ -744,25 +763,15 @@
     }
 
     .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
       padding: 2.25rem;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(16px);
       position: relative;
-    }
-
-    .service-card:hover {
-      border-color: var(--border-cyan);
-      transform: translateY(-6px);
     }
 
     .service-idx {
       position: absolute;
       top: 1.5rem;
       right: 1.5rem;
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 2.2rem;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.04);
@@ -773,7 +782,7 @@
       height: 48px;
       border-radius: var(--radius-md);
       background: rgba(0, 240, 255, 0.08);
-      border: 1px solid var(--border-cyan);
+      border: 1px solid var(--border-glow-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -782,7 +791,7 @@
     }
 
     .service-card-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 1.25rem;
       margin-bottom: 0.75rem;
     }
@@ -795,15 +804,11 @@
 
     /* About Section */
     .about-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
       padding: 3.5rem;
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
       gap: 4rem;
       align-items: center;
-      backdrop-filter: blur(20px);
     }
 
     .about-avatar-center {
@@ -842,7 +847,7 @@
       font-size: 0.75rem;
       padding: 0.35rem 0.8rem;
       background: var(--bg-surface);
-      border: 1px solid var(--border-red);
+      border: 1px solid var(--border-glow-red);
       border-radius: var(--radius-full);
       color: var(--text-main);
     }
@@ -855,28 +860,18 @@
     }
 
     .yt-item-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
       padding: 1.5rem;
       text-decoration: none;
       color: var(--text-main);
-      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      backdrop-filter: blur(12px);
-    }
-
-    .yt-item-card:hover {
-      border-color: var(--red);
-      transform: translateY(-5px);
     }
 
     /* Contact Banner */
     .contact-glass-box {
-      background: linear-gradient(135deg, rgba(255, 42, 75, 0.12) 0%, rgba(157, 78, 221, 0.08) 50%, var(--bg-card) 100%);
-      border: 1px solid var(--border-red);
+      background: linear-gradient(135deg, rgba(255, 42, 75, 0.12) 0%, rgba(168, 50, 215, 0.08) 50%, var(--bg-card) 100%);
+      border: 1px solid var(--border-glow-red);
       border-radius: var(--radius-lg);
       padding: 4.5rem 2rem;
       text-align: center;
@@ -902,7 +897,7 @@
       font-size: 0.85rem;
       padding: 0.6rem 1.25rem;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-full);
       transition: all 0.25s ease;
     }
@@ -916,7 +911,7 @@
     /* Footer */
     footer {
       background: #020305;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-light);
       padding: 3rem 0;
       color: var(--text-dim);
       font-size: 0.88rem;
@@ -954,8 +949,8 @@
     }
 
     .modal-content-box {
-      background: #0B0F19;
-      border: 1px solid var(--border-red);
+      background: #070B12;
+      border: 1px solid var(--border-glow-red);
       border-radius: var(--radius-lg);
       max-width: 520px;
       width: 100%;
@@ -990,7 +985,7 @@
     .form-input {
       width: 100%;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
       padding: 0.8rem 1rem;
       color: #FFF;
@@ -1082,7 +1077,7 @@
 </head>
 <body>
 
-  <!-- Top Reading Scroll Progress -->
+  <!-- Reading Progress Bar -->
   <div id="scroll-progress"></div>
 
   <!-- WebGL 3D Canvas Background -->
@@ -1270,7 +1265,7 @@
 
       <div class="products-grid">
         <!-- Sagenta Card -->
-        <div class="product-glass-card featured reveal-item">
+        <div class="product-glass-card spotlight-card featured reveal-item">
           <span class="product-tag-badge badge-red">Flagship · 2026</span>
           <div>
             <div class="product-icon-box"><i data-lucide="bot" size="28"></i></div>
@@ -1290,7 +1285,7 @@
         </div>
 
         <!-- RepoMind Card -->
-        <div class="product-glass-card reveal-item">
+        <div class="product-glass-card spotlight-card reveal-item">
           <span class="product-tag-badge badge-cyan">Live SaaS</span>
           <div>
             <div class="product-icon-box"><i data-lucide="search" size="28"></i></div>
@@ -1310,7 +1305,7 @@
         </div>
 
         <!-- CodeContext Card -->
-        <div class="product-glass-card reveal-item">
+        <div class="product-glass-card spotlight-card reveal-item">
           <span class="product-tag-badge badge-purple">CLI Tool</span>
           <div>
             <div class="product-icon-box"><i data-lucide="terminal" size="28"></i></div>
@@ -1376,42 +1371,42 @@
       </div>
 
       <div class="services-grid">
-        <div class="service-card reveal-item">
+        <div class="service-card spotlight-card reveal-item">
           <span class="service-idx">01</span>
           <div class="service-icon-box"><i data-lucide="database"></i></div>
           <h3 class="service-card-title">RAG Systems & Knowledge Bases</h3>
           <p class="service-card-desc">Custom document Q&A systems and semantic search powered by Pinecone, Weaviate, or Pgvector.</p>
         </div>
 
-        <div class="service-card reveal-item">
+        <div class="service-card spotlight-card reveal-item">
           <span class="service-idx">02</span>
           <div class="service-icon-box"><i data-lucide="cpu"></i></div>
           <h3 class="service-card-title">Multi-Agent Automation</h3>
           <p class="service-card-desc">Autonomous AI agent workflows built with LangGraph that plan, execute, and self-correct tasks.</p>
         </div>
 
-        <div class="service-card reveal-item">
+        <div class="service-card spotlight-card reveal-item">
           <span class="service-idx">03</span>
           <div class="service-icon-box"><i data-lucide="zap"></i></div>
           <h3 class="service-card-title">LLM API Integration</h3>
           <p class="service-card-desc">Seamless integration of OpenAI, Claude 3.7, Gemini, or open-source LLMs into your production backend.</p>
         </div>
 
-        <div class="service-card reveal-item">
+        <div class="service-card spotlight-card reveal-item">
           <span class="service-idx">04</span>
           <div class="service-icon-box"><i data-lucide="layers"></i></div>
           <h3 class="service-card-title">AI SaaS Development</h3>
           <p class="service-card-desc">Full-stack web application development from architecture to cloud deployment with Stripe and auth.</p>
         </div>
 
-        <div class="service-card reveal-item">
+        <div class="service-card spotlight-card reveal-item">
           <span class="service-idx">05</span>
           <div class="service-icon-box"><i data-lucide="trending-down"></i></div>
           <h3 class="service-card-title">Token & Cost Optimization</h3>
           <p class="service-card-desc">Audit prompts and system architectures to reduce token invoice costs by 30%–60%.</p>
         </div>
 
-        <div class="service-card reveal-item">
+        <div class="service-card spotlight-card reveal-item">
           <span class="service-idx">06</span>
           <div class="service-icon-box"><i data-lucide="compass"></i></div>
           <h3 class="service-card-title">AI Strategy & Technical Scoping</h3>
@@ -1430,7 +1425,7 @@
         <p class="section-desc">Proof of craft under pressure. We don't sell slide decks — we ship production software.</p>
       </div>
 
-      <div class="about-card reveal-item">
+      <div class="about-card spotlight-card reveal-item">
         <div class="about-avatar-center">
           <img src="assets/profile.png" alt="DevDuo Co-Founders" class="about-avatar-img">
           <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-dim); margin-top:1rem">
@@ -1475,7 +1470,7 @@
       </div>
 
       <div class="yt-grid">
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
           <div>
             <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// DEMO</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Sagenta Multi-Agent End-to-End Build</h4>
@@ -1484,7 +1479,7 @@
           <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
           <div>
             <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// EXPLAINER</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Why Single LLMs Fail at Complex Tasks</h4>
@@ -1493,7 +1488,7 @@
           <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
           <div>
             <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// CASE STUDY</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">RepoMind Workflow for 40k-Line Repos</h4>
@@ -1502,7 +1497,7 @@
           <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); margin-top:1rem">Watch Video →</div>
         </a>
 
-        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card reveal-item">
+        <a href="https://youtube.com/@devduoinnovations" target="_blank" class="yt-item-card spotlight-card reveal-item">
           <div>
             <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--red); margin-bottom:0.75rem">// FOUNDER LOG</div>
             <h4 style="font-size:1rem; font-weight:600; margin-bottom:0.5rem">Building a Dev Studio in Karachi</h4>
@@ -1609,6 +1604,17 @@
   <!-- Three.js 3D WebGL Neural Swarm Engine & Interactive Scripts -->
   <script>
     lucide.createIcons();
+
+    // Mouse Spotlight Position Tracking on Cards
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
 
     // Mobile Navigation Toggle
     const mobileBtn = document.getElementById('mobile-toggle');
@@ -1782,25 +1788,23 @@
     }
 
     /* 
-      ===============================================================
-      ADVANCED THREE.JS WEBGL AI NEURAL SWARM & CYBER GRID ENGINE
-      ===============================================================
+      ==================================================================
+      THREE.JS WEBGL KINETIC SCROLL ENGINE - HOLOGRAPHIC AI CORE & MATRIX
+      ==================================================================
     */
     let scene, camera, renderer;
-    let nodeGroup, lineMesh, dataParticlesMesh;
+    let aiCoreGroup, torusKnotMesh, coreSphereMesh, particleHaloMesh;
+    let synapticLinesMesh, agentOrbsGroup;
     let mouseX = 0, mouseY = 0;
-    let targetCameraZ = 350;
-    let targetCameraY = 0;
+    let targetCameraZ = 360, targetCameraY = 0, targetCameraX = 0;
 
     function initThreeEngine() {
       const canvasEl = document.getElementById('webgl-canvas');
       scene = new THREE.Scene();
+      scene.fog = new THREE.FogExp2(0x020306, 0.0016);
 
-      // Fog for deep spatial cyber perception
-      scene.fog = new THREE.FogExp2(0x040609, 0.0018);
-
-      camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 2000);
-      camera.position.set(0, 0, 350);
+      camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 2500);
+      camera.position.set(0, 0, 360);
 
       renderer = new THREE.WebGLRenderer({
         canvas: canvasEl,
@@ -1811,143 +1815,157 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.2;
+      renderer.toneMappingExposure = 1.25;
 
-      // Group holding Neural Agent Nodes & Connections
-      nodeGroup = new THREE.Group();
-      scene.add(nodeGroup);
+      // 1. Holographic AI Brain Core Group
+      aiCoreGroup = new THREE.Group();
+      scene.add(aiCoreGroup);
 
-      // 1. Create AI Neural Agent Nodes
-      const nodeCount = 45;
-      const nodePositions = [];
-      const nodeGeom = new THREE.SphereGeometry(2.5, 16, 16);
-      const nodeMatRed = new THREE.MeshBasicMaterial({ color: 0xFF2A4B });
-      const nodeMatCyan = new THREE.MeshBasicMaterial({ color: 0x00F0FF });
-      const nodeMatPurple = new THREE.MeshBasicMaterial({ color: 0x9D4EDD });
+      // Torus Knot Outer Matrix Structure
+      const torusGeo = new THREE.TorusKnotGeometry(75, 18, 120, 16);
+      const torusMat = new THREE.MeshBasicMaterial({
+        color: 0x00F0FF,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.22
+      });
+      torusKnotMesh = new THREE.Mesh(torusGeo, torusMat);
+      aiCoreGroup.add(torusKnotMesh);
 
-      for (let i = 0; i < nodeCount; i++) {
-        const x = (Math.random() - 0.5) * 550;
-        const y = (Math.random() - 0.5) * 450;
-        const z = (Math.random() - 0.5) * 350;
+      // Core Inner Pulsing Sphere
+      const sphereGeo = new THREE.SphereGeometry(35, 32, 32);
+      const sphereMat = new THREE.MeshBasicMaterial({
+        color: 0xFF2A4B,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.35
+      });
+      coreSphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
+      aiCoreGroup.add(coreSphereMesh);
 
-        nodePositions.push(new THREE.Vector3(x, y, z));
+      // Particle Halo Cloud surrounding the AI Core
+      const haloParticleCount = 850;
+      const haloGeo = new THREE.BufferGeometry();
+      const haloPos = new Float32Array(haloParticleCount * 3);
+      const haloCols = new Float32Array(haloParticleCount * 3);
 
-        const mat = i % 3 === 0 ? nodeMatRed : (i % 3 === 1 ? nodeMatCyan : nodeMatPurple);
-        const mesh = new THREE.Mesh(nodeGeom, mat);
-        mesh.position.set(x, y, z);
-        nodeGroup.add(mesh);
-      }
-
-      // 2. Create Synaptic Line Connections between nearby Nodes
-      const linePositions = [];
-      const lineColors = [];
       const colorRed = new THREE.Color(0xFF2A4B);
       const colorCyan = new THREE.Color(0x00F0FF);
+      const colorPurple = new THREE.Color(0xA832D7);
 
-      for (let i = 0; i < nodePositions.length; i++) {
-        for (let j = i + 1; j < nodePositions.length; j++) {
-          const dist = nodePositions[i].distanceTo(nodePositions[j]);
-          if (dist < 130) {
-            linePositions.push(nodePositions[i].x, nodePositions[i].y, nodePositions[i].z);
-            linePositions.push(nodePositions[j].x, nodePositions[j].y, nodePositions[j].z);
+      for (let i = 0; i < haloParticleCount; i++) {
+        const u = Math.random();
+        const v = Math.random();
+        const theta = u * 2.0 * Math.PI;
+        const phi = Math.acos(2.0 * v - 1.0);
+        const r = 130 + Math.random() * 140;
 
-            const col = Math.random() > 0.5 ? colorRed : colorCyan;
-            lineColors.push(col.r, col.g, col.b);
-            lineColors.push(col.r, col.g, col.b);
-          }
-        }
+        haloPos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+        haloPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+        haloPos[i * 3 + 2] = r * Math.cos(phi);
+
+        const col = i % 3 === 0 ? colorRed : (i % 3 === 1 ? colorCyan : colorPurple);
+        haloCols[i * 3] = col.r;
+        haloCols[i * 3 + 1] = col.g;
+        haloCols[i * 3 + 2] = col.b;
       }
 
-      const lineGeom = new THREE.BufferGeometry();
-      lineGeom.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-      lineGeom.setAttribute('color', new THREE.Float32BufferAttribute(lineColors, 3));
+      haloGeo.setAttribute('position', new THREE.BufferAttribute(haloPos, 3));
+      haloGeo.setAttribute('color', new THREE.BufferAttribute(haloCols, 3));
 
-      const lineMat = new THREE.LineBasicMaterial({
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.25,
-        blending: THREE.AdditiveBlending
-      });
-
-      lineMesh = new THREE.LineSegments(lineGeom, lineMat);
-      nodeGroup.add(lineMesh);
-
-      // 3. Floating Data Pulse Particles traversing the Neural Network
-      const particleCount = 400;
-      const partGeom = new THREE.BufferGeometry();
-      const partPos = new Float32Array(particleCount * 3);
-      const partCols = new Float32Array(particleCount * 3);
-
-      for (let i = 0; i < particleCount; i++) {
-        partPos[i * 3] = (Math.random() - 0.5) * 600;
-        partPos[i * 3 + 1] = (Math.random() - 0.5) * 500;
-        partPos[i * 3 + 2] = (Math.random() - 0.5) * 400;
-
-        const col = i % 2 === 0 ? colorRed : colorCyan;
-        partCols[i * 3] = col.r;
-        partCols[i * 3 + 1] = col.g;
-        partCols[i * 3 + 2] = col.b;
-      }
-
-      partGeom.setAttribute('position', new THREE.BufferAttribute(partPos, 3));
-      partGeom.setAttribute('color', new THREE.BufferAttribute(partCols, 3));
-
-      const partMat = new THREE.PointsMaterial({
+      const haloMat = new THREE.PointsMaterial({
         size: 3.5,
         vertexColors: true,
         transparent: true,
-        opacity: 0.65,
+        opacity: 0.75,
         blending: THREE.AdditiveBlending
       });
 
-      dataParticlesMesh = new THREE.Points(partGeom, partMat);
-      nodeGroup.add(dataParticlesMesh);
+      particleHaloMesh = new THREE.Points(haloGeo, haloMat);
+      aiCoreGroup.add(particleHaloMesh);
 
-      // 4. Holographic Floor Grid Plane
-      const gridHelper = new THREE.GridHelper(1000, 40, 0xFF2A4B, 0x00F0FF);
-      gridHelper.position.y = -220;
-      gridHelper.material.opacity = 0.15;
+      // 2. Orbiting 3D Agent Orbs (Planner, Coder, Security, Deployer)
+      agentOrbsGroup = new THREE.Group();
+      aiCoreGroup.add(agentOrbsGroup);
+
+      const orbPositions = [
+        { x: -160, y: 80, z: 40, col: 0x00F0FF },
+        { x: 160, y: -60, z: -30, col: 0xFF2A4B },
+        { x: 0, y: 150, z: -80, col: 0xA832D7 },
+        { x: 80, y: -140, z: 90, col: 0x10B981 }
+      ];
+
+      orbPositions.forEach(p => {
+        const orbGeo = new THREE.SphereGeometry(12, 24, 24);
+        const orbMat = new THREE.MeshBasicMaterial({ color: p.col, wireframe: true, opacity: 0.65, transparent: true });
+        const orbMesh = new THREE.Mesh(orbGeo, orbMat);
+        orbMesh.position.set(p.x, p.y, p.z);
+        agentOrbsGroup.add(orbMesh);
+      });
+
+      // 3. Holographic Cyber Plane Floor
+      const gridHelper = new THREE.GridHelper(1200, 48, 0xFF2A4B, 0x00F0FF);
+      gridHelper.position.y = -240;
+      gridHelper.material.opacity = 0.16;
       gridHelper.material.transparent = true;
       scene.add(gridHelper);
 
       // Mouse & Scroll Event Listeners
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('scroll', handleScroll3D);
-      window.addEventListener('resize', handleWindowResize);
+      window.addEventListener('mousemove', onMouseMove3D);
+      window.addEventListener('scroll', onScrollKinetic3D);
+      window.addEventListener('resize', onResize3D);
     }
 
-    function handleMouseMove(e) {
-      mouseX = (e.clientX - window.innerWidth / 2) * 0.08;
-      mouseY = (e.clientY - window.innerHeight / 2) * 0.08;
+    function onMouseMove3D(e) {
+      mouseX = (e.clientX - window.innerWidth / 2) * 0.06;
+      mouseY = (e.clientY - window.innerHeight / 2) * 0.06;
     }
 
-    function handleScroll3D() {
+    function onScrollKinetic3D() {
       const scrollY = window.scrollY;
-      targetCameraY = -scrollY * 0.15;
-      targetCameraZ = 350 + Math.sin(scrollY * 0.002) * 40;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = Math.min(1, Math.max(0, scrollY / docHeight));
+
+      // Kinetic camera journey morphing along 3D space
+      targetCameraY = -scrollY * 0.18;
+      targetCameraZ = 360 + Math.sin(progress * Math.PI * 2) * 80;
+      targetCameraX = Math.cos(progress * Math.PI) * 50;
+
+      if (aiCoreGroup) {
+        aiCoreGroup.rotation.z = progress * Math.PI * 1.5;
+        aiCoreGroup.scale.setScalar(1 + Math.sin(progress * Math.PI) * 0.3);
+      }
     }
 
-    function handleWindowResize() {
+    function onResize3D() {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
-    function renderLoop() {
-      requestAnimationFrame(renderLoop);
+    function render3DLoop() {
+      requestAnimationFrame(render3DLoop);
 
-      // Slow organic rotation of the AI Neural Node Network
-      if (nodeGroup) {
-        nodeGroup.rotation.y += 0.0012;
-        nodeGroup.rotation.x += 0.0006;
+      // Continuous 3D Animations
+      if (torusKnotMesh) {
+        torusKnotMesh.rotation.x += 0.003;
+        torusKnotMesh.rotation.y += 0.005;
       }
 
-      if (dataParticlesMesh) {
-        dataParticlesMesh.rotation.y -= 0.0008;
+      if (coreSphereMesh) {
+        coreSphereMesh.rotation.y -= 0.008;
       }
 
-      // Smooth camera interpolation (Parallax + Scroll response)
-      camera.position.x += (mouseX - camera.position.x) * 0.04;
+      if (particleHaloMesh) {
+        particleHaloMesh.rotation.y += 0.0012;
+      }
+
+      if (agentOrbsGroup) {
+        agentOrbsGroup.rotation.y += 0.004;
+      }
+
+      // Smooth Lerp Camera Controls
+      camera.position.x += (mouseX + targetCameraX - camera.position.x) * 0.04;
       camera.position.y += (-mouseY + targetCameraY - camera.position.y) * 0.04;
       camera.position.z += (targetCameraZ - camera.position.z) * 0.04;
       camera.lookAt(scene.position);
@@ -1955,10 +1973,10 @@
       renderer.render(scene, camera);
     }
 
-    // Launch Three.js Engine on Load
+    // Launch Three.js & Page Engine
     window.addEventListener('DOMContentLoaded', () => {
       initThreeEngine();
-      renderLoop();
+      render3DLoop();
       executeSimSwarm();
     });
   </script>
