@@ -9,7 +9,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="DevDuo Innovations | AI Systems • SaaS Engineering • Automation">
   <meta property="og:description" content="Building Intelligence. Shaping Tomorrow. Multi-agent systems, LLM tools, and production SaaS platforms.">
-  <meta property="og:image" content="assets/Banner.png">
+  <meta property="og:image" content="assets/ChatGPT_Image.png">
   <link rel="icon" type="image/png" href="assets/profile.png">
   
   <!-- Premium Fonts: Space Grotesk, Rajdhani, JetBrains Mono, Inter -->
@@ -1357,48 +1357,10 @@
   <!-- Hero Section with Full-Width Cinematic Banner Showcase -->
   <section class="hero" id="hero">
     <div class="container">
-      <div class="reveal-item">
-        <div class="hero-pill-hud">
-          <span class="hero-pill-dot"></span>
-          BUILDING INTELLIGENCE. SHAPING TOMORROW. &gt;&gt;&gt; _L1...
-        </div>
-
-        <h1 class="hero-headline-title">
-          <span class="text-metallic-white">DEV</span><span class="text-neon-red">/DUO</span><br>
-          <span class="text-metallic-white">INNOVATIONS</span>
-        </h1>
-
-        <p class="hero-subtext">
-          Production-grade <strong>multi-agent AI systems</strong>, LLM orchestration tools, and enterprise SaaS platforms. Minimalist. Precise. <strong>Cyber-engineered software studio.</strong>
-        </p>
-
-        <!-- Banner HUD Badges: BUILD • INNOVATE • COLLABORATE -->
-        <div class="hud-badges-row">
-          <div class="hud-badge-item hud-badge-red">
-            &lt;//&gt; BUILD
-          </div>
-          <div class="hud-badge-item hud-badge-purple">
-            💡 INNOVATE
-          </div>
-          <div class="hud-badge-item hud-badge-cyan">
-            👥 COLLABORATE
-          </div>
-        </div>
-
-        <div class="hero-cta-group">
-          <a href="#products" class="btn btn-red">
-            <i data-lucide="cpu"></i> Explore AI Products
-          </a>
-          <a href="#simulator" class="btn btn-glass">
-            <i data-lucide="play-circle"></i> Swarm Simulator
-          </a>
-        </div>
-      </div>
-
       <!-- Massive Full-Width Cinematic Banner Showcase -->
       <div class="hero-cinematic-showcase reveal-item">
         <div class="hero-banner-frame hud-box">
-          <img src="assets/Banner.png" alt="DevDuo Innovations Cyberpunk Banner" class="hero-banner-img">
+          <img src="assets/ChatGPT_Image.png" alt="DevDuo Innovations Studio Showcase" class="hero-banner-img">
         </div>
       </div>
 
@@ -1885,12 +1847,16 @@
   <script>
     lucide.createIcons();
 
-    // Keyboard shortcut ⌘K / Ctrl+K for Raycast Command Palette
+    // Keyboard shortcuts: ⌘K / Ctrl+K for Raycast Command Palette, Escape for closing modals
     window.addEventListener('keydown', (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         toggleModal('cmd-modal', true);
         document.getElementById('cmd-input').focus();
+      }
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-backdrop.active').forEach(m => m.classList.remove('active'));
+        document.body.style.overflow = 'auto';
       }
     });
 
@@ -1987,6 +1953,7 @@
     ];
 
     let activePreset = 0;
+    let simIntervalTimer = null;
 
     function pickSimPreset(idx, btn) {
       document.querySelectorAll('.sim-preset-card').forEach(b => b.classList.remove('active'));
@@ -1997,12 +1964,14 @@
     }
 
     function executeSimSwarm() {
+      if (simIntervalTimer) clearInterval(simIntervalTimer);
+      
       const logContainer = document.getElementById('sim-log-box');
       const val = document.getElementById('sim-prompt-field').value;
-      const logs = presets[activePreset] ? presets[activePreset].logs : [
-        { tag: "badge-planner", text: `[PLANNER AGENT] Received instruction: "${val}"` },
+      const logs = (presets[activePreset] && presets[activePreset].prompt === val) ? presets[activePreset].logs : [
+        { tag: "badge-planner", text: `[PLANNER AGENT] Received custom instruction: "${val}"` },
         { tag: "badge-coder", text: "[CODER AGENT] Synthesizing graph models & API schema..." },
-        { tag: "badge-security", text: "[SECURITY AGENT] Auditing security rules..." },
+        { tag: "badge-security", text: "[SECURITY AGENT] Auditing security rules & authorization invariants..." },
         { tag: "badge-success", text: "[SWARM] Task executed successfully with approval checkpoint!" }
       ];
 
@@ -2011,7 +1980,7 @@
       nodeIds.forEach(id => document.getElementById(id).className = 'swarm-node-item');
 
       let i = 0;
-      const timer = setInterval(() => {
+      simIntervalTimer = setInterval(() => {
         if (i < logs.length) {
           const l = logs[i];
           const div = document.createElement('div');
@@ -2033,7 +2002,8 @@
           }
           i++;
         } else {
-          clearInterval(timer);
+          clearInterval(simIntervalTimer);
+          simIntervalTimer = null;
         }
       }, 650);
     }
@@ -2062,12 +2032,16 @@
     }
 
     function toggleModal(id, open) {
-      document.getElementById(id).classList.toggle('active', open);
+      const modal = document.getElementById(id);
+      modal.classList.toggle('active', open);
+      const activeModals = document.querySelectorAll('.modal-backdrop.active');
+      document.body.style.overflow = activeModals.length > 0 ? 'hidden' : 'auto';
     }
 
     function onFormSubmit(e, msg) {
       e.preventDefault();
       document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
+      document.body.style.overflow = 'auto';
       showToast(msg);
     }
 
@@ -2079,8 +2053,28 @@
     }
 
     function copyToClipboard(text, msg) {
-      navigator.clipboard.writeText(text);
-      showToast(msg);
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => fallbackCopy(text, msg));
+      } else {
+        fallbackCopy(text, msg);
+      }
+    }
+
+    function fallbackCopy(text, msg) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast(msg);
+      } catch (err) {
+        showToast('Copied text!');
+      }
+      document.body.removeChild(ta);
     }
 
     window.addEventListener('DOMContentLoaded', () => {
